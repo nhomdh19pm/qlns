@@ -86,4 +86,11 @@ Route::post('/ngoaingu/them',[NgoaiNguController::class,'postThem'])->name('ngoa
 Route::get('/ngoaingu/sua/{id}',[NgoaiNguController::class,'getSua'])->name('ngoaingu.sua');
 Route::post('/ngoaingu/sua/{id}',[NgoaiNguController::class,'postSua'])->name('ngoaingu.sua');
 Route::get('/ngoaingu/xoa/{id}',[NgoaiNguController::class,'postXoa'])->name('ngoaingu.xoa');
+
+Route::get('/dantoc',[NgoaiNguController::class,'getdanhsach'])->name('dantoc');
+Route::get('/dantoc/them',[NgoaiNguController::class,'getThem'])->name('dantoc.them');
+Route::post('/dantoc/them',[NgoaiNguController::class,'postThem'])->name('dantoc.them');
+Route::get('/dantoc/sua/{id}',[NgoaiNguController::class,'getSua'])->name('dantoc.sua');
+Route::post('/dantoc/sua/{id}',[NgoaiNguController::class,'postSua'])->name('dantoc.sua');
+Route::get('/dantoc/xoa/{id}',[NgoaiNguController::class,'postXoa'])->name('dantoc.xoa');
 });
