@@ -8,6 +8,8 @@ use App\Http\Controllers\TonGiaoController;
 use App\Http\Controllers\NhanVienController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ChuyenMonController;
+use App\Http\Controllers\NgoaiNguController;
+use App\Http\Controllers\BangCapController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -71,11 +73,17 @@ Route::get('/chuyenmon/sua/{id}',[ChuyenMonController::class,'getSua'])->name('c
 Route::post('/chuyenmon/sua/{id}',[ChuyenMonController::class,'postSua'])->name('chuyenmon.sua');
 Route::get('/chuyenmon/xoa/{id}',[ChuyenMonController::class,'postXoa'])->name('chuyenmon.xoa');
 
-Route::get('/bangcap',[ChuyenMonController::class,'getdanhsach'])->name('bangcap');
-Route::get('/bangcap/them',[ChuyenMonController::class,'getThem'])->name('bangcap.them');
-Route::post('/bangcap/them',[ChuyenMonController::class,'postThem'])->name('bangcap.them');
-Route::get('/bangcap/sua/{id}',[ChuyenMonController::class,'getSua'])->name('bangcap.sua');
-Route::post('/bangcap/sua/{id}',[ChuyenMonController::class,'postSua'])->name('bangcap.sua');
-Route::get('/bangcap/xoa/{id}',[ChuyenMonController::class,'postXoa'])->name('bangcap.xoa');
+Route::get('/bangcap',[BangCapController::class,'getdanhsach'])->name('bangcap');
+Route::get('/bangcap/them',[BangCapController::class,'getThem'])->name('bangcap.them');
+Route::post('/bangcap/them',[BangCapController::class,'postThem'])->name('bangcap.them');
+Route::get('/bangcap/sua/{id}',[BangCapController::class,'getSua'])->name('bangcap.sua');
+Route::post('/bangcap/sua/{id}',[BangCapController::class,'postSua'])->name('bangcap.sua');
+Route::get('/bangcap/xoa/{id}',[BangCapController::class,'postXoa'])->name('bangcap.xoa');
 
+Route::get('/ngoaingu',[NgoaiNguController::class,'getdanhsach'])->name('ngoaingu');
+Route::get('/ngoaingu/them',[NgoaiNguController::class,'getThem'])->name('ngoaingu.them');
+Route::post('/ngoaingu/them',[NgoaiNguController::class,'postThem'])->name('ngoaingu.them');
+Route::get('/ngoaingu/sua/{id}',[NgoaiNguController::class,'getSua'])->name('ngoaingu.sua');
+Route::post('/ngoaingu/sua/{id}',[NgoaiNguController::class,'postSua'])->name('ngoaingu.sua');
+Route::get('/ngoaingu/xoa/{id}',[NgoaiNguController::class,'postXoa'])->name('ngoaingu.xoa');
 });
