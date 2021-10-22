@@ -6,7 +6,7 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-            <p><a href="{{ route('phongban.them') }}" class="btn btn-info"><i class="fas fa-plus"></i> New</a></p>
+            <p><a href="{{ route('phongban.them') }}" class="btn btn-info"><i class="fas fa-plus"></i> Thêm mới</a></p>
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr class="text-center">
