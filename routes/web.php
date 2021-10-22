@@ -10,6 +10,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ChuyenMonController;
 use App\Http\Controllers\NgoaiNguController;
 use App\Http\Controllers\BangCapController;
+use App\Http\Controllers\DanTocController;
+use App\Http\Controllers\ThuongPhatController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -87,10 +89,17 @@ Route::get('/ngoaingu/sua/{id}',[NgoaiNguController::class,'getSua'])->name('ngo
 Route::post('/ngoaingu/sua/{id}',[NgoaiNguController::class,'postSua'])->name('ngoaingu.sua');
 Route::get('/ngoaingu/xoa/{id}',[NgoaiNguController::class,'postXoa'])->name('ngoaingu.xoa');
 
-Route::get('/dantoc',[NgoaiNguController::class,'getdanhsach'])->name('dantoc');
-Route::get('/dantoc/them',[NgoaiNguController::class,'getThem'])->name('dantoc.them');
-Route::post('/dantoc/them',[NgoaiNguController::class,'postThem'])->name('dantoc.them');
-Route::get('/dantoc/sua/{id}',[NgoaiNguController::class,'getSua'])->name('dantoc.sua');
-Route::post('/dantoc/sua/{id}',[NgoaiNguController::class,'postSua'])->name('dantoc.sua');
-Route::get('/dantoc/xoa/{id}',[NgoaiNguController::class,'postXoa'])->name('dantoc.xoa');
+Route::get('/dantoc',[DanTocController::class,'getdanhsach'])->name('dantoc');
+Route::get('/dantoc/them',[DanTocController::class,'getThem'])->name('dantoc.them');
+Route::post('/dantoc/them',[DanTocController::class,'postThem'])->name('dantoc.them');
+Route::get('/dantoc/sua/{id}',[DanTocController::class,'getSua'])->name('dantoc.sua');
+Route::post('/dantoc/sua/{id}',[DanTocController::class,'postSua'])->name('dantoc.sua');
+Route::get('/dantoc/xoa/{id}',[DanTocController::class,'postXoa'])->name('dantoc.xoa');
+
+Route::get('/thuongphat',[ThuongPhatController::class,'getdanhsach'])->name('thuongphat');
+Route::get('/thuongphat/them',[ThuongPhatController::class,'getThem'])->name('thuongphat.them');
+Route::post('/thuongphat/them',[ThuongPhatController::class,'postThem'])->name('thuongphat.them');
+Route::get('/thuongphat/sua/{id}',[ThuongPhatController::class,'getSua'])->name('thuongphat.sua');
+Route::post('/thuongphat/sua/{id}',[ThuongPhatController::class,'postSua'])->name('thuongphat.sua');
+Route::get('/thuongphat/xoa/{id}',[ThuongPhatController::class,'postXoa'])->name('thuongphat.xoa');
 });
