@@ -270,6 +270,8 @@ desired effect
         <li><a href="{{ route('tongiao') }}"><i class="fa fa-laptop-house"></i> <span>Tôn Giaos</span></a></li>
         <li><a href="{{ route('chuyenmon') }}"><i class="fa fa-laptop-house"></i> <span>Chuyên Môn</span></a></li>
         <li><a href="{{ route('bangcap') }}"><i class="fa fa-laptop-house"></i> <span>Bằng Cấp</span></a></li>
+        <li><a href="{{ route('ngoaingu') }}"><i class="fa fa-laptop-house"></i> <span>Ngoại Ngữ</span></a></li>
+        <li><a href="{{ route('dantoc') }}"><i class="fa fa-laptop-house"></i> <span>Dân Tộc</span></a></li>
         <li class="treeview">
           <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
             <span class="pull-right-container">

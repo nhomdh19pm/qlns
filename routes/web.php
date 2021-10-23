@@ -8,6 +8,10 @@ use App\Http\Controllers\TonGiaoController;
 use App\Http\Controllers\NhanVienController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ChuyenMonController;
+use App\Http\Controllers\NgoaiNguController;
+use App\Http\Controllers\BangCapController;
+use App\Http\Controllers\DanTocController;
+use App\Http\Controllers\ThuongPhatController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -71,11 +75,31 @@ Route::get('/chuyenmon/sua/{id}',[ChuyenMonController::class,'getSua'])->name('c
 Route::post('/chuyenmon/sua/{id}',[ChuyenMonController::class,'postSua'])->name('chuyenmon.sua');
 Route::get('/chuyenmon/xoa/{id}',[ChuyenMonController::class,'postXoa'])->name('chuyenmon.xoa');
 
-Route::get('/bangcap',[ChuyenMonController::class,'getdanhsach'])->name('bangcap');
-Route::get('/bangcap/them',[ChuyenMonController::class,'getThem'])->name('bangcap.them');
-Route::post('/bangcap/them',[ChuyenMonController::class,'postThem'])->name('bangcap.them');
-Route::get('/bangcap/sua/{id}',[ChuyenMonController::class,'getSua'])->name('bangcap.sua');
-Route::post('/bangcap/sua/{id}',[ChuyenMonController::class,'postSua'])->name('bangcap.sua');
-Route::get('/bangcap/xoa/{id}',[ChuyenMonController::class,'postXoa'])->name('bangcap.xoa');
+Route::get('/bangcap',[BangCapController::class,'getdanhsach'])->name('bangcap');
+Route::get('/bangcap/them',[BangCapController::class,'getThem'])->name('bangcap.them');
+Route::post('/bangcap/them',[BangCapController::class,'postThem'])->name('bangcap.them');
+Route::get('/bangcap/sua/{id}',[BangCapController::class,'getSua'])->name('bangcap.sua');
+Route::post('/bangcap/sua/{id}',[BangCapController::class,'postSua'])->name('bangcap.sua');
+Route::get('/bangcap/xoa/{id}',[BangCapController::class,'postXoa'])->name('bangcap.xoa');
 
+Route::get('/ngoaingu',[NgoaiNguController::class,'getdanhsach'])->name('ngoaingu');
+Route::get('/ngoaingu/them',[NgoaiNguController::class,'getThem'])->name('ngoaingu.them');
+Route::post('/ngoaingu/them',[NgoaiNguController::class,'postThem'])->name('ngoaingu.them');
+Route::get('/ngoaingu/sua/{id}',[NgoaiNguController::class,'getSua'])->name('ngoaingu.sua');
+Route::post('/ngoaingu/sua/{id}',[NgoaiNguController::class,'postSua'])->name('ngoaingu.sua');
+Route::get('/ngoaingu/xoa/{id}',[NgoaiNguController::class,'postXoa'])->name('ngoaingu.xoa');
+
+Route::get('/dantoc',[DanTocController::class,'getdanhsach'])->name('dantoc');
+Route::get('/dantoc/them',[DanTocController::class,'getThem'])->name('dantoc.them');
+Route::post('/dantoc/them',[DanTocController::class,'postThem'])->name('dantoc.them');
+Route::get('/dantoc/sua/{id}',[DanTocController::class,'getSua'])->name('dantoc.sua');
+Route::post('/dantoc/sua/{id}',[DanTocController::class,'postSua'])->name('dantoc.sua');
+Route::get('/dantoc/xoa/{id}',[DanTocController::class,'postXoa'])->name('dantoc.xoa');
+
+Route::get('/thuongphat',[ThuongPhatController::class,'getdanhsach'])->name('thuongphat');
+Route::get('/thuongphat/them',[ThuongPhatController::class,'getThem'])->name('thuongphat.them');
+Route::post('/thuongphat/them',[ThuongPhatController::class,'postThem'])->name('thuongphat.them');
+Route::get('/thuongphat/sua/{id}',[ThuongPhatController::class,'getSua'])->name('thuongphat.sua');
+Route::post('/thuongphat/sua/{id}',[ThuongPhatController::class,'postSua'])->name('thuongphat.sua');
+Route::get('/thuongphat/xoa/{id}',[ThuongPhatController::class,'postXoa'])->name('thuongphat.xoa');
 });
