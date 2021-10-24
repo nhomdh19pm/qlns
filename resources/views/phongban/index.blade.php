@@ -1,12 +1,12 @@
 @extends('layouts.app')
 @section('content-header')
 <h1>
-        Page Header
-        <small>Optional description</small>
+        Phòng ban
+        <small>quản lý phòng ban</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-        <li class="active">Here</li>
+        <li><a href="#"><i class="fa fa-dashboard"></i>Trang Chủ</a></li>
+        <li class="active">Phòng ban</li>
       </ol>
 @endsection
 @section('content')

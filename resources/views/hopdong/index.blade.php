@@ -1,4 +1,14 @@
 @extends('layouts.app')
+@section('content-header')
+<h1>
+        Hợp đồng
+        <small>Quản lý hợp đồng </small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i>Trang Chủ</a></li>
+        <li class="active">Hợp đồng</li>
+      </ol>
+@endsection
 @section('content')
 <div class="box">
             <div class="box-header">

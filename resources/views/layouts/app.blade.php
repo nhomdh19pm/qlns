@@ -70,7 +70,7 @@ desired effect
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>H</b>LT</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>ISEKAI-</b>WJBU</span>
+      <span class="logo-lg"><b>Quản lý nhân sự</b></span>
     </a>
 
     <!-- Header Navbar -->
