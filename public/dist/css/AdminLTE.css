@@ -289,7 +289,7 @@ a:focus {
   transition: width 0.3s ease-in-out;
   display: block;
   float: left;
-  height: 50px;
+  height: 60px;
   font-size: 20px;
   line-height: 50px;
   text-align: center;
@@ -301,6 +301,7 @@ a:focus {
 }
 .main-header .logo .logo-lg {
   display: block;
+  margin-top: 5px;
 }
 .main-header .logo .logo-mini {
   display: none;
@@ -470,6 +471,7 @@ a:focus {
   width: 100%;
   padding: 10px;
   overflow: hidden;
+  margin-top: 15px;
 }
 .user-panel:before,
 .user-panel:after {
@@ -673,6 +675,7 @@ a:focus {
   }
   .sidebar-mini.sidebar-collapse .main-header .navbar {
     margin-left: 50px;
+    
   }
 }
 .sidebar-menu,

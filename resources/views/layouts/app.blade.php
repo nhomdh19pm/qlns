@@ -16,6 +16,7 @@
   
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ url('public/dist') }}/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="{{ url('public/dist') }}/css/AdminLTE.css">
   <!-- AdminLTE Skins. Choose a skin from the  css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="{{ url('public/dist') }}/css/skins/_all-skins.min.css">
@@ -293,14 +294,7 @@ desired effect
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1>
-        Page Header
-        <small>Optional description</small>
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-        <li class="active">Here</li>
-      </ol>
+    @yield('content-header')
     </section>
 
     <!-- Main content -->
