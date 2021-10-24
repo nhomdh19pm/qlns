@@ -20,6 +20,7 @@
   <!-- AdminLTE Skins. Choose a skin from the  css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="{{ url('public/dist') }}/css/skins/_all-skins.min.css">
+  <link rel="stylesheet" href="{{ url('public/dist') }}/css/skins/_all-skins.css">
   <!-- iCheck -->
   <link rel="stylesheet" href="{{ url('public/plugins') }}/iCheck/flat/blue.css">
   <!-- Morris chart -->
@@ -59,7 +60,7 @@ desired effect
 |               | sidebar-mini                            |
 |---------------------------------------------------------|
 -->
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-purple sidebar-mini">
 <div class="wrapper">
 
   <!-- Main Header -->
@@ -267,14 +268,15 @@ desired effect
         <!-- Optionally, you can add icons to the links -->
         <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
         <li><a href="{{ route('nhanvien') }}"><i class="fa fa-id-card"></i> <span>Nhân Viên</span></a></li>
-        <li><a href="{{ route('phongban') }}"><i class="fa fa-laptop-house"></i> <span>Phòng Ban</span></a></li>
+        <li><a href="{{ route('phongban') }}"><i class="fa fa-users"></i> <span>Phòng Ban</span></a></li>
         <li><a href="{{ route('tongiao') }}"><i class="fa fa-laptop-house"></i> <span>Tôn Giaos</span></a></li>
-        <li><a href="{{ route('chuyenmon') }}"><i class="fa fa-laptop-house"></i> <span>Chuyên Môn</span></a></li>
-        <li><a href="{{ route('bangcap') }}"><i class="fa fa-laptop-house"></i> <span>Bằng Cấp</span></a></li>
+        <li><a href="{{ route('chuyenmon') }}"><i class="fa fa-user-tie"></i> <span>Chuyên Môn</span></a></li>
+        <li><a href="{{ route('bangcap') }}"><i class="fa fa-id-card-alt"></i> <span>Bằng Cấp</span></a></li>
         <li><a href="{{ route('ngoaingu') }}"><i class="fa fa-laptop-house"></i> <span>Ngoại Ngữ</span></a></li>
         <li><a href="{{ route('dantoc') }}"><i class="fa fa-laptop-house"></i> <span>Dân Tộc</span></a></li>
         <li><a href="{{ route('thuongphat') }}"><i class="fa fa-laptop-house"></i> <span>Thưởng phạt</span></a></li>
         <li><a href="{{ route('hopdong') }}"><i class="fa fa-laptop-house"></i> <span>Hợp đồng</span></a></li>
+        <li><a href="{{ route('ungluong') }}"><i class="fa fa-money-check-alt"></i> <span>Ứng lương</span></a></li>
         <li class="treeview">
           <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
             <span class="pull-right-container">

@@ -13,6 +13,7 @@ use App\Http\Controllers\BangCapController;
 use App\Http\Controllers\DanTocController;
 use App\Http\Controllers\ThuongPhatController;
 use App\Http\Controllers\HopDongController;
+use App\Http\Controllers\UngLuongController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -110,4 +111,12 @@ Route::post('/hopdong/them',[HopDongController::class,'postThem'])->name('hopdon
 Route::get('/hopdong/sua/{id}',[HopDongController::class,'getSua'])->name('hopdong.sua');
 Route::post('/hopdong/sua/{id}',[HopDongController::class,'postSua'])->name('hopdong.sua');
 Route::get('/hopdong/xoa/{id}',[HopDongController::class,'postXoa'])->name('hopdong.xoa');
+
+Route::get('/ungluong',[UngLuongController::class,'getdanhsach'])->name('ungluong');
+Route::get('/ungluong/them',[UngLuongController::class,'getThem'])->name('ungluong.them');
+Route::post('/ungluong/them',[UngLuongController::class,'postThem'])->name('ungluong.them');
+Route::get('/ungluong/sua/{id}',[UngLuongController::class,'getSua'])->name('ungluong.sua');
+Route::post('/ungluong/sua/{id}',[UngLuongController::class,'postSua'])->name('ungluong.sua');
+Route::get('/ungluong/xoa/{id}',[UngLuongController::class,'postXoa'])->name('ungluong.xoa');
+
 });

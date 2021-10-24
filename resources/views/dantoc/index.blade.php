@@ -1,4 +1,14 @@
 @extends('layouts.app')
+@section('content-header')
+<h1>
+        Dân tộc
+        <small>Quản lý dân tộc </small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i>Trang Chủ</a></li>
+        <li class="active">Dân tộc</li>
+      </ol>
+@endsection
 @section('content')
 <div class="box">
             <div class="box-header">
