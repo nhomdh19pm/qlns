@@ -14,7 +14,7 @@ class CreateChuyenmonTable extends Migration
     public function up()
     {
         Schema::create('chuyenmon', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
             $table->string('tencm', 100);
             $table->timestamps();
             $table->engine = 'InnoDB';

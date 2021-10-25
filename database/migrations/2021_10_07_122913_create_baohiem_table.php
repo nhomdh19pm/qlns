@@ -14,17 +14,15 @@ class CreateBaohiemTable extends Migration
     public function up()
     {
         Schema::create('baohiem', function (Blueprint $table) {
-            $table->increments('id');
-            $table->unsignedInteger('nhanvien_id');
-            $table->unsignedInteger('loaibaohiem_id');
+            $table->id();
+            $table->foreignId('nhanvien_id')->constrained('nhanvien');
+            $table->foreignId('loaibaohiem_id')->constrained('loaibaohiem');
             $table->date('maso');
             $table->string('noicap', 255);
             $table->date('ngaycap');
             $table->date('ngayhethan');
             $table->float('mucdong', 5, 2);
             $table->timestamps();
-            $table->foreign('nhanvien_id','fk_baohiem_nhanvien_id')->references('id')->on('nhanvien')->onUpdate('CASCADE');
-            $table->foreign('loaibaohiem_id','fk_baohiem_loaibaohiem_id')->references('id')->on('loaibaohiem')->onUpdate('CASCADE');
             $table->engine = 'InnoDB';
         });
     }

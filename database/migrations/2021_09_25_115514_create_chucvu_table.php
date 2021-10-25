@@ -14,7 +14,7 @@ class CreateChucvuTable extends Migration
     public function up()
     {
         Schema::create('chucvu', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
             $table->string('tencv', 100);
             $table->timestamps();
             $table->engine = 'InnoDB';

@@ -14,7 +14,7 @@ class CreateTongiaoTable extends Migration
     public function up()
     {
         Schema::create('tongiao', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
             $table->string('tentg', 100);
             $table->timestamps();
             $table->engine = 'InnoDB';

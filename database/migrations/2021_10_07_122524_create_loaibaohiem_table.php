@@ -14,7 +14,7 @@ class CreateLoaibaohiemTable extends Migration
     public function up()
     {
         Schema::create('loaibaohiem', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
             $table->string('tenbh', 100);
             $table->timestamps();
             $table->engine = 'InnoDB';

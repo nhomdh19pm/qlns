@@ -14,7 +14,7 @@ class CreateDantocTable extends Migration
     public function up()
     {
         Schema::create('dantoc', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
             $table->string('tendt', 100);
             $table->timestamps();
             $table->engine = 'InnoDB';

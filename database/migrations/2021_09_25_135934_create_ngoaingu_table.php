@@ -14,7 +14,7 @@ class CreateNgoainguTable extends Migration
     public function up()
     {
         Schema::create('ngoaingu', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
             $table->string('tenng', 100);
             $table->timestamps();
             $table->engine = 'InnoDB';

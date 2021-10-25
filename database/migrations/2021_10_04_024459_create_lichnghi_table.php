@@ -14,7 +14,7 @@ class CreateLichnghiTable extends Migration
     public function up()
     {
         Schema::create('lichnghi', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
             $table->string('tenln', 255);
             $table->date('ngaybd');
             $table->date('ngaykt');

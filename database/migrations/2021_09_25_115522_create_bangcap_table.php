@@ -14,7 +14,7 @@ class CreateBangcapTable extends Migration
     public function up()
     {
         Schema::create('bangcap', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
             $table->string('tenbc', 100);
             $table->timestamps();
             $table->engine = 'InnoDB';

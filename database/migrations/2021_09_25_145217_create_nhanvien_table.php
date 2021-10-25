@@ -14,13 +14,13 @@ class CreateNhanvienTable extends Migration
     public function up()
     {
         Schema::create('nhanvien', function (Blueprint $table) {
-            $table->increments('id');
-            $table->unsignedInteger('mucluong_id');
-            $table->unsignedInteger('bangcap_id');
-            $table->unsignedInteger('chuyenmon_id');
-            $table->unsignedInteger('ngoaingu_id');
-            $table->unsignedInteger('dantoc_id');
-            $table->unsignedInteger('tongiao_id');
+            $table->id();
+            $table->foreignId('mucluong_id')->constrained('mucluong');
+            $table->foreignId('bangcap_id')->constrained('bangcap');
+            $table->foreignId('chuyenmon_id')->constrained('chuyenmon');
+            $table->foreignId('ngoaingu_id')->constrained('ngoaingu');
+            $table->foreignId('dantoc_id')->constrained('dantoc');
+            $table->foreignId('tongiao_id')->constrained('tongiao');
             $table->string('hovaten', 100);
             $table->boolean('gioitinh')->default(false);
             $table->date('ngaysinh');
@@ -33,12 +33,6 @@ class CreateNhanvienTable extends Migration
             $table->float('hesoluong', 5, 2);
             $table->string('photo_path', 100)->nullable();
             $table->timestamps();
-            $table->foreign('mucluong_id','fk_nhanvien_mucluong_id')->references('id')->on('mucluong')->onUpdate('CASCADE');
-            $table->foreign('bangcap_id','fk_nhanvien_bangcap_id')->references('id')->on('bangcap')->onUpdate('CASCADE');
-            $table->foreign('chuyenmon_id','fk_nhanvien_chuyenmon_id')->references('id')->on('chuyenmon')->onUpdate('CASCADE');
-            $table->foreign('ngoaingu_id','fk_nhanvien_ngoaingu_id')->references('id')->on('ngoaingu')->onUpdate('CASCADE');
-            $table->foreign('dantoc_id','fk_nhanvien_dantoc_id')->references('id')->on('dantoc')->onUpdate('CASCADE');
-            $table->foreign('tongiao_id','fk_nhanvien_tongiao_id')->references('id')->on('tongiao')->onUpdate('CASCADE');
             $table->engine = 'InnoDB';
         });
     }
@@ -50,21 +44,7 @@ class CreateNhanvienTable extends Migration
      */
     public function down()
     {
-        Schema::table('nhanvien', function(Blueprint $table)
-        {
-            $table->dropForeign('fk_nhanvien_mucluong_id');
-            $table->dropForeign('fk_nhanvien_bangcap_id');
-            $table->dropForeign('fk_nhanvien_ngoaingu_id');
-            $table->dropForeign('fk_nhanvien_chuyenmon_id');
-            $table->dropForeign('fk_nhanvien_dantoc_id');
-            $table->dropForeign('fk_nhanvien_tongiao_id');
-            $table->dropColumn('mucluong_id');
-            $table->dropColumn('bangcap_id');
-            $table->dropColumn('chuyenmon_id');
-            $table->dropColumn('ngoaingu_id');
-            $table->dropColumn('dantoc_id');
-            $table->dropColumn('tongiao_id');
-        });
+        
         Schema::dropIfExists('nhanvien');
     }
 }

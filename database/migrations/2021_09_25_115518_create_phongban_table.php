@@ -14,7 +14,7 @@ class CreatePhongbanTable extends Migration
     public function up()
     {
         Schema::create('phongban', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
             $table->string('tenpb', 100);
             $table->timestamps();
             $table->engine = 'InnoDB';

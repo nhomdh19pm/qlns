@@ -14,10 +14,9 @@ class CreateChamcongTable extends Migration
     public function up()
     {
         Schema::create('chamcong', function (Blueprint $table) {
-            $table->increments('id');
-            $table->unsignedInteger('nhanvien_id');
+            $table->id();
+            $table->foreignId('nhanvien_id')->constrained('nhanvien');
             $table->timestamps();
-            $table->foreign('nhanvien_id','fk_chamcong_nhanvien_id')->references('id')->on('nhanvien')->onUpdate('CASCADE');
             $table->engine = 'InnoDB';
         });
     }
@@ -29,11 +28,6 @@ class CreateChamcongTable extends Migration
      */
     public function down()
     {
-        Schema::table('chamcong', function(Blueprint $table)
-        {
-            $table->dropForeign('fk_chamcong_nhanvien_id');
-            $table->dropColumn('nhanvien_id');
-        });
         Schema::dropIfExists('chamcong');
     }
 }
