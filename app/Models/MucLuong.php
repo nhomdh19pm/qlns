@@ -22,18 +22,4 @@ class MucLuong extends Model
         return $this->belongsTo(ChucVu::class);
     }
 
-    public function nhanvien()
-    {
-        return $this->hasMany(NhanVien::class);
-    }
-
-    public function getAll()
-    {
-        return DB::table('mucluong')
-            ->join('phongban', 'mucluong.phongban_id', '=', 'phongban.id')
-            ->join('chucvu', 'mucluong.chucvu_id', '=', 'chucvu.id')
-            ->select('mucluong.id', 'phongban.tenpb', 'chucvu.tencv')
-            ->orderBy('phongban.id')
-            ->get();
-    }
 }

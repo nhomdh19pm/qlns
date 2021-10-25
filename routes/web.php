@@ -14,6 +14,8 @@ use App\Http\Controllers\DanTocController;
 use App\Http\Controllers\ThuongPhatController;
 use App\Http\Controllers\HopDongController;
 use App\Http\Controllers\UngLuongController;
+use App\Http\Controllers\LoaiBaoHiemController;
+use App\Http\Controllers\MucLuongController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -119,4 +121,17 @@ Route::get('/ungluong/sua/{id}',[UngLuongController::class,'getSua'])->name('ung
 Route::post('/ungluong/sua/{id}',[UngLuongController::class,'postSua'])->name('ungluong.sua');
 Route::get('/ungluong/xoa/{id}',[UngLuongController::class,'postXoa'])->name('ungluong.xoa');
 
+Route::get('/loaibaohiem',[LoaiBaoHiemController::class,'getdanhsach'])->name('loaibaohiem');
+Route::get('/loaibaohiem/them',[LoaiBaoHiemController::class,'getThem'])->name('loaibaohiem.them');
+Route::post('/loaibaohiem/them',[LoaiBaoHiemController::class,'postThem'])->name('loaibaohiem.them');
+Route::get('/loaibaohiem/sua/{id}',[LoaiBaoHiemController::class,'getSua'])->name('loaibaohiem.sua');
+Route::post('/loaibaohiem/sua/{id}',[LoaiBaoHiemController::class,'postSua'])->name('loaibaohiem.sua');
+Route::get('/loaibaohiem/xoa/{id}',[LoaiBaoHiemController::class,'postXoa'])->name('loaibaohiem.xoa');
+
+Route::get('/mucluong',[MucLuongController::class,'getdanhsach'])->name('mucluong');
+Route::get('/mucluong/them',[MucLuongController::class,'getThem'])->name('mucluong.them');
+Route::post('/mucluong/them',[MucLuongController::class,'postThem'])->name('mucluong.them');
+Route::get('/mucluong/sua/{id}',[MucLuongController::class,'getSua'])->name('mucluong.sua');
+Route::post('/mucluong/sua/{id}',[MucLuongController::class,'postSua'])->name('mucluong.sua');
+Route::get('/mucluong/xoa/{id}',[MucLuongController::class,'postXoa'])->name('mucluong.xoa');
 });
