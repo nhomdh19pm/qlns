@@ -20,45 +20,35 @@ class ThuongPhatController extends Controller
     }
     public function getThem()
     {
-
-        $this->validate($request, [
-            'mucluong_id' => ['required'],
-            'bangcap_id' => ['required'],
-            'chuyemon_id' => ['required', 'max:255', 'unique:phim'],
-            'ngoaingu_id' => ['required', 'string'],
-            'dantoc_id' => ['required', 'string'],
-            'tongiao_id' => ['required', 'string'],
-            'hovaten' => ['required', 'max:255', 'unique:nhanvien'],
-            'gioitinh' => ['required', 'string'],
-            'ngaysinh' => ['required', 'image'],
-            'ngaysanxuat' => ['required', 'date'],
-        ]);
-        $orm = new phim();
-        $orm->loaiphim_id = $request->loaiphim_id;
-        $orm->dangphim_id = $request->dangphim_id;
-        $orm->tenphim = $request->tenphim;
-        $orm->thoigian = $request->thoigian;
-        $orm->tomtat = $request->tomtat;
-        $orm->luotxem = $request->luotxem;
-        $orm->dienvien = $request->dienvien;
-        $orm->quocgia = $request->quocgia;
-        $orm->daodien = $request->daodien;
-        $orm->ngaysanxuat = $request->ngaysanxuat;
-        if ($request->hasFile('hinhanh')) {
-            $file = $request->file('hinhanh');
-            $extension = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extension;
-            $file->move('upload/images/', $filename);
-            $orm->hinhanh = $filename;
-        }
-        $orm->save();
-        return redirect()->route('phim');
+        $nhanvien = nhanvien::all();
+        return view('thuongphat.them', compact('nhanvien'));
+        
     }
 
     public function postThem(Request $request)
     {
-        
+        $this->validate($request, [
+            'nhanvien_id' => ['required'],
+            'loai' => ['required', 'unique:thuongphat'],
+            'sotien' => ['required', 'string'],
+            'lydo' => ['required', 'string'],
+            'thang' => ['required', 'string'],
+            'nam' => ['required', 'string'],
+        ]);
+        $orm = mucluong::find($id);
+        $orm->nhanvien_id = $request->nhanvien_id;
+        $orm->loai = $request->loai;
+        $orm->sotien = $request->sotien;
+        $orm->lydo = $request->lydo;
+        $orm->nam = $request->nam;
+        $orm->save();
+        return redirect()->route('mucluong');
 
     }
-
+    public function getXoa($id){
+        $orm = thuongphat::find($id);
+        $orm->delete();
+        return redirect()->route('thuongphat');
+       
+    }
 }
