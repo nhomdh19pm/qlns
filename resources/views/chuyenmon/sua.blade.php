@@ -1,4 +1,14 @@
 @extends('layouts.app')
+@section('content-header')
+<h1>
+        Chuyên môn
+        <small>Quản lý chuyên môn </small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i>Trang Chủ</a></li>
+        <li class="active">Chuyên môn</li>
+      </ol>
+@endsection
 @section('content')
  <div class="card">
  <div class="card-header">Sửa chuyên môn</div>

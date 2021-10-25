@@ -2,15 +2,15 @@
 @section('content')
 
     <div class="card">
-        <div class="card-header">Thêm phòng ban</div>
+        <div class="card-header">Thêm dân tộc</div>
         <div class="card-body">
-            <form action="{{ route('ngoaingu.them') }}" method="post">
+            <form action="{{ route('dantoc.them') }}" method="post">
                 @csrf
 
                 <div class="mb-2">
-                    <input type="text" class="form-control @error('tenng') is-invalid @enderror"  id="tenng"
-                        name="tenng" required />
-                    @error('ngoaingu')
+                    <input type="text" class="form-control @error('tendt') is-invalid @enderror"  id="tendt"
+                        name="tendt" required />
+                    @error('dantoc')
                         <div class="invalid-feedback"><strong>{{ $message }}</strong></div>
                     @enderror
                 </div>

@@ -22,8 +22,9 @@
                 <tr class="text-center">
                         <th >#</th>
                         <th >Tên Bằng ngoại ngữ</th>
-                        <th >Sửa</th>
+                        
                         <th >Xóa</th>
+                        <th >Sửa</th>
                 </tr>
                 </thead>
                 <tbody>

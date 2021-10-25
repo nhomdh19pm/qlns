@@ -1,8 +1,18 @@
 @extends('layouts.app')
+@section('content-header')
+<h1>
+        Tôn giáo
+        <small>Quản lý tôn giáo </small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i>Trang Chủ</a></li>
+        <li class="active">Tôn giáo</li>
+      </ol>
+@endsection
 @section('content')
 <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Phòng ban</h3>
+              <h3 class="box-title">Tôn giáo</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
