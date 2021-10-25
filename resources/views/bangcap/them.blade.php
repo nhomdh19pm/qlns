@@ -4,13 +4,13 @@
     <div class="card">
         <div class="card-header">Thêm phòng ban</div>
         <div class="card-body">
-            <form action="{{ route('phongban.them') }}" method="post">
+            <form action="{{ route('bangcap.them') }}" method="post">
                 @csrf
 
                 <div class="mb-2">
-                    <input type="text" class="form-control @error('tenpb') is-invalid @enderror"  id="tenpb"
-                        name="tenpb" required />
-                    @error('phongban')
+                    <input type="text" class="form-control @error('tenbc') is-invalid @enderror"  id="tenbc"
+                        name="tenbc" required />
+                    @error('bangcap')
                         <div class="invalid-feedback"><strong>{{ $message }}</strong></div>
                     @enderror
                 </div>

@@ -2,15 +2,15 @@
 @section('content')
 
     <div class="card">
-        <div class="card-header">Thêm phòng ban</div>
+        <div class="card-header">Chuyên môn</div>
         <div class="card-body">
-            <form action="{{ route('phongban.them') }}" method="post">
+            <form action="{{ route('chuyenmon.them') }}" method="post">
                 @csrf
 
                 <div class="mb-2">
-                    <input type="text" class="form-control @error('tenpb') is-invalid @enderror"  id="tenpb"
-                        name="tenpb" required />
-                    @error('phongban')
+                    <input type="text" class="form-control @error('tenpb') is-invalid @enderror"  id="tencm"
+                        name="tencm" required />
+                    @error('chuyenmon')
                         <div class="invalid-feedback"><strong>{{ $message }}</strong></div>
                     @enderror
                 </div>

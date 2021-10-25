@@ -31,8 +31,8 @@
                         <tr class="">
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $value->tenbc }}</td>
-                            <td ><a href="{{ route('tongiao.xoa',['id' => $value->id]) }}" onclick="confirm('Bạn có muốn xóa {{ $value->loaiphim }}')"><i class="fa fa-trash"></i></a></td>
-                            <td ><a href="{{ route('tongiao.sua',['id' => $value->id]) }}"><i class="fa fa-edit"></i></a></td>
+                            <td ><a href="{{ route('bangcap.xoa',['id' => $value->id]) }}" onclick="confirm('Bạn có muốn xóa {{ $value->loaiphim }}')"><i class="fa fa-trash"></i></a></td>
+                            <td ><a href="{{ route('bangcap.sua',['id' => $value->id]) }}"><i class="fa fa-edit"></i></a></td>
                         </tr>
                     @endforeach
                 </tbody>

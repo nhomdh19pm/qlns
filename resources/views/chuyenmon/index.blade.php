@@ -30,9 +30,9 @@
                 @foreach ($chuyenmon as $value)
                         <tr class="">
                             <td>{{ $loop->iteration }}</td>
-                            <td>{{ $value->tentg }}</td>
-                            <td ><a href="{{ route('tongiao.xoa',['id' => $value->id]) }}" onclick="confirm('Bạn có muốn xóa {{ $value->loaiphim }}')"><i class="fa fa-trash"></i></a></td>
-                            <td ><a href="{{ route('tongiao.sua',['id' => $value->id]) }}"><i class="fa fa-edit"></i></a></td>
+                            <td>{{ $value->tencm }}</td>
+                            <td ><a href="{{ route('chuyenmon.xoa',['id' => $value->id]) }}" onclick="confirm('Bạn có muốn xóa {{ $value->loaiphim }}')"><i class="fa fa-trash"></i></a></td>
+                            <td ><a href="{{ route('chuyenmon.sua',['id' => $value->id]) }}"><i class="fa fa-edit"></i></a></td>
                         </tr>
                     @endforeach
                 </tbody>
