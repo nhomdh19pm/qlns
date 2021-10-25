@@ -16,6 +16,7 @@ use App\Http\Controllers\HopDongController;
 use App\Http\Controllers\UngLuongController;
 use App\Http\Controllers\LoaiBaoHiemController;
 use App\Http\Controllers\MucLuongController;
+use App\Http\Controllers\LichNghiController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -134,4 +135,11 @@ Route::post('/mucluong/them',[MucLuongController::class,'postThem'])->name('mucl
 Route::get('/mucluong/sua/{id}',[MucLuongController::class,'getSua'])->name('mucluong.sua');
 Route::post('/mucluong/sua/{id}',[MucLuongController::class,'postSua'])->name('mucluong.sua');
 Route::get('/mucluong/xoa/{id}',[MucLuongController::class,'postXoa'])->name('mucluong.xoa');
+
+Route::get('/lichnghi',[LichNghiController::class,'getdanhsach'])->name('lichnghi');
+Route::get('/lichnghi/them',[LichNghiController::class,'getThem'])->name('lichnghi.them');
+Route::post('/lichnghi/them',[LichNghiController::class,'postThem'])->name('lichnghi.them');
+Route::get('/lichnghi/sua/{id}',[LichNghiController::class,'getSua'])->name('lichnghi.sua');
+Route::post('/lichnghi/sua/{id}',[LichNghiController::class,'postSua'])->name('lichnghi.sua');
+Route::get('/lichnghi/xoa/{id}',[LichNghiController::class,'postXoa'])->name('lichnghi.xoa');
 });
