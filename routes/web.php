@@ -17,6 +17,7 @@ use App\Http\Controllers\UngLuongController;
 use App\Http\Controllers\LoaiBaoHiemController;
 use App\Http\Controllers\MucLuongController;
 use App\Http\Controllers\LichNghiController;
+use App\Http\Controllers\ChucVuController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -142,4 +143,12 @@ Route::post('/lichnghi/them',[LichNghiController::class,'postThem'])->name('lich
 Route::get('/lichnghi/sua/{id}',[LichNghiController::class,'getSua'])->name('lichnghi.sua');
 Route::post('/lichnghi/sua/{id}',[LichNghiController::class,'postSua'])->name('lichnghi.sua');
 Route::get('/lichnghi/xoa/{id}',[LichNghiController::class,'postXoa'])->name('lichnghi.xoa');
+
+Route::get('/chucvu',[ChucVuController::class,'getdanhsach'])->name('chucvu');
+Route::get('/chucvu/them',[ChucVuController::class,'getThem'])->name('chucvu.them');
+Route::post('/chucvu/them',[ChucVuController::class,'postThem'])->name('chucvu.them');
+Route::get('/chucvu/sua/{id}',[ChucVuController::class,'getSua'])->name('chucvu.sua');
+Route::post('/chucvu/sua/{id}',[ChucVuController::class,'postSua'])->name('chucvu.sua');
+Route::get('/chucvu/xoa/{id}',[ChucVuController::class,'postXoa'])->name('chucvu.xoa');
 });
+

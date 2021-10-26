@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content-header')
 <h1>
       <strong>Thêm Thưởng phạt</strong>

@@ -34,7 +34,7 @@ class MucLuongController extends Controller
             'luongcb' => ['required', 'string'],
             'phucap' => ['required', 'string'],
         ]);
-        $orm = mucluong::find($id);
+        $orm = new mucluong();
         $orm->chucvu_id = $request->chucvu_id;
         $orm->phongban_id = $request->phongban_id;
         $orm->luongcb = $request->luongcb;

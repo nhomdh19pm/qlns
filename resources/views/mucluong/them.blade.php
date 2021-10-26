@@ -18,7 +18,7 @@
 
                 <div class="mb-2">
                     <label class="form-label" for="phongban_id">Loại Phim</label>
-                    <select name="chucvu_id" id="phongban_id" class="form-control @error('phongban_id') is-invalid @enderror"
+                    <select name="phongban_id" id="phongban_id" class="form-control @error('phongban_id') is-invalid @enderror"
                         required>
                         <option value="">--Chọn--</option>
                         @foreach ($phongban as $value)

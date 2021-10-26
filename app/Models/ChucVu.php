@@ -13,6 +13,6 @@ class ChucVu extends Model
 
     public function mucluong()
     {
-        return $this->hasMany(MucLuong::class);
+        return $this->hasMany(MucLuong::class, 'chucvu_id', 'id');
     }
 }

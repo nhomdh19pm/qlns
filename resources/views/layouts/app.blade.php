@@ -86,10 +86,7 @@ desired effect
           <!-- Messages: style can be found in dropdown.less-->
           <li class="dropdown messages-menu">
             <!-- Menu toggle button -->
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <i class="fa fa-envelope-o"></i>
-              <span class="label label-success">4</span>
-            </a>
+           
             <ul class="dropdown-menu">
               <li class="header">You have 4 messages</li>
               <li>
@@ -99,7 +96,7 @@ desired effect
                     <a href="#">
                       <div class="pull-left">
                         <!-- User Image -->
-                        <img src="{{url('public/dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image"/>
+                        <img src="{{url('public/dist/img/admin.png')}}" class="img-circle" alt="User Image"/>
                       </div>
                       <!-- Message title and timestamp -->
                       <h4>
@@ -122,10 +119,7 @@ desired effect
           <!-- Notifications Menu -->
           <li class="dropdown notifications-menu">
             <!-- Menu toggle button -->
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <i class="fa fa-bell-o"></i>
-              <span class="label label-warning">10</span>
-            </a>
+            
             <ul class="dropdown-menu">
               <li class="header">You have 10 notifications</li>
               <li>
@@ -145,10 +139,7 @@ desired effect
           <!-- Tasks Menu -->
           <li class="dropdown tasks-menu">
             <!-- Menu Toggle Button -->
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <i class="fa fa-flag-o"></i>
-              <span class="label label-danger">9</span>
-            </a>
+            
             <ul class="dropdown-menu">
               <li class="header">You have 9 tasks</li>
               <li>
@@ -183,19 +174,19 @@ desired effect
             <!-- Menu Toggle Button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <!-- The user image in the navbar-->
-              <img src="{{url('public/dist/img/user2-160x160.jpg')}}" width=30 height=30 class="img-circle" alt="User Image"/>
+              <img src="{{url('public/dist/img/admin.png')}}" width=30 height=30 class="img-circle" alt="User Image"/>
 
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
-              <span class="hidden-xs">Alexander Pierce</span>
+              <span class="hidden-xs">DH19PM</span>
             </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
               <li class="user-header">
-              <img src="{{url('public/dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image"/>
+              <img src="{{url('public/dist/img/admin.png')}}" class="img-circle" alt="User Image"/>
 
                 <p>
-                  Alexander Pierce - Web Developer
-                  <small>Member since Nov. 2012</small>
+                  DH19PM - KTPM
+                  <small>2021</small>
                 </p>
               </li>
               <!-- Menu Body -->
@@ -241,12 +232,12 @@ desired effect
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel">
         <div class="pull-left image">
-        <img src="{{url('public/dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image"/>
+        <img src="{{url('public/dist/img/admin.png')}}" class="img-circle" alt="User Image"/>
         </div>
         <div class="pull-left info">
-          <p>Alexander Pierce</p>
+          <p>DH19PM</p>
           <!-- Status -->
-          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+          <a href="#"><i class="fa fa-circle text-success"></i>With love</a>
         </div>
       </div>
 
@@ -269,7 +260,8 @@ desired effect
         <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
         <li><a href="{{ route('nhanvien') }}"><i class="fa fa-id-card"></i> <span>Nhân Viên</span></a></li>
         <li><a href="{{ route('phongban') }}"><i class="fa fa-users"></i> <span>Phòng Ban</span></a></li>
-        <li><a href="{{ route('tongiao') }}"><i class="fa fa-laptop-house"></i> <span>Tôn Giaos</span></a></li>
+        <li><a href="{{ route('chucvu') }}"><i class="fa fa-users"></i> <span>Chức Vụ</span></a></li>
+        <li><a href="{{ route('tongiao') }}"><i class="fa fa-laptop-house"></i> <span>Tôn Giáo</span></a></li>
         <li><a href="{{ route('chuyenmon') }}"><i class="fa fa-user-tie"></i> <span>Chuyên Môn</span></a></li>
         <li><a href="{{ route('bangcap') }}"><i class="fa fa-id-card-alt"></i> <span>Bằng Cấp</span></a></li>
         <li><a href="{{ route('ngoaingu') }}"><i class="fa fa-laptop-house"></i> <span>Ngoại Ngữ</span></a></li>
