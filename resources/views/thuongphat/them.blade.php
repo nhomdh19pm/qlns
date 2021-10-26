@@ -16,18 +16,18 @@
         <div class="card-body">
             <form action="{{ route('Thuongphat.them') }}" method="post">
                 @csrf
-
+                {{print_r($phongban)}}
                 <div class="mb-2">
-                    <label class="form-label" for="nhanvien_id">Nhân viên</label>
+                    <label class="form-label" for="nhanvien_id">Loại Phim</label>
                     <select name="nhanvien_id" id="nhanvien_id" class="form-control @error('nhanvien_id') is-invalid @enderror"
                         required>
                         <option value="">--Chọn--</option>
-                        @foreach ($nhanvien as $value)
+                        <!-- @foreach ($phongban as $value)
                             <option value="{{ $value->id }}">
-                                {{ $value->nhanvien }}
+                                {{ $value->hovaten }}
                             </option>
-                        @endforeach
-                        @error('nhanvien_id')
+                        @endforeach -->
+                        @error('getname')
                             <div class="invalid-feedback"><strong>{{ $message }}</strong></div>
                         @enderror
                     </select>

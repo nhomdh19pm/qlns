@@ -32,8 +32,8 @@ use App\Http\Controllers\ChucVuController;
 
 
 Auth::routes();
-
 Route::get('/', [HomeController::class, 'index'])->name('frontend');
+Route::get('/index', [HomeController::class, 'index'])->name('index');
 
 Route::prefix('nhan-vien')->group(function () {
     Route::get('/', [UserController::class, 'index'])->name('frontend.user');

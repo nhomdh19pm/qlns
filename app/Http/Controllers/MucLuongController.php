@@ -8,7 +8,7 @@ use App\Models\ChucVu;
 use App\Models\PhongBan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\Request;
+use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\URL;
 use Inertia\Inertia;
@@ -22,15 +22,15 @@ class MucLuongController extends Controller
     public function getThem()
     {
         $chucvu = chucvu::all();
-        $phongban = phongban::all();
+        $phongban = phongban::all(); 
         return view('mucluong.them', compact('chucvu', 'phongban'));
     }
 
     public function postThem(Request $request)
     {
-        $this->validate($request, [
-            'chucvu_id' => ['required'],
-            'phongban_id' => ['required'],
+        $request->validate([
+            'chucvu_id' => ['required', Rule::exists('chucvu', 'id')],
+            'phongban_id' => ['required',Rule::exists('phongban', 'id')],
             'luongcb' => ['required', 'string'],
             'phucap' => ['required', 'string'],
         ]);
@@ -40,14 +40,15 @@ class MucLuongController extends Controller
         $orm->luongcb = $request->luongcb;
         $orm->phucap = $request->phucap;
         $orm->save();
-        return redirect()->route('phim');
+        return redirect()->route('mucluong');
 
-    } public function getXoa($id)
+    } 
+    public function getXoa($id)
     {
         $orm = mucluong::find($id);
         $orm->delete();
         Storage::delete($orm->hinhanh);
-        return redirect()->route('phim');
+        return redirect()->route('mucluong');
     }
 
 }

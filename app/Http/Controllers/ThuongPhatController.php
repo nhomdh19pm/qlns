@@ -21,6 +21,7 @@ class ThuongPhatController extends Controller
     public function getThem()
     {
         $nhanvien = nhanvien::all();
+        $getname = thuongphat::getname();
         return view('thuongphat.them', compact('nhanvien'));
         
     }

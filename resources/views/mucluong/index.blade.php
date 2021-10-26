@@ -34,7 +34,7 @@
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $value->phongban->tenpb }}</td>
                             <td>{{ $value->chucvu->tencv }}</td>
-                            <td>{{ $value->luongcb }}</td>
+                            <td>{{ number_format($value->luongcb) }}</td>
                             <td>{{ $value->phucap }}</td>
                             <td class="text-center"><a href="{{ route('mucluong.xoa',['id' => $value->id]) }}" onclick="confirm('Bạn có muốn xóa {{ $value->nhanvien }}')"><i class="fa fa-edit"></i></a></td>
                             <td class="text-center"><a href="{{ route('mucluong.sua',['id' => $value->id]) }}"><i class="fa fa-trash"></i></a></td>

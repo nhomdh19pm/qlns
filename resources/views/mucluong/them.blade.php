@@ -15,7 +15,6 @@
         <div class="card-body">
             <form action="{{ route('mucluong.them') }}" method="post">
                 @csrf
-
                 <div class="mb-2">
                     <label class="form-label" for="phongban_id">Loại Phim</label>
                     <select name="phongban_id" id="phongban_id" class="form-control @error('phongban_id') is-invalid @enderror"
@@ -23,13 +22,48 @@
                         <option value="">--Chọn--</option>
                         @foreach ($phongban as $value)
                             <option value="{{ $value->id }}">
-                                {{ $value->phongban->tenpb }}
+                                {{ $value->tenpb }}
                             </option>
                         @endforeach
-                        @error('phongban_id')
+                        @error('phongban')
                             <div class="invalid-feedback"><strong>{{ $message }}</strong></div>
                         @enderror
                     </select>
+                </div>
+
+
+                <div class="mb-2">
+                    <label class="form-label" for="chucvu_id">Loại Phim</label>
+                    <select name="chucvu_id" id="chucvu_id" class="form-control @error('chucvu_id') is-invalid @enderror"
+                        required>
+                        <option value="">--Chọn--</option>
+                        @foreach ($chucvu as $value)
+                            <option value="{{ $value->id }}">
+                                {{ $value->tencv }}
+                            </option>
+                        @endforeach
+                        @error('chucvu')
+                            <div class="invalid-feedback"><strong>{{ $message }}</strong></div>
+                        @enderror
+                    </select>
+                </div>
+
+
+                <div class="mb-2">
+                    <input type="text" class="form-control @error('luongcb') is-invalid @enderror"  id="luongcb"
+                        name="luongcb" required />
+                    @error('mucluong')
+                        <div class="invalid-feedback"><strong>{{ $message }}</strong></div>
+                    @enderror
+                </div>
+                
+                
+                <div class="mb-2">
+                    <input type="text" class="form-control @error('phucap') is-invalid @enderror"  id="phucap"
+                        name="phucap" required />
+                    @error('mucluong')
+                        <div class="invalid-feedback"><strong>{{ $message }}</strong></div>
+                    @enderror
                 </div>
 
                 <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Thêm vào CSDL</button>
