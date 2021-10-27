@@ -31,13 +31,8 @@
                         <tr class="">
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $value->tenng }}</td>
-<<<<<<< HEAD
                             <td class="text-center"width="10%"><a class="btn btn-outline-primary"href="{{ route('ngoaingu.xoa',['id' => $value->id]) }}" onclick="confirm('Bạn có muốn xóa {{ $value->tenng }}')"><i class="fa fa-trash"></i> Xóa</a></td>
                             <td class="text-center"width="10%"><a class="btn btn-outline-danger" href="{{ route('ngoaingu.sua',['id' => $value->id]) }}"><i class="fa fa-edit"></i> Sửa</a></td>
-=======
-                            <td class="text-center"><a href="{{ route('ngoaingu.xoa',['id' => $value->id]) }}" onclick="confirm('Bạn có muốn xóa {{ $value->loaiphim }}')"><i class="fa fa-trash"></i></a></td>
-                            <td class="text-center"><a href="{{ route('ngoaingu.sua',['id' => $value->id]) }}"><i class="fa fa-edit"></i></a></td>
->>>>>>> 241c96571ade3902ea622a65df21636808f71c1f
                         </tr>
                     @endforeach
                 </tbody>

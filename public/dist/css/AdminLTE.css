@@ -2299,38 +2299,22 @@ a:focus {
 .btn-warning.hover {
   background-color: #e08e0b;
 }
-<<<<<<< HEAD
 .btn-outline-primary {
-=======
-.btn-outline-danger {
->>>>>>> 241c96571ade3902ea622a65df21636808f71c1f
   color: #dc3545;
   border-color: #dc3545;
 }
 
-<<<<<<< HEAD
 .btn-outline-primary:hover{
-=======
-.btn-outline-danger:hover{
->>>>>>> 241c96571ade3902ea622a65df21636808f71c1f
   background-color: #dc3545;
   color:rgba(255, 255, 255);
 }
 
-<<<<<<< HEAD
 .btn-outline-danger {
-=======
-.btn-outline-primary {
->>>>>>> 241c96571ade3902ea622a65df21636808f71c1f
   color: #0d6efd;
   border-color: #0d6efd;
 }
 
-<<<<<<< HEAD
 .btn-outline-danger:hover{
-=======
-.btn-outline-primary:hover{
->>>>>>> 241c96571ade3902ea622a65df21636808f71c1f
   background-color: #0d6efd ;
   color:rgba(255, 255, 255);
 }
