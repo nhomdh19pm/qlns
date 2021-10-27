@@ -1,8 +1,8 @@
 @extends('layouts.app')
 @section('content-header')
 <h1>
-        Dân tộc
-        <small>Quản lý dân tộc </small>
+      <strong>Quản lý Dân tộc</strong>
+      <small></small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i>Trang Chủ</a></li>
@@ -12,7 +12,6 @@
 @section('content')
 <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Dân Tộc</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -21,10 +20,9 @@
                 <thead>
                 <tr class="text-center">
                         <th >#</th>
-                        <th >Tên Bằng ngoại ngữ</th>
-                        
-                        <th >Xóa</th>
-                        <th >Sửa</th>
+                        <th >Tên Dân tộc</th>
+                        <th ></th>
+                        <th ></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -32,8 +30,8 @@
                         <tr class="">
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $value->tendt }}</td>
-                            <td ><a href="{{ route('dantoc.xoa',['id' => $value->id]) }}" onclick="confirm('Bạn có muốn xóa {{ $value->loaiphim }}')"><i class="fa fa-trash"></i></a></td>
-                            <td ><a href="{{ route('dantoc.sua',['id' => $value->id]) }}"><i class="fa fa-edit"></i></a></td>
+                            <td class="text-center"><a href="{{ route('dantoc.xoa',['id' => $value->id]) }}" onclick="confirm('Bạn có muốn xóa {{ $value->loaiphim }}')"><i class="fa fa-trash"></i></a></td>
+                            <td class="text-center"><a href="{{ route('dantoc.sua',['id' => $value->id]) }}"><i class="fa fa-edit"></i></a></td>
                         </tr>
                     @endforeach
                 </tbody>

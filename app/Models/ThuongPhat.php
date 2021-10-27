@@ -12,18 +12,10 @@ class ThuongPhat extends Model
 
     protected $table = 'thuongphat';
 
+
     public function nhanvien()
     {
-        return $this->belongsTo(NhanVien::class);
+        return $this->belongsTo(NhanVien::class, 'nhanvien_id', 'id');
     }
 
-    public static function getname()
-    {
-        return DB::table('thuongphat')
-        ->select('thuongphat.id','nhanvien.hovaten')
-        ->join('thuongphat','thuongphat.nhanvien_id','=','nhanvien.id')
-        ->orderBy('nhanvien.id')
-        ->get();
-        
-    }
 }
