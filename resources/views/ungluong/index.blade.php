@@ -17,7 +17,7 @@
             <!-- /.box-header -->
             <div class="box-body">
             <p><a href="{{ route('ungluong.them') }}" class="btn btn-info"><i class="fas fa-plus"></i> Thêm mới</a></p>
-              <table id="example1" class="table table-bordered table-striped">
+              <table id="example1" class="table table-bordered table-striped text-center">
                 <thead>
                 <tr class="text-center">
                 <th >#</th>
@@ -35,12 +35,12 @@
                 <tr class="">
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $value->nhanvien->hovaten }}</td>
-                            <td>{{ $value->sotien }}</td>
+                            <td>{{ number_format($value->sotien) }}đ</td>
                             <td>{{ $value->lydo }}</td>
                             <td>{{ $value->thang }}</td>
                             <td>{{ $value->nam }}</td>
-                            <td ><a href="{{ route('ungluong.xoa',['id' => $value->id]) }}" onclick="confirm('Bạn có muốn xóa {{ $value->nhanvien }}')"><i class="fa fa-edit"></i></a></td>
-                            <td ><a href="{{ route('ungluong.sua',['id' => $value->id]) }}"><i class="fa fa-trash"></i></a></td>
+                            <td class="text-center" width="10%"><a class="btn btn-outline-primary"href="{{ route('ungluong.xoa',['id' => $value->id]) }}" onclick="confirm('Bạn có muốn xóa {{ $value->nhanvien->hovaten }}')"><i class="fa fa-trash"></i> Xóa</a></td>
+                            <td class="text-center" width="10%"><a class="btn btn-outline-danger" href="{{ route('ungluong.sua',['id' => $value->id]) }}"><i class="fa fa-edit"></i> Sửa</a></td>
                         </tr>
                     @endforeach
                 </tbody>

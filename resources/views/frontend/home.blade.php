@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Trang quản lý nhân sự DH19PM') }}</div>
+                <div class="card-header">{{ __('Ký đầu thư lê') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
