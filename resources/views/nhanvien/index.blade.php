@@ -64,8 +64,9 @@
                             <td>{{ $value->ngaynghilam }}</td>
                             <td>{{ $value->hesoluong }}</td>
                             <td>{{ $value->anh }}</td>
-                            <td ><a href="{{ route('nhanvien.xoa',['id' => $value->id]) }}" onclick="confirm('Bạn có muốn xóa {{ $value->nhanvien }}')"><i class="fa fa-edit"></i></a></td>
-                            <td ><a href="{{ route('nhanvien.sua',['id' => $value->id]) }}"><i class="fa fa-trash"></i></a></td>
+                            
+                            <td class="text-center"><a class="btn btn-outline-primary"href="{{ route('nhanvien.xoa',['id' => $value->id]) }}" onclick="confirm('Bạn có muốn xóa {{ $value->loaiphim }}')"><i class="fa fa-trash"></i> Xóa</a></td>
+                            <td class="text-center"><a class="btn btn-outline-danger" href="{{ route('nhanvien.sua',['id' => $value->id]) }}"><i class="fa fa-edit"></i> Sửa</a></td>
                         </tr>
                     @endforeach
                 </tbody>

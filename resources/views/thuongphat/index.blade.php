@@ -12,7 +12,6 @@
 @section('content')
 <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Thưởng phạt</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -33,18 +32,18 @@
                 </thead>
                 <tbody>
                 @foreach ($thuongphat as $value)
-                <tr class="text-center">
+                <tr >
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $value->nhanvien->hovaten }}</td>
-                            <td>{{ number_format($value->mucluong->luongcb) }}</td>
-                            <td>{{ $value->ngoaingu->tenng }}</td>
-                            <td>{{ $value->bangcap->tenbc }}</td>
-                            <td>{{ $value->chuyenmon->tencm }}</td>
-                            <td>{{ $value->dantoc->tendt }}</td>
-                            <td>{{ $value->tongiao->tentg }}</td>
-                            <td>{{ $value->ngaysinh }}</td>
-                            <td ><a href="{{ route('nhanvien.xoa',['id' => $value->id]) }}" onclick="confirm('Bạn có muốn xóa {{ $value->nhanvien }}')"><i class="fa fa-edit"></i></a></td>
-                            <td ><a href="{{ route('nhanvien.sua',['id' => $value->id]) }}"><i class="fa fa-trash"></i></a></td>
+                            <td>
+                                {{ ($value->loai == 1) ? 'Thưởng' : 'Phạt'; }}
+                            </td>
+                            <td>{{ number_format($value->sotien) }}</td>
+                            <td>{{ $value->lydo }}</td>
+                            <td>{{ $value->thang }}</td>
+                            <td>{{ $value->nam }}</td>
+                            <td class="text-center"><a href="{{ route('nhanvien.xoa',['id' => $value->id]) }}" onclick="confirm('Bạn có muốn xóa {{ $value->nhanvien }}')"><i class="fa fa-edit"></i></a></td>
+                            <td class="text-center"><a href="{{ route('nhanvien.sua',['id' => $value->id]) }}"><i class="fa fa-trash"></i></a></td>
                         </tr>
                     @endforeach
                 </tbody>

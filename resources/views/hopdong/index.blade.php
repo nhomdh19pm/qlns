@@ -1,8 +1,8 @@
 @extends('layouts.app')
 @section('content-header')
 <h1>
-        Hợp đồng
-        <small>Quản lý hợp đồng </small>
+      <strong>Quản lý Hợp đồng</strong>
+      <small></small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i>Trang Chủ</a></li>
@@ -12,12 +12,11 @@
 @section('content')
 <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Hợp đồng</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
             <p><a href="{{ route('hopdong.them') }}" class="btn btn-info"><i class="fas fa-plus"></i> Thêm mới</a></p>
-              <table id="example1" class="table table-bordered table-striped">
+              <table id="example1" class="table table-bordered table-striped text-center">
                 <thead>
                 <tr class="text-center">
                 <th >#</th>
@@ -31,14 +30,16 @@
                 </thead>
                 <tbody>
                 @foreach ($hopdong as $value)
-                <tr class="text-center">
+                <tr >
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $value->nhanvien->hovaten }}</td>
-                            <td>{{ $value->loaihopdong }}</td>
+                            <td>
+                                {{ ($value->loaihopdong == 1) ? 'Có hạn' : 'Không xác định thời hạn'; }}
+                            </td>
                             <td>{{ $value->ngaybd }}</td>
                             <td>{{ $value->ngaykt }}</td>
-                            <td ><a href="{{ route('hopdong.xoa',['id' => $value->id]) }}" onclick="confirm('Bạn có muốn xóa {{ $value->nhanvien }}')"><i class="fa fa-edit"></i></a></td>
-                            <td ><a href="{{ route('hopdong.sua',['id' => $value->id]) }}"><i class="fa fa-trash"></i></a></td>
+                            <td class="text-center"><a class="btn btn-outline-primary"href="{{ route('hopdong.xoa',['id' => $value->id]) }}" onclick="confirm('Bạn có muốn xóa {{ $value->nhanvien->hovaten }}')"><i class="fa fa-trash"></i> Xóa</a></td>
+                            <td class="text-center"><a class="btn btn-outline-danger" href="{{ route('hopdong.sua',['id' => $value->id]) }}"><i class="fa fa-edit"></i> Sửa</a></td>
                         </tr>
                     @endforeach
                 </tbody>

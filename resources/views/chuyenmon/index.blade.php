@@ -30,8 +30,8 @@
                         <tr class="">
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $value->tencm }}</td>
-                            <td ><a href="{{ route('chuyenmon.xoa',['id' => $value->id]) }}" onclick="confirm('Bạn có muốn xóa {{ $value->loaiphim }}')"><i class="fa fa-trash"></i></a></td>
-                            <td ><a href="{{ route('chuyenmon.sua',['id' => $value->id]) }}"><i class="fa fa-edit"></i></a></td>
+                            <td class="text-center"><a class="btn btn-outline-primary"href="{{ route('chuyenmon.xoa',['id' => $value->id]) }}" onclick="confirm('Bạn có muốn xóa {{ $value->tencv }}')"><i class="fa fa-trash"></i> Xóa</a></td>
+                            <td class="text-center"><a class="btn btn-outline-danger" href="{{ route('chuyenmon.sua',['id' => $value->id]) }}"><i class="fa fa-edit"></i> Sửa</a></td>
                         </tr>
                     @endforeach
                 </tbody>

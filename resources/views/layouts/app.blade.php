@@ -313,7 +313,7 @@ desired effect
       Anything you want
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2016 <a href="#">Company</a>.</strong> All rights reserved.
+    <strong>Bản quyền &copy; 2021 <a href="#">DH19PM</a>.</strong> WITH LOVE.
   </footer>
 
   <!-- Control Sidebar -->
