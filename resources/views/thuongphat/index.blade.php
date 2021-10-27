@@ -38,21 +38,12 @@
                             <td>
                                 {{ ($value->loai == 1) ? 'Thưởng' : 'Phạt'; }}
                             </td>
-<<<<<<< HEAD
                             <td>{{ number_format($value->sotien) }}đ</td>
                             <td>{{ $value->lydo }}</td>
                             <td>{{ $value->thang }}</td>
                             <td>{{ $value->nam }}</td>
                             <td class="text-center" width="10%"><a class="btn btn-outline-primary"href="{{ route('thuongphat.xoa',['id' => $value->id]) }}" onclick="confirm('Bạn có muốn xóa {{ $value->nhanvien->hovaten }}')"><i class="fa fa-trash"></i> Xóa</a></td>
                             <td class="text-center" width="10%"><a class="btn btn-outline-danger" href="{{ route('thuongphat.sua',['id' => $value->id]) }}"><i class="fa fa-edit"></i> Sửa</a></td>
-=======
-                            <td>{{ number_format($value->sotien) }}</td>
-                            <td>{{ $value->lydo }}</td>
-                            <td>{{ $value->thang }}</td>
-                            <td>{{ $value->nam }}</td>
-                            <td class="text-center"><a href="{{ route('nhanvien.xoa',['id' => $value->id]) }}" onclick="confirm('Bạn có muốn xóa {{ $value->nhanvien }}')"><i class="fa fa-edit"></i></a></td>
-                            <td class="text-center"><a href="{{ route('nhanvien.sua',['id' => $value->id]) }}"><i class="fa fa-trash"></i></a></td>
->>>>>>> 241c96571ade3902ea622a65df21636808f71c1f
                         </tr>
                     @endforeach
                 </tbody>

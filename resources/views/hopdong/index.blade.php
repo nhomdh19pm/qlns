@@ -40,13 +40,8 @@
                             </td>
                             <td>{{ $value->ngaybd }}</td>
                             <td>{{ $value->ngaykt }}</td>
-<<<<<<< HEAD
                             <td class="text-center" width="10%"><a class="btn btn-outline-primary"href="{{ route('hopdong.xoa',['id' => $value->id]) }}" onclick="confirm('Bạn có muốn xóa {{ $value->loaiphim }}')"><i class="fa fa-trash"></i> Xóa</a></td>
                             <td class="text-center" width="10%"><a class="btn btn-outline-danger" href="{{ route('hopdong.sua',['id' => $value->id]) }}"><i class="fa fa-edit"></i> Sửa</a></td>
-=======
-                            <td class="text-center"><a class="btn btn-outline-primary"href="{{ route('hopdong.xoa',['id' => $value->id]) }}" onclick="confirm('Bạn có muốn xóa {{ $value->nhanvien->hovaten }}')"><i class="fa fa-trash"></i> Xóa</a></td>
-                            <td class="text-center"><a class="btn btn-outline-danger" href="{{ route('hopdong.sua',['id' => $value->id]) }}"><i class="fa fa-edit"></i> Sửa</a></td>
->>>>>>> 241c96571ade3902ea622a65df21636808f71c1f
                         </tr>
                     @endforeach
                 </tbody>
