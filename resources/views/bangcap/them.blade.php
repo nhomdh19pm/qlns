@@ -1,8 +1,17 @@
 @extends('layouts.app')
+@section('content-header')
+<h1>
+      <strong>Thêm Bằng cấp</strong>
+      <small></small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i>Trang Chủ</a></li>
+        <li class="active">Bằng cấp</li>
+      </ol>
+@endsection
 @section('content')
 
     <div class="card">
-        <div class="card-header">Thêm phòng ban</div>
         <div class="card-body">
             <form action="{{ route('bangcap.them') }}" method="post">
                 @csrf

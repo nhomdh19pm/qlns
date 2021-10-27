@@ -1,8 +1,8 @@
 @extends('layouts.app')
 @section('content-header')
 <h1>
-        Chuyên môn
-        <small>Quản lý chuyên môn </small>
+      <strong>Quản lý Chuyên môn</strong>
+      <small></small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i>Trang Chủ</a></li>
@@ -12,7 +12,6 @@
 @section('content')
 <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Chuyên môn</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">

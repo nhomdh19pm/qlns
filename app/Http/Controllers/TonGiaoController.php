@@ -33,7 +33,7 @@ class TonGiaoController extends Controller
             'tentg' => ['required', 'max:255', 'unique:tongiao'],
         ]);
         $orm = tongiao::find($id);
-        $orm->tentg = $request->tenpb;
+        $orm->tentg = $request->tentg;
         $orm->save();
         return redirect()->route('tongiao');
     }

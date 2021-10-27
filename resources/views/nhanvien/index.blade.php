@@ -12,7 +12,6 @@
 @section('content')
 <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Phòng ban</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">

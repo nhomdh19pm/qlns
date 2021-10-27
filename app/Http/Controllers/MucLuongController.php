@@ -47,7 +47,6 @@ class MucLuongController extends Controller
     {
         $orm = mucluong::find($id);
         $orm->delete();
-        Storage::delete($orm->hinhanh);
         return redirect()->route('mucluong');
     }
 

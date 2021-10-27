@@ -12,7 +12,6 @@
 @section('content')
 
     <div class="card">
-        <div class="card-header">Thêm phòng ban</div>
         <div class="card-body">
             <form action="{{ route('phongban.them') }}" method="post">
                 @csrf
