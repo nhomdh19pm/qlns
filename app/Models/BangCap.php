@@ -13,6 +13,6 @@ class BangCap extends Model
 
     public function nhanvien()
     {
-        return $this->hasMany(NhanVien::class);
+        return $this->hasMany(NhanVien::class, 'bangcap_id','id');
     }
 }

@@ -44,6 +44,29 @@ class UngLuongController extends Controller
         return redirect()->route('ungluong');
 
     }
+
+    public function getSua($id){
+        $lichnghi = lichnghi::find($id);
+        return view('lichnghi.sua',compact('lichnghi'));
+    }
+    public function postSua( Request $request,$id)
+    {
+        $request->validate([
+            'nhanvien_id' => ['required', Rule::exists('nhanvien', 'id')],
+            'sotien' => ['required', 'string'],
+            'lydo' => ['required', 'string'],
+            'thang' => ['required', 'string'],
+            'nam' => ['required', 'string'],
+        ]);
+        $orm = ungluong::find($id);
+        $orm->nhanvien_id = $request->nhanvien_id;
+        $orm->sotien = $request->sotien;
+        $orm->lydo = $request->lydo;
+        $orm->thang = $request->thang;
+        $orm->nam = $request->nam;
+        $orm->save();
+        return redirect()->route('ungluong');
+    }
     
     public function getXoa($id){
         $orm = ungluong::find($id);

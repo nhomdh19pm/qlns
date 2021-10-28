@@ -30,7 +30,7 @@ class MucLuong extends Model
 
     public function nhanvien()
     {
-        return $this->belongsTo(NhanVien::class);
+        return $this->hasMany(NhanVien::class, 'mucluong_id', 'id');
     }
 
 

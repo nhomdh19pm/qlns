@@ -15,7 +15,7 @@ class BaoHiem extends Model
 
     public function nhanvien()
     {
-        return $this->belongsTo(NhanVien::class, 'nhanvien_id', 'id');
+        return $this->hasMany(NhanVien::class, 'baohiem_id', 'id');
     }
 
     public function loaibaohiem()

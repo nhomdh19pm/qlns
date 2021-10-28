@@ -29,7 +29,7 @@
     <div class="card">
         <div class="card-header"></div>
         <div class="card-body">
-            <form action="{{ route('nhanvien.them') }}" method="post">
+            <form action="{{ route('nhanvien.them') }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-2">
                     <label class="form-label" for="mucluong_id">Mức lương</label>
@@ -217,8 +217,8 @@
 
                 <div class="mb-2">
                 <label class="form-label" for="trangthai">Trạng thái</label>
-                    <input type="text" class="form-control @error('ngaysinh') is-invalid @enderror"  id="ngaysinh"
-                        name="ngaysinh" required />
+                    <input type="text" class="form-control @error('trangthai') is-invalid @enderror"  id="trangthai"
+                        name="trangthai" required />
                     @error('nhanvien')
                         <div class="invalid-feedback"><strong>{{ $message }}</strong></div>
                     @enderror
@@ -244,7 +244,7 @@
     
 
                 <div class="mb-2">
-                    <label class="form-label" for="photo_path">Hình ảnh Phim</label>
+                    <label class="form-label" for="photo_path">Hình ảnh</label>
                     <input type="file" class=" @error('photo_path') is-invalid @enderror" id="photo_path"
                         name="photo_path" value="{{ old('photo_path') }}" />
                     @error('photo_path')

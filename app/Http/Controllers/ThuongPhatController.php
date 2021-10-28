@@ -27,14 +27,12 @@ class ThuongPhatController extends Controller
 
     public function postThem(Request $request)
     {
-        $request->validate([
-            'nhanvien_id' => ['required', Rule::exists('chucvu', 'id')],
-            'loai' => ['required', 'unique:thuongphat'],
-            'sotien' => ['required', 'string'],
-            'lydo' => ['required', 'string'],
-            'thang' => ['required', 'string'],
-            'nam' => ['required', 'string'],
-        ]);
+        // $request->validate([
+        //     'nhanvien_id' => ['required', Rule::exists('chucvu', 'id')],
+        //     'loaihopdong' => ['required'],
+        //     'ngaybd' => ['required', 'date'],
+        //     'ngaykt' => ['required', 'date'],
+        // ]);
         $orm = new thuongphat();
         $orm->nhanvien_id = $request->nhanvien_id;
         $orm->loai = $request->loai;
