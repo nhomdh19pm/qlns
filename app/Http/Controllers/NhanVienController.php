@@ -28,11 +28,11 @@ class NhanVienController extends Controller
     {
         $mucluong = mucluong::all();
         $bangcap = bangcap::all(); 
-        $chuyemon = chuyemon::all(); 
+        $chuyenmon = chuyenmon::all(); 
         $ngoaingu = ngoaingu::all(); 
         $dantoc = dantoc::all(); 
         $tongiao = tongiao::all(); 
-        return view('nhanvien.them', compact('mucluong', 'bangcap','chuyemon','ngoaingu','dantoc','tongiao'));
+        return view('nhanvien.them', compact('mucluong', 'bangcap','chuyenmon','ngoaingu','dantoc','tongiao'));
     }
 
     public function postThem(Request $request)
@@ -52,7 +52,7 @@ class NhanVienController extends Controller
             'diachi' => ['required', 'string'],
             'quequan' => ['required', 'string'],
             'trangthai' => ['required', 'string'],
-            'ngaynghilam' => ['required', 'string'],
+            'ngaynghilam' => ['required', 'date'],
             'hesoluong' => ['required', 'string'],
             'photo_path' => ['required', 'string'],
         ]);

@@ -16,7 +16,7 @@
             <!-- /.box-header -->
             <div class="box-body">
             <p><a href="{{ route('lichnghi.them') }}" class="btn btn-info"><i class="fas fa-plus"></i> Thêm mới</a></p>
-              <table id="example1" class="table table-bordered table-striped">
+              <table id="example1" class="table table-bordered table-striped text-center">
                 <thead>
                 <tr class="text-center">
                 <th >#</th>
@@ -36,8 +36,8 @@
                             <td>{{ $value->ngaybd }}</td>
                             <td>{{ $value->ngaykt }}</td>
                             <td>{{ $value->huongluong }}</td>
-                            <td ><a href="{{ route('lichnghi.xoa',['id' => $value->id]) }}" onclick="confirm('Bạn có muốn xóa {{ $value->loaiphim }}')"><i class="fa fa-trash"></i></a></td>
-                            <td ><a href="{{ route('lichnghi.sua',['id' => $value->id]) }}"><i class="fa fa-edit"></i></a></td>
+                            <td class="text-center"><a class="btn btn-outline-primary"href="{{ route('lichnghi.xoa',['id' => $value->id]) }}" onclick="confirm('Bạn có muốn xóa {{ $value->tenln }}')"><i class="fa fa-trash"></i> Xóa</a></td>
+                            <td class="text-center"><a class="btn btn-outline-danger" href="{{ route('lichnghi.sua',['id' => $value->id]) }}"><i class="fa fa-edit"></i> Sửa</a></td>
                             
                         </tr>
                     @endforeach
