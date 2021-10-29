@@ -20,6 +20,7 @@ class UngLuongController extends Controller
     }
     public function getThem()
     {
+        
         $nhanvien = nhanvien::all();
         return view('ungluong.them', compact('nhanvien'));
         
@@ -46,8 +47,9 @@ class UngLuongController extends Controller
     }
 
     public function getSua($id){
-        $lichnghi = lichnghi::find($id);
-        return view('lichnghi.sua',compact('lichnghi'));
+        $ungluong = ungluong::find($id);
+        $nhanvien = nhanvien::all();
+        return view('ungluong.sua',compact('ungluong','nhanvien'));
     }
     public function postSua( Request $request,$id)
     {

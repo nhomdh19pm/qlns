@@ -32,21 +32,25 @@
  @csrf
  
  <div class="mb-2">
- <label class="form-label" for="tenln">Tên lịch nghỉ</label>
- <input type="text" class="form-control" id="tenln" name="tenln" value="{{ $lichnghi->tenln }}" required />
+      <label class="form-label" for="tenln">Tên lịch nghỉ</label>
+      <input type="text" class="form-control" id="tenln" name="tenln" value="{{ $lichnghi->tenln }}" required />
  </div>
  <div class="mb-2">
- <label class="form-label" for="ngaybh">Ngày bắt đầu</label>
- <input type="date" class="form-control" id="ngaybd" name="ngaybd" value="{{ $lichnghi->ngaybd }}" required />
+      <label class="form-label" for="ngaybh">Ngày bắt đầu</label>
+      <input type="date" class="form-control" id="ngaybd" name="ngaybd" value="{{ $lichnghi->ngaybd }}" required />
  </div>
- <div class="mb-2">
- <label class="form-label" for="ngaykt">Ngày kết thúc</label>
+      <div class="mb-2">
+      <label class="form-label" for="ngaykt">Ngày kết thúc</label>
  <input type="date" class="form-control" id="ngaykt" name="ngaykt" value="{{ $lichnghi->ngaykt }}" required />
  </div>
  <div class="mb-2">
- <label class="form-label" for="huongluong">Hưởng lương</label>
- <input type="text" class="form-control" id="huongluong" name="huongluong" value="{{ $lichnghi->huongluong }}" required />
- </div>
+      <label class="form-label" for="huongluong">Loại</label>
+
+      <select class="form-control" id="huongluong" name="huongluong">
+      <option value="0" {{ $lichnghi->huongluong == 0 ? 'selected' : '' }}>Có</option> 
+      <option value="1" {{ $lichnghi->huongluong == 1 ? 'selected' : '' }}>Không</option>              
+      </select>
+</div>
                 <button type="submit" class="btn btn-primary"><i class="fa fa-plus"></i> Cập nhật</button>
         </form>
       </div>

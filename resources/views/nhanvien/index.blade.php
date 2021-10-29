@@ -47,21 +47,21 @@
               <table id="example1" class="table table-bordered table-striped text-center">
                 <thead>
                 <tr class="text-center">
-                <th >#</th>
-                <th >Họ và tên</th>
-                <th >Mức lương</th>
-                <th >Bằng cấp</th>
-                <th >Chuyên môn</th>
-                <th >Giới tính</th>
-                <th >Trạng thái</th>
-                <th width="25%">Ảnh</th>
-                <th ></th>
-                <th ></th>
+                  <th >#</th>
+                  <th >Họ và tên</th>
+                  <th >Mức lương</th>
+                  <th >Bằng cấp</th>
+                  <th >Chuyên môn</th>
+                  <th >Giới tính</th>
+                  <th >Trạng thái</th>
+                  <th width="25%">Ảnh</th>
+                  <th ></th>
+                  <th ></th>
                 </tr>
                 </thead>
                 <tbody>
                 @foreach ($nhanvien as $value)
-                <tr class="">
+                <tr class="hung-nguyen">
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $value->hovaten }}</td>
                             <td>{{ number_format($value->mucluong->luongcb) }}</td>
@@ -73,7 +73,9 @@
                             <td>
                                 {{ ($value->trangthai == 1) ? 'Đang làm việc' : 'Treo giò'; }}
                             </td>
-                            <td class="hungnguyen" style="max-width=300px"><img width="20%" height="20%"src="../storage/images/{{ $value->photo_path }}" ></td>                          
+                            <td style="max-width=300px">
+                              <img width="20%" height="20%"src="../storage/images/{{ $value->photo_path }}" >
+                            </td>                          
                             <td class="text-center"><a class="btn btn-outline-primary"href="{{ route('nhanvien.xoa',['id' => $value->id]) }}" onclick="confirm('Bạn có muốn xóa {{ $value->loaiphim }}')"><i class="fa fa-trash"></i> Xóa</a></td>
                             <td class="text-center"><a class="btn btn-outline-danger" href="{{ route('nhanvien.sua',['id' => $value->id]) }}"><i class="fa fa-edit"></i> Sửa</a></td>
                         </tr>

@@ -35,12 +35,12 @@ class LichNghiController extends Controller
     }
     public function postSua( Request $request,$id)
     {
-        $this->validate($request, [
-            'tenln' => ['required', 'max:255', 'unique:lichnghi'],
-            'ngaybd' => ['required', 'date'],
-            'ngaykt' => ['required', 'date'],
-            'huongluong' => ['required', 'numeric'],
-        ]);
+        // $this->validate($request, [
+        //     'tenln' => ['required', 'max:255', 'unique:lichnghi'],
+        //     'ngaybd' => ['required', 'date'],
+        //     'ngaykt' => ['required', 'date'],
+        //     'huongluong' => ['required'],
+        // ]);
         $orm = lichnghi::find($id);
         $orm->tenln = $request->tenln;
         $orm->ngaybd = $request->ngaybd;

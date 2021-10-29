@@ -1099,6 +1099,7 @@ a:focus {
   border-bottom-right-radius: 4px;
   border-bottom-left-radius: 4px;
 }
+
 .navbar-nav > .user-menu > .dropdown-menu > li.user-header {
   height: 175px;
   padding: 10px;
@@ -1235,10 +1236,12 @@ a:focus {
 .navbar-custom-menu > .navbar-nav > li {
   position: relative;
 }
+
 .navbar-custom-menu > .navbar-nav > li > .dropdown-menu {
   position: absolute;
   right: 0;
   left: auto;
+  box-shadow: 5px 5px 5px #766262b0;
 }
 @media (max-width: 991px) {
   .navbar-custom-menu > .navbar-nav {
@@ -1584,6 +1587,7 @@ a:focus {
 .box.collapsed-box .box-footer {
   display: none;
 }
+
 .box .nav-stacked > li {
   border-bottom: 1px solid #f4f4f4;
   margin: 0;
@@ -2718,12 +2722,21 @@ a:focus {
 .table.no-border th {
   border: 0;
 }
+
+.table-bordered > tbody > tr > td > img {
+    transition: transform .5s;
+}
+
+.table-bordered > tbody > tr > td > img:hover {
+  transform: scale(2.0);
+}
 /* .text-center in tables */
 table.text-center,
 table.text-center td,
 table.text-center th {
   text-align: center;
 }
+
 .table.align th {
   text-align: left;
 }

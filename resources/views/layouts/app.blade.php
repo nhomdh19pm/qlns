@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Trang Quản Lý Lương</title>
-  <link rel="icon" href="{{ url('public/dist') }}/img/admin.ico">>
+  <link rel="icon" href="{{ url('public/dist') }}/img/admin.ico">
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
@@ -42,7 +42,7 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
-<body class="hold-transition purple-light sidebar-mini fixed">
+<body class="hold-transition purple-light sidebar-mini toggle-sidebar">
 <div class="wrapper">
 
   <header class="main-header">
@@ -71,7 +71,7 @@
             <!-- Menu Toggle Button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <!-- The user image in the navbar-->
-              <img src="{{url('public/dist/img/admin.png')}}" width=30 height=30 class="img-circle" alt="User Image"/>
+              <img href="/qlns" src="{{url('public/dist/img/admin.png')}}" width=30 height=30 class="img-circle" alt="User Image"/>
 
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
               <span class="hidden-xs">DH19PM</span>
@@ -90,7 +90,7 @@
 
               <!-- Menu Footer-->
               <li class="user-footer">
-                <div class="pull-right">
+                <div class="pull-right" style="margin-right: 85px;">
                   <form action="{{ route('logout') }}" method="POST">
                 @csrf
                     <button class="btn btn-default btn-flat">Đăng xuất</button>
@@ -114,7 +114,7 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-        <img src="{{url('public/dist/img/admin.png')}}" class="img-circle" alt="User Image"/>
+         <img  src="{{url('public/dist/img/admin.png')}}" class="img-circle" alt="User Image"/>
         </div>
         <div class="pull-left info">
           <p>DH19PM</p>

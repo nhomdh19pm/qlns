@@ -51,7 +51,9 @@
                             <td>{{ $value->tenln }}</td>
                             <td>{{ $value->ngaybd }}</td>
                             <td>{{ $value->ngaykt }}</td>
-                            <td>{{ $value->huongluong }}</td>
+                            <td>
+                                {{ ($value->huongluong == 0) ? 'Có' : 'Không'; }}
+                            </td>
                             <td class="text-center"><a class="btn btn-outline-primary"href="{{ route('lichnghi.xoa',['id' => $value->id]) }}" onclick="confirm('Bạn có muốn xóa {{ $value->tenln }}')"><i class="fa fa-trash"></i> Xóa</a></td>
                             <td class="text-center"><a class="btn btn-outline-danger" href="{{ route('lichnghi.sua',['id' => $value->id]) }}"><i class="fa fa-edit"></i> Sửa</a></td>
                             
