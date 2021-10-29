@@ -52,7 +52,7 @@
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $value->nhanvien->hovaten }}</td>
                             <td>
-                                {{ ($value->loai == 1) ? 'Thưởng' : 'Phạt'; }}
+                                {{ ($value->loai == 0) ? 'Thưởng' : 'Phạt'; }}
                             </td>
                             <td>{{ number_format($value->sotien) }}đ</td>
                             <td>{{ $value->lydo }}</td>

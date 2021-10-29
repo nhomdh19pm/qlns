@@ -46,7 +46,7 @@
 <div class="wrapper">
 
   <header class="main-header">
-  <a href="/" class="logo">
+  <a href="/qlns" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>H</b>LT</span>
       <!-- logo for regular state and mobile devices -->
@@ -87,25 +87,9 @@
                 </p>
               </li>
               <!-- Menu Body -->
-              <li class="user-body">
-                <div class="row">
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Followers</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Sales</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Friends</a>
-                  </div>
-                </div>
-                <!-- /.row -->
-              </li>
+
               <!-- Menu Footer-->
               <li class="user-footer">
-                <div class="pull-left">
-                  <a href="{{ route('login') }}" class="btn btn-default btn-flat">Đăng nhập</a>
-                </div>
                 <div class="pull-right">
                   <form action="{{ route('logout') }}" method="POST">
                 @csrf
@@ -155,17 +139,7 @@
         <li class="header">HEADER</li>
         <!-- Optionally, you can add icons to the links -->
         @yield('active')
-        <li class="treeview">
-          <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="#">Link in level 2</a></li>
-            <li><a href="#">Link in level 2</a></li>
-          </ul>
-        </li>
+        
       </ul>
       <!-- /.sidebar-menu -->
     </section>

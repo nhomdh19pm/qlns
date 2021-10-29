@@ -18,6 +18,7 @@ use App\Http\Controllers\LoaiBaoHiemController;
 use App\Http\Controllers\MucLuongController;
 use App\Http\Controllers\LichNghiController;
 use App\Http\Controllers\ChucVuController;
+use App\Http\Controllers\NghiViecController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -148,5 +149,12 @@ Route::middleware('auth')->prefix('quan-ly')->group(function () {
     Route::get('/chucvu/sua/{id}',[ChucVuController::class,'getSua'])->name('chucvu.sua');
     Route::post('/chucvu/sua/{id}',[ChucVuController::class,'postSua'])->name('chucvu.sua');
     Route::get('/chucvu/xoa/{id}',[ChucVuController::class,'getXoa'])->name('chucvu.xoa');
+
+    Route::get('/nghiviec',[NghiViecController::class,'getdanhsach'])->name('nghiviec');
+    Route::get('/nghiviec/them',[NghiViecController::class,'getThem'])->name('nghiviec.them');
+    Route::post('/nghiviec/them',[NghiViecController::class,'postThem'])->name('nghiviec.them');
+    Route::get('/nghiviec/sua/{id}',[NghiViecController::class,'getSua'])->name('nghiviec.sua');
+    Route::post('/nghiviec/sua/{id}',[NghiViecController::class,'postSua'])->name('nghiviec.sua');
+    Route::get('/nghiviec/xoa/{id}',[NghiViecController::class,'getXoa'])->name('nghiviec.xoa');
 });
 

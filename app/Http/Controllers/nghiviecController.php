@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 
-use App\Models\ThuongPhat;
+use App\Models\NghiViec;
 use App\Models\NhanVien;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
@@ -12,16 +12,16 @@ use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\URL;
 use Inertia\Inertia;
 
-class ThuongPhatController extends Controller
+class nghiviecController extends Controller
 {
     public function getDanhSach(){
-        $thuongphat = thuongphat::all();
-        return view('thuongphat.index',compact('thuongphat'));
+        $nghiviec = nghiviec::all();
+        return view('nghiviec.index',compact('nghiviec'));
     }
     public function getThem()
     {
         $nhanvien = nhanvien::all();
-        return view('thuongphat.them', compact('nhanvien'));
+        return view('nghiviec.them', compact('nhanvien'));
         
     }
 
@@ -33,22 +33,21 @@ class ThuongPhatController extends Controller
         //     'ngaybd' => ['required', 'date'],
         //     'ngaykt' => ['required', 'date'],
         // ]);
-        $orm = new thuongphat();
+        $orm = new nghiviec();
         $orm->nhanvien_id = $request->nhanvien_id;
-        $orm->loai = $request->loai;
-        $orm->sotien = $request->sotien;
+        $orm->ngaybd = $request->ngaybd;
+        $orm->ngaykt = $request->ngaykt;
         $orm->lydo = $request->lydo;
-        $orm->thang = $request->thang;
-        $orm->nam = $request->nam;
+        $orm->huongluong = $request->huongluong;
         $orm->save();
-        return redirect()->route('thuongphat');
+        return redirect()->route('nghiviec');
 
     }
 
     public function getSua($id){
-        $thuongphat = thuongphat::find($id);
+        $nghiviec = nghiviec::find($id);
         $nhanvien = nhanvien::all();
-        return view('thuongphat.sua',compact('thuongphat','nhanvien'));
+        return view('nghiviec.sua',compact('nghiviec','nhanvien'));
     }
     public function postSua( Request $request,$id)
     {
@@ -60,7 +59,7 @@ class ThuongPhatController extends Controller
             'thang' => ['required'],
             'nam' => ['required'],
         ]);
-        $orm = thuongphat::find($id);
+        $orm = nghiviec::find($id);
         $orm->nhanvien_id = $request->nhanvien_id;
         $orm->loai = $request->loai;
         $orm->lydo = $request->lydo;
@@ -68,14 +67,14 @@ class ThuongPhatController extends Controller
         $orm->thang = $request->thang;
         $orm->nam = $request->nam;
         $orm->save();
-        return redirect()->route('thuongphat');
+        return redirect()->route('nghiviec');
 
     }
     
     public function getXoa($id){
-        $orm = thuongphat::find($id);
+        $orm = nghiviec::find($id);
         $orm->delete();
-        return redirect()->route('thuongphat');
+        return redirect()->route('nghiviec');
        
     }
 }
