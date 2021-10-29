@@ -36,7 +36,7 @@
                     <select name="nhanvien_id" id="nhanvien_id" class="form-control @error('nhanvien_id')  is-invalid @enderror" 
                         required>
                         @foreach ($nhanvien as $value)
-                        <option value="{{ $value->id }}" {{ ($phim->loaiphim_id == $value->id) ? 'selected' : '' }}>
+                        <option value="{{ $value->id }}" {{ ($hopdong->nhanvien_id == $value->id) ? 'selected' : '' }}>
                                 {{ $value->hovaten }}
                             </option>
                         @endforeach
@@ -48,7 +48,11 @@
 
                 <div class="mb-2">
                     <label class="form-label" for="loaihopdong">Loại hợp đồng</label>
-                        <input type="text" class="form-control" id="loaihopdong" name="loaihopdong" value="{{ $hopdong->loaihopdong }}" required />
+
+                    <select class="form-control" id="loaihopdong" name="loaihopdong">
+                        <option value="0" {{ $hopdong->loaihopdong == 0 ? 'selected' : '' }}>thử việc</option> 
+                        <option value="1" {{ $hopdong->loaihopdong == 1 ? 'selected' : '' }}>Chính thức</option>              
+                    </select>
                 </div>
 
                 <div class="mb-2">

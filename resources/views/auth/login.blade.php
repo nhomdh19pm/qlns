@@ -30,14 +30,14 @@
 					<img src="public/login/images/img-01.png" alt="IMG">
 				</div>
 
-				<form class="login100-form validate-form" method="POST" action="{{ route('login') }}">
+				<form class="login100-form validate-form" method="post" action="{{ route('login') }}">
 				@csrf
 					<span class="login100-form-title">
 						Login on Company
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="email" id="email" name="email" value="{{ old('email') }}" placeholder="Email or Username">
+						<input class="input100 {{ $errors->has('email') || $errors->has('nhanvien_id') ? ' is-invalid' : '' }}" type="text"  name="email" id="email" name="email" value="{{ old('email') }}" placeholder="Email or Username">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-envelope" aria-hidden="true"></i>
@@ -45,14 +45,14 @@
 						@if ($errors->has('email') || $errors->has('username'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>
-                                            {{ empty($errors->first('email')) ? $errors->first('username') : $errors->first('email') }}
+											{{ empty($errors->first('email')) ? $errors->first('username') : $errors->first('email') }}
                                         </strong>
                                     </span>
                          @endif
 					</div>
 
 					<div class="wrap-input100 validate-input @error('password') is-invalid @enderror" data-validate = "Password is required">
-						<input class="input100" type="password" name="pass" placeholder="Password">
+						<input class="input100"  id="password" type="password" name="password" placeholder="Password">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-lock" aria-hidden="true"></i>
@@ -63,7 +63,7 @@
 					</div>
 					
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
+						<button type="submit" class="login100-form-btn">
 							Login
 						</button>
 					</div>

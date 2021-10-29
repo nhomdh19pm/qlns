@@ -158,15 +158,18 @@
                 </div>
 
                 <div class="mb-2">
-                <label class="form-label" for="luongcb">Giới tính</label>
-                    <input type="text" class="form-control @error('gioitinh') is-invalid @enderror"  id="gioitinh"
-                        name="gioitinh" required />
-                    @error('nhanvien')
+                <label class="form-label" for="gioitinh">Giới tính</label>
+                <select class="form-control" id="gioitinh" name="gioitinh">
+                    <option value="0">Nam</option>              
+                    <option value="1">Nũ</option>
+                </select>
+                    @error('hopdong')
                         <div class="invalid-feedback"><strong>{{ $message }}</strong></div>
                     @enderror
                 </div>
 
-                <div class="mb-2">
+
+                <div style="max-width:150px" class="mb-2">
                 <label class="form-label" for="ngaysinh">Ngày sinh</label>
                     <input type="date" class="form-control @error('ngaysinh') is-invalid @enderror"  id="ngaysinh"
                         name="ngaysinh" required />
@@ -216,10 +219,12 @@
 
 
                 <div class="mb-2">
-                <label class="form-label" for="trangthai">Trạng thái</label>
-                    <input type="text" class="form-control @error('trangthai') is-invalid @enderror"  id="trangthai"
-                        name="trangthai" required />
-                    @error('nhanvien')
+                <label class="form-label" for="trangthai">Tình trạng</label>
+                <select class="form-control" id="trangthai" name="trangthai">
+                    <option value="0">Treo giò</option>              
+                    <option value="1">Đang làm việc</option>
+                </select>
+                    @error('hopdong')
                         <div class="invalid-feedback"><strong>{{ $message }}</strong></div>
                     @enderror
                 </div>

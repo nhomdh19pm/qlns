@@ -28,6 +28,8 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ url('public/dist') }}/css/AdminLTE.min.css">
   <link rel="stylesheet" href="{{ url('public/dist') }}/css/AdminLTE.css">
+
+  <link rel="stylesheet" href="{{ url('public/dist') }}/fontawesome/css/all.css">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
        <link rel="stylesheet" href="{{ url('public/dist') }}/css/skins/_all-skins.min.css">
@@ -44,7 +46,7 @@
 <div class="wrapper">
 
   <header class="main-header">
-  <a href="{{ route('index') }}" class="logo">
+  <a href="/" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>H</b>LT</span>
       <!-- logo for regular state and mobile devices -->
@@ -105,7 +107,10 @@
                   <a href="{{ route('login') }}" class="btn btn-default btn-flat">Đăng nhập</a>
                 </div>
                 <div class="pull-right">
-                  <a href="{{ route('logout') }}" class="btn btn-default btn-flat">Đăng xuất</a>
+                  <form action="{{ route('logout') }}" method="POST">
+                @csrf
+                    <button class="btn btn-default btn-flat">Đăng xuất</button>
+                  </form>
                 </div>
               </li>
             </ul>

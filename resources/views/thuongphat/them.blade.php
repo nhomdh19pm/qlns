@@ -52,10 +52,10 @@
 
 
                 <div class="mb-2">
-                <label class="form-label" for="loai">Loại hợp đồng</label>
+                <label class="form-label" for="loai">Loại</label>
                 <select class="form-control" id="loai" name="loai">
-                    <option value="0">Chính thức</option>              
-                    <option value="1">Thử việc</option>
+                    <option value="0">Phạt</option>              
+                    <option value="1">Thưởng</option>
                 </select>
                     @error('hopdong')
                         <div class="invalid-feedback"><strong>{{ $message }}</strong></div>

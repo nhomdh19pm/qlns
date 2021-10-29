@@ -50,28 +50,20 @@
                     <option value="0">Chính thức</option>              
                     <option value="1">Thử việc</option>
                 </select>
-                    @error('hopdong')
-                        <div class="invalid-feedback"><strong>{{ $message }}</strong></div>
-                    @enderror
                 </div>
 
-                <div class="mb-2">
+                <div class="mb-2" style="max-width:250px">
                 <label class="form-label" for="ngaybd">Ngày bắt đầu hợp đồng</label>
                     <input type="date" class="form-control @error('ngaybd') is-invalid @enderror"  id="ngaybd"
                         name="ngaybd" required />
-                    @error('hopdong')
-                        <div class="invalid-feedback"><strong>{{ $message }}</strong></div>
-                    @enderror
                 </div>
                 
                 
-                <div class="mb-2">
+                <div class="mb-2" style="max-width:250px">
                 <label class="form-label" for="ngaykt">Ngày kết thúc hợp đồng</label>
                     <input type="date" class="form-control @error('ngaykt') is-invalid @enderror"  id="ngaykt"
                         name="ngaykt" required />
-                    @error('hopdong')
-                        <div class="invalid-feedback"><strong>{{ $message }}</strong></div>
-                    @enderror
+
                 </div>
 
                 <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Thêm vào CSDL</button>

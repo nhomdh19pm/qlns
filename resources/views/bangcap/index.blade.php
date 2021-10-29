@@ -46,7 +46,7 @@
                         <tr class="">
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $value->tenbc }}</td>
-                            <td class="text-center" width="10%"><a class="btn btn-outline-primary"href="{{ route('bangcap.xoa',['id' => $value->id]) }}" onclick="confirm('Bạn có muốn xóa {{ $value->tenbc }}')"><i class="fa fa-trash"></i> Xóa</a></td>
+                            <td class="text-center" width="10%"><a class="btn btn-outline-primary"href="javascript:eventXoa('{{ route('bangcap.xoa',['id' => $value->id]) }}', '{{ $value->tenbc }}');"><i class="fa fa-trash"></i> Xóa</a></td>
                             <td class="text-center" width="10%"><a class="btn btn-outline-danger" href="{{ route('bangcap.sua',['id' => $value->id]) }}"><i class="fa fa-edit"></i> Sửa</a></td>
                         </tr>
                     @endforeach
@@ -57,4 +57,13 @@
             </div>
             <!-- /.box-body -->
           </div>
+<script>
+function eventXoa(url, ten)
+{
+  let check  = confirm('Bạn có muốn xóa "' + ten + '"');
+
+  if (check)
+    window.location.href= url;
+}
+</script>
 @endsection

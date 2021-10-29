@@ -48,18 +48,18 @@
                 </thead>
                 <tbody>
                 @foreach ($hopdong as $value)
-                <tr >
-                            <td>{{ $loop->iteration }}</td>
-                            <td>{{ $value->nhanvien->hovaten }}</td>
-                            <td>
-                                {{ ($value->loaihopdong == 1) ? 'Có hạn' : 'Không xác định thời hạn'; }}
-                            </td>
-                            <td>{{ $value->ngaybd }}</td>
-                            <td>{{ $value->ngaykt }}</td>
-                            <td class="text-center" width="10%"><a class="btn btn-outline-primary"href="{{ route('hopdong.xoa',['id' => $value->id]) }}" onclick="confirm('Bạn có muốn xóa {{ $value->loaiphim }}')"><i class="fa fa-trash"></i> Xóa</a></td>
-                            <td class="text-center" width="10%"><a class="btn btn-outline-danger" href="{{ route('hopdong.sua',['id' => $value->id]) }}"><i class="fa fa-edit"></i> Sửa</a></td>
-                        </tr>
-                    @endforeach
+                <tr>
+                    <td>{{ $loop->iteration }}</td>
+                    <td>{{ $value->nhanvien->hovaten }}</td>
+                    <td>
+                        {{ ($value->loaihopdong == 0) ? 'Thử việc' : 'Chính thức'; }}
+                    </td>
+                    <td>{{ $value->ngaybd }}</td>
+                    <td>{{ $value->ngaykt }}</td>
+                    <td class="text-center" width="10%"><a class="btn btn-outline-primary"href="{{ route('hopdong.xoa',['id' => $value->id]) }}" onclick="confirm('Bạn có muốn xóa {{ $value->loaiphim }}')"><i class="fa fa-trash"></i> Xóa</a></td>
+                    <td class="text-center" width="10%"><a class="btn btn-outline-danger" href="{{ route('hopdong.sua',['id' => $value->id]) }}"><i class="fa fa-edit"></i> Sửa</a></td>
+                </tr>
+                @endforeach
                 </tbody>
                 <tfoot>
                 </tfoot>
