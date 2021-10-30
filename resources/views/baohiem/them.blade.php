@@ -16,19 +16,19 @@
         <li class=""><a href="{{ route('dantoc') }}"><i class="fa fa-flag-usa"></i> <span>Dân Tộc</span></a></li>
         </ul>
     </li>
-    <li class="treeview ">
+    <li class="treeview active">
         <a href="#"><i class="fas fa-hospitals"></i> <span>Bảo Hiểm</span>
         <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
         </span>
         </a>
         <ul class="treeview-menu">
-        <li class=""><a href="{{ route('baohiem') }}"><i class="far fa-id-card"></i> <span>Bảo hiểm</span></a></li>
+        <li class="active"><a href="{{ route('baohiem') }}"><i class="far fa-id-card"></i> <span>Bảo hiểm</span></a></li>
         <li class=""><a href="{{ route('loaibaohiem') }}"><i class="far fa-credit-card"></i> <span>Loại bảo hiểm</span></a></li>
         </ul>
     </li>
     <li class=""><a href="{{ route('thuongphat') }}"><i class="fa fa-gift-card"></i> <span>Thưởng phạt</span></a></li>
-    <li class="active"><a href="{{ route('hopdong') }}"><i class="fas fa-file-signature"></i> <span>Hợp đồng</span></a></li>
+    <li class=""><a href="{{ route('hopdong') }}"><i class="fas fa-file-signature"></i> <span>Hợp đồng</span></a></li>
     <li class=""><a href="{{ route('chucvu') }}"><i class="fa fa-users"></i> <span>Chức Vụ</span></a></li>
     <li class=""><a href="{{ route('ungluong') }}"><i class="fad fa-money-check-edit-alt"></i> <span>Ứng lương</span></a></li>
     <li class=""><a href="{{ route('mucluong') }}"><i class="fa fa-money-check-alt"></i> <span>Mức lương</span></a></li>
@@ -49,10 +49,10 @@
     <div class="card">
         <div class="card-header"></div>
         <div class="card-body">
-            <form action="{{ route('hopdong.them') }}" method="post">
+            <form action="{{ route('baohiem.them') }}" method="post">
                 @csrf
                 <div class="mb-2">
-                    <label class="form-label" for="nhanvien_id">Tên nhân viên</label>
+                    <label class="form-label" for="nhanvien_id">Tên phòng ban</label>
                     <select name="nhanvien_id" id="nhanvien_id" class="form-control @error('nhanvien_id') is-invalid @enderror"
                         required>
                         <option value="">--Chọn--</option>
@@ -65,25 +65,49 @@
                 </div>
 
                 <div class="mb-2">
-                <label class="form-label" for="loaihopdong">Loại hợp đồng</label>
-                <select class="form-control" id="loaihopdong" name="loaihopdong">
-                    <option value="0">Chính thức</option>              
-                    <option value="1">Thử việc</option>
-                </select>
+                    <label class="form-label" for="loaibaohiem_id">Loại bảo hiểm</label>
+                    <select name="loaibaohiem_id" id="loaibaohiem_id" class="form-control @error('loaibaohiem_id') is-invalid @enderror"
+                        required>
+                        <option value="">--Chọn--</option>
+                        @foreach ($loaibaohiem as $value)
+                            <option value="{{ $value->id }}">
+                                {{ $value->tenbh }}
+                            </option>
+                        @endforeach
+                    </select>
+                </div>
+
+
+                <div class="mb-2">
+                <label class="form-label" for="maso">Mã số</label>
+                    <input type="text" class="form-control @error('maso') is-invalid @enderror"  id="maso"
+                        name="maso" required />
+                </div>
+
+                <div class="mb-2">
+                <label class="form-label" for="noicap">Nơi cấp</label>
+                    <input type="text" class="form-control @error('noicap') is-invalid @enderror"  id="noicap"
+                        name="noicap" required />
                 </div>
 
                 <div class="mb-2" style="max-width:250px">
-                <label class="form-label" for="ngaybd">Ngày bắt đầu hợp đồng</label>
-                    <input type="date" class="form-control @error('ngaybd') is-invalid @enderror"  id="ngaybd"
-                        name="ngaybd" required />
+                <label class="form-label" for="ngaycap">Ngày cấp</label>
+                    <input type="date" class="form-control @error('ngaycap') is-invalid @enderror"  id="ngaycap"
+                        name="ngaycap" required />
                 </div>
                 
                 
                 <div class="mb-2" style="max-width:250px">
-                <label class="form-label" for="ngaykt">Ngày kết thúc hợp đồng</label>
-                    <input type="date" class="form-control @error('ngaykt') is-invalid @enderror"  id="ngaykt"
-                        name="ngaykt" required />
+                <label class="form-label" for="ngayhethan">Ngày hết hạn</label>
+                    <input type="date" class="form-control @error('ngayhethan') is-invalid @enderror"  id="ngayhethan"
+                        name="ngayhethan" required />
 
+                </div>
+
+                <div class="mb-2">
+                <label class="form-label" for="mucdong">Mức đóng</label>
+                    <input type="text" class="form-control @error('mucdong') is-invalid @enderror"  id="mucdong"
+                        name="mucdong" required />
                 </div>
 
                 <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Thêm vào CSDL</button>

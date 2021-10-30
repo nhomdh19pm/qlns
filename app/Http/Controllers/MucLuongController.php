@@ -28,12 +28,12 @@ class MucLuongController extends Controller
 
     public function postThem(Request $request)
     {
-        $request->validate([
-            'chucvu_id' => ['required', Rule::exists('chucvu', 'id')],
-            'phongban_id' => ['required',Rule::exists('phongban', 'id')],
-            'luongcb' => ['required', 'string'],
-            'phucap' => ['required', 'string'],
-        ]);
+        // $request->validate([
+        //     'chucvu_id' => ['required', Rule::exists('chucvu', 'id')],
+        //     'phongban_id' => ['required',Rule::exists('phongban', 'id')],
+        //     'luongcb' => ['required', 'string'],
+        //     'phucap' => ['required', 'string'],
+        // ]);
         $orm = new mucluong();
         $orm->chucvu_id = $request->chucvu_id;
         $orm->phongban_id = $request->phongban_id;

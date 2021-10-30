@@ -16,19 +16,19 @@
         <li class=""><a href="{{ route('dantoc') }}"><i class="fa fa-flag-usa"></i> <span>Dân Tộc</span></a></li>
         </ul>
     </li>
-    <li class="treeview ">
+    <li class="treeview active">
         <a href="#"><i class="fas fa-hospitals"></i> <span>Bảo Hiểm</span>
         <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
         </span>
         </a>
         <ul class="treeview-menu">
-        <li class=""><a href="{{ route('baohiem') }}"><i class="far fa-id-card"></i> <span>Bảo hiểm</span></a></li>
+        <li class="active"><a href="{{ route('baohiem') }}"><i class="far fa-id-card"></i> <span>Bảo hiểm</span></a></li>
         <li class=""><a href="{{ route('loaibaohiem') }}"><i class="far fa-credit-card"></i> <span>Loại bảo hiểm</span></a></li>
         </ul>
     </li>
     <li class=""><a href="{{ route('thuongphat') }}"><i class="fa fa-gift-card"></i> <span>Thưởng phạt</span></a></li>
-    <li class="active"><a href="{{ route('hopdong') }}"><i class="fas fa-file-signature"></i> <span>Hợp đồng</span></a></li>
+    <li class=""><a href="{{ route('hopdong') }}"><i class="fas fa-file-signature"></i> <span>Hợp đồng</span></a></li>
     <li class=""><a href="{{ route('chucvu') }}"><i class="fa fa-users"></i> <span>Chức Vụ</span></a></li>
     <li class=""><a href="{{ route('ungluong') }}"><i class="fad fa-money-check-edit-alt"></i> <span>Ứng lương</span></a></li>
     <li class=""><a href="{{ route('mucluong') }}"><i class="fa fa-money-check-alt"></i> <span>Mức lương</span></a></li>
@@ -49,41 +49,40 @@
     <div class="card">
         <div class="card-header"></div>
         <div class="card-body">
-            <form action="{{ route('hopdong.them') }}" method="post">
+                <form action="{{ route('hopdong.sua', ['id' => $hopdong->id]) }}" method="post">
                 @csrf
                 <div class="mb-2">
                     <label class="form-label" for="nhanvien_id">Tên nhân viên</label>
-                    <select name="nhanvien_id" id="nhanvien_id" class="form-control @error('nhanvien_id') is-invalid @enderror"
+                    <select name="nhanvien_id" id="nhanvien_id" class="form-control @error('nhanvien_id')  is-invalid @enderror" 
                         required>
-                        <option value="">--Chọn--</option>
                         @foreach ($nhanvien as $value)
-                            <option value="{{ $value->id }}">
+                        <option value="{{ $value->id }}" {{ ($hopdong->nhanvien_id == $value->id) ? 'selected' : '' }}>
                                 {{ $value->hovaten }}
                             </option>
                         @endforeach
+                        @error('hopdong')
+                            <div class="invalid-feedback"><strong>{{ $message }}</strong></div>
+                        @enderror
                     </select>
                 </div>
 
                 <div class="mb-2">
-                <label class="form-label" for="loaihopdong">Loại hợp đồng</label>
-                <select class="form-control" id="loaihopdong" name="loaihopdong">
-                    <option value="0">Chính thức</option>              
-                    <option value="1">Thử việc</option>
-                </select>
+                    <label class="form-label" for="loaihopdong">Loại hợp đồng</label>
+
+                    <select class="form-control" id="loaihopdong" name="loaihopdong">
+                        <option value="0" {{ $hopdong->loaihopdong == 0 ? 'selected' : '' }}>thử việc</option> 
+                        <option value="1" {{ $hopdong->loaihopdong == 1 ? 'selected' : '' }}>Chính thức</option>              
+                    </select>
                 </div>
 
-                <div class="mb-2" style="max-width:250px">
-                <label class="form-label" for="ngaybd">Ngày bắt đầu hợp đồng</label>
-                    <input type="date" class="form-control @error('ngaybd') is-invalid @enderror"  id="ngaybd"
-                        name="ngaybd" required />
+                <div class="mb-2">
+                    <label class="form-label" for="ngaybd">Ngày bắt đầu hợp đồng</label>
+                        <input type="date" class="form-control" id="ngaybd" name="ngaybd" value="{{ $hopdong->ngaybd }}" required />
                 </div>
-                
-                
-                <div class="mb-2" style="max-width:250px">
-                <label class="form-label" for="ngaykt">Ngày kết thúc hợp đồng</label>
-                    <input type="date" class="form-control @error('ngaykt') is-invalid @enderror"  id="ngaykt"
-                        name="ngaykt" required />
 
+                <div class="mb-2">
+                    <label class="form-label" for="ngaykt">Ngày kết thúc hợp đồng</label>
+                        <input type="date" class="form-control" id="ngaykt" name="ngaykt" value="{{ $hopdong->ngaykt }}" required />
                 </div>
 
                 <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Thêm vào CSDL</button>

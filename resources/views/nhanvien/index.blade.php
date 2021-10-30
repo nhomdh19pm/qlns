@@ -17,11 +17,21 @@
         <li><a href="{{ route('dantoc') }}"><i class="fa fa-flag-usa"></i> <span>Dân Tộc</span></a></li>
         </ul>
     </li>
+    <li class="treeview">
+        <a href="#"><i class="fas fa-hospitals"></i> <span>Bảo Hiểm</span>
+        <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+        </span>
+        </a>
+        <ul class="treeview-menu">
+        <li><a href="{{ route('baohiem') }}"><i class="far fa-id-card"></i> <span>Bảo hiểm</span></a></li>
+        <li><a href="{{ route('loaibaohiem') }}"><i class="far fa-credit-card"></i> <span>Loại bảo hiểm</span></a></li>
+        </ul>
+    </li>
     <li><a href="{{ route('thuongphat') }}"><i class="fa fa-gift-card"></i> <span>Thưởng phạt</span></a></li>
     <li><a href="{{ route('hopdong') }}"><i class="fas fa-file-signature"></i> <span>Hợp đồng</span></a></li>
     <li><a href="{{ route('chucvu') }}"><i class="fa fa-users"></i> <span>Chức Vụ</span></a></li>
     <li><a href="{{ route('ungluong') }}"><i class="fad fa-money-check-edit-alt"></i> <span>Ứng lương</span></a></li>
-    <li><a href="{{ route('loaibaohiem') }}"><i class="fas fa-hospitals"></i> <span>Loại bảo hiểm</span></a></li>
     <li><a href="{{ route('mucluong') }}"><i class="fa fa-money-check-alt"></i> <span>Mức lương</span></a></li>
     <li><a href="{{ route('lichnghi') }}"><i class="fal fa-toggle-off"></i> <span>Lịch Nghỉ</span></a></li>
     <li><a href="{{ route('nghiviec') }}"><i class="fal fa-power-off"></i> <span>Nghỉ Việc</span></a></li>
@@ -44,9 +54,9 @@
             <!-- /.box-header -->
             <div class="box-body">
             <p><a href="{{ route('nhanvien.them') }}" class="btn btn-info"><i class="fas fa-plus"></i> Thêm mới</a></p>
-              <table id="example1" class="table table-bordered table-striped text-center">
+              <table id="example1" class="table table-bordered table-striped ">
                 <thead>
-                <tr class="text-center">
+                <tr class="">
                   <th >#</th>
                   <th >Họ và tên</th>
                   <th >Mức lương</th>
@@ -54,7 +64,7 @@
                   <th >Chuyên môn</th>
                   <th >Giới tính</th>
                   <th >Trạng thái</th>
-                  <th width="25%">Ảnh</th>
+                  <th class="text-center" width="25%" >Ảnh</th>
                   <th ></th>
                   <th ></th>
                 </tr>
@@ -73,7 +83,7 @@
                             <td>
                                 {{ ($value->trangthai == 1) ? 'Đang làm việc' : 'Treo giò'; }}
                             </td>
-                            <td style="max-width=300px">
+                            <td class="text-center">
                               <img width="20%" height="20%"src="../storage/images/{{ $value->photo_path }}" >
                             </td>                          
                             <td class="text-center"><a class="btn btn-outline-primary"href="{{ route('nhanvien.xoa',['id' => $value->id]) }}" onclick="confirm('Bạn có muốn xóa {{ $value->loaiphim }}')"><i class="fa fa-trash"></i> Xóa</a></td>

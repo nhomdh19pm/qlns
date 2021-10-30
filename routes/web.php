@@ -19,6 +19,7 @@ use App\Http\Controllers\MucLuongController;
 use App\Http\Controllers\LichNghiController;
 use App\Http\Controllers\ChucVuController;
 use App\Http\Controllers\NghiViecController;
+use App\Http\Controllers\BaoHiemController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -156,5 +157,12 @@ Route::middleware('auth')->prefix('quan-ly')->group(function () {
     Route::get('/nghiviec/sua/{id}',[NghiViecController::class,'getSua'])->name('nghiviec.sua');
     Route::post('/nghiviec/sua/{id}',[NghiViecController::class,'postSua'])->name('nghiviec.sua');
     Route::get('/nghiviec/xoa/{id}',[NghiViecController::class,'getXoa'])->name('nghiviec.xoa');
+
+    Route::get('/baohiem',[BaoHiemController::class,'getdanhsach'])->name('baohiem');
+    Route::get('/baohiem/them',[BaoHiemController::class,'getThem'])->name('baohiem.them');
+    Route::post('/baohiem/them',[BaoHiemController::class,'postThem'])->name('baohiem.them');
+    Route::get('/baohiem/sua/{id}',[BaoHiemController::class,'getSua'])->name('baohiem.sua');
+    Route::post('/baohiem/sua/{id}',[BaoHiemController::class,'postSua'])->name('baohiem.sua');
+    Route::get('/baohiem/xoa/{id}',[BaoHiemController::class,'getXoa'])->name('baohiem.xoa');
 });
 
