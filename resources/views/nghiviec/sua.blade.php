@@ -28,7 +28,7 @@
 @endsection
 @section('content-header')
 <h1>
-      <strong>Sửa Thưởng phạt</strong>
+      <strong>Sửa Nghỉ việc</strong>
       <small></small>
       </h1>
       <ol class="breadcrumb">
@@ -40,52 +40,48 @@
     <div class="card">
         <div class="card-header"></div>
         <div class="card-body">
-                <form action="{{ route('thuongphat.sua', ['id' => $thuongphat->id]) }}" method="post">
+                <form action="{{ route('nghiviec.sua', ['id' => $nghiviec->id]) }}" method="post">
                 @csrf
                 <div class="mb-2">
                     <label class="form-label" for="nhanvien_id">Tên nhân viên</label>
                     <select name="nhanvien_id" id="nhanvien_id" class="form-control @error('nhanvien_id')  is-invalid @enderror" 
                         required>
                         @foreach ($nhanvien as $value)
-                        <option value="{{ $value->id }}" {{ ($thuongphat->nhanvien_id == $value->id) ? 'selected' : '' }}>
+                        <option value="{{ $value->id }}" {{ ($nghiviec->nhanvien_id == $value->id) ? 'selected' : '' }}>
                                 {{ $value->hovaten }}
                             </option>
                         @endforeach
-                        @error('thuongphat')
+                        @error('nhanvien')
                             <div class="invalid-feedback"><strong>{{ $message }}</strong></div>
                         @enderror
                     </select>
                 </div>
 
-                <div class="mb-2">
-                    <label class="form-label" for="loai">Loại</label>
 
-                    <select class="form-control" id="loai" name="loai">
-                        <option value="0" {{ $thuongphat->loai == 0 ? 'selected' : '' }}>Thưởng</option> 
-                        <option value="1" {{ $thuongphat->loai == 1 ? 'selected' : '' }}>Phạt</option>              
-                    </select>
+                <div class="mb-2" style="width:250px">
+                    <label class="form-label" for="ngaybd">Ngày bắt đầu</label>
+                        <input type="text" class="form-control" id="ngaybd" name="ngaybd" value="{{ $nghiviec->ngaybd }}" required />
                 </div>
 
-                <div class="mb-2">
-                    <label class="form-label" for="sotien">Số tiền</label>
-                        <input type="text" class="form-control" id="sotien" name="sotien" value="{{ $thuongphat->sotien }}" required />
+                <div class="mb-2" style="width:250px">
+                    <label class="form-label" for="ngaykt">Ngày kết thúc</label>
+                        <input type="text" class="form-control" id="ngaykt" name="ngaykt" value="{{ $nghiviec->ngaykt }}" required />
                 </div>
+
 
                 <div class="mb-2">
                     <label class="form-label" for="lydo">lý do</label>
-                        <input type="text" class="form-control" id="lydo" name="lydo" value="{{ $thuongphat->lydo }}" required />
+                        <input type="text" class="form-control" id="lydo" name="lydo" value="{{ $nghiviec->lydo }}" required />
                 </div>
 
 
                 <div class="mb-2">
-                    <label class="form-label" for="thang">lý do</label>
-                        <input type="text" class="form-control" id="thang" name="thang" value="{{ $thuongphat->thang }}" required />
-                </div>
+                    <label class="form-label" for="huongluong">Hưởng lương</label>
 
-
-                <div class="mb-2">
-                    <label class="form-label" for="nam">lý do</label>
-                        <input type="text" class="form-control" id="nam" name="nam" value="{{ $thuongphat->nam }}" required />
+                    <select class="form-control" id="huongluong" name="huongluong">
+                        <option value="0" {{ $nghiviec->huongluong == 0 ? 'selected' : '' }}>Không</option> 
+                        <option value="1" {{ $nghiviec->huongluong == 1 ? 'selected' : '' }}>Có</option>              
+                    </select>
                 </div>
 
 

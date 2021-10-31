@@ -37,7 +37,7 @@
 @endsection
 @section('content-header')
 <h1>
-      <strong>Thêm Hợp đồng</strong>
+      <strong>Sửa Bảo hiểm</strong>
       <small></small>
       </h1>
       <ol class="breadcrumb">
@@ -49,40 +49,58 @@
     <div class="card">
         <div class="card-header"></div>
         <div class="card-body">
-                <form action="{{ route('hopdong.sua', ['id' => $hopdong->id]) }}" method="post">
+                <form action="{{ route('baohiem.sua', ['id' => $baohiem->id]) }}" method="post">
                 @csrf
                 <div class="mb-2">
                     <label class="form-label" for="nhanvien_id">Tên nhân viên</label>
                     <select name="nhanvien_id" id="nhanvien_id" class="form-control @error('nhanvien_id')  is-invalid @enderror" 
                         required>
                         @foreach ($nhanvien as $value)
-                        <option value="{{ $value->id }}" {{ ($hopdong->nhanvien_id == $value->id) ? 'selected' : '' }}>
+                        <option value="{{ $value->id }}" {{ ($baohiem->nhanvien_id == $value->id) ? 'selected' : '' }}>
                                 {{ $value->hovaten }}
                             </option>
                         @endforeach
-                        @error('hopdong')
+                        @error('baohiem')
                             <div class="invalid-feedback"><strong>{{ $message }}</strong></div>
                         @enderror
                     </select>
                 </div>
 
                 <div class="mb-2">
-                    <label class="form-label" for="loaihopdong">Loại hợp đồng</label>
-
-                    <select class="form-control" id="loaihopdong" name="loaihopdong">
-                        <option value="0" {{ $hopdong->loaihopdong == 0 ? 'selected' : '' }}>thử việc</option> 
-                        <option value="1" {{ $hopdong->loaihopdong == 1 ? 'selected' : '' }}>Chính thức</option>              
+                    <label class="form-label" for="loaibaohiem_id">Loại bảo hiểm</label>
+                    <select name="loaibaohiem_id" id="loaibaohiem_id" class="form-control @error('loaibaohiem_id')  is-invalid @enderror" 
+                        required>
+                        @foreach ($loaibaohiem as $value)
+                        <option value="{{ $value->id }}" {{ ($baohiem->loaibaohiem_id == $value->id) ? 'selected' : '' }}>
+                                {{ $value->tenbh }}
+                            </option>
+                        @endforeach
+                        @error('baohiem')
+                            <div class="invalid-feedback"><strong>{{ $message }}</strong></div>
+                        @enderror
                     </select>
                 </div>
 
                 <div class="mb-2">
-                    <label class="form-label" for="ngaybd">Ngày bắt đầu hợp đồng</label>
-                        <input type="date" class="form-control" id="ngaybd" name="ngaybd" value="{{ $hopdong->ngaybd }}" required />
+                    <label class="form-label" for="maso">Mã số thẻ</label>
+                        <input type="text" class="form-control" id="maso" name="maso" value="{{ $baohiem->maso }}" required />
                 </div>
 
                 <div class="mb-2">
-                    <label class="form-label" for="ngaykt">Ngày kết thúc hợp đồng</label>
-                        <input type="date" class="form-control" id="ngaykt" name="ngaykt" value="{{ $hopdong->ngaykt }}" required />
+                    <label class="form-label" for="noicap">Nơi cấp</label>
+                        <input type="text" class="form-control" id="noicap" name="noicap" value="{{ $baohiem->noicap }}" required />
+                </div>
+                <div style="width:150px" class="mb-2">
+                    <label class="form-label" for="ngaycap">Ngày cấp</label>
+                        <input type="date" class="form-control" id="ngaycap" name="ngaycap" value="{{ $baohiem->ngaycap }}" required />
+                </div>
+                <div style="width:150px" class="mb-2">
+                    <label class="form-label" for="ngayhethan">Ngày hết hạn</label>
+                        <input type="text" class="form-control" id="ngayhethan" name="ngayhethan" value="{{ $baohiem->ngayhethan }}" required />
+                </div>
+                <div class="mb-2">
+                    <label class="form-label" for="mucdong">Mức đóng</label>
+                        <input type="text" class="form-control" id="mucdong" name="mucdong" value="{{ $baohiem->mucdong }}" required />
                 </div>
 
                 <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Thêm vào CSDL</button>

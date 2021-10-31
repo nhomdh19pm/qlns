@@ -48,12 +48,12 @@
 @section('content')
  <div class="card">
  <div class="card-body">
- <form action="{{ route('phongban.sua', ['id' => $phongban->id]) }}" method="post">
+ <form action="{{ route('chucvu.sua', ['id' => $chucvu->id]) }}" method="post">
  @csrf
  
  <div class="mb-2">
- <label class="form-label" for="tenpb">Tên phòng ban</label>
- <input type="text" class="form-control" id="tenpb" name="tenpb" value="{{ $phongban->tenpb }}" required />
+ <label class="form-label" for="tencv">Tên Chức vụ</label>
+ <input type="text" class="form-control" id="tencv" name="tencv" value="{{ $chucvu->tencv }}" required />
  </div>
  
  <button type="submit" class="btn btn-primary"><i class="fa fa-plus"></i> Cập nhật</button>

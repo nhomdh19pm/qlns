@@ -49,6 +49,36 @@ class BaoHiemController extends Controller
         return redirect()->route('baohiem');
 
     } 
+
+    public function getSua($id){
+        $baohiem = baohiem::find($id);
+        $nhanvien = nhanvien::all();
+        $loaibaohiem = loaibaohiem::all(); 
+        return view('baohiem.sua',compact('baohiem','nhanvien','loaibaohiem'));
+    }
+    public function postSua( Request $request,$id)
+    {
+        // $request->validate([
+        //     'nhanvien_id' => ['required', Rule::exists('chucvu', 'id')],
+        //     'loai' => ['required'],
+        //     'lydo' => ['required'],
+        //     'sotien' => ['required'],
+        //     'thang' => ['required'],
+        //     'nam' => ['required'],
+        // ]);
+        $orm = baohiem::find($id);
+        $orm->nhanvien_id = $request->nhanvien_id;
+        $orm->loaibaohiem_id = $request->loaibaohiem_id;
+        $orm->maso = $request->maso;
+        $orm->noicap = $request->noicap;
+        $orm->ngaycap = $request->ngaycap;
+        $orm->ngayhethan = $request->ngayhethan;
+        $orm->mucdong = $request->mucdong;
+        $orm->save();
+        return redirect()->route('baohiem');
+
+    }
+
     public function getXoa($id)
     {
         $orm = baohiem::find($id);

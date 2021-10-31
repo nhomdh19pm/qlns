@@ -75,12 +75,12 @@
                     </select>
                 </div>
 
-                <div class="mb-2">
+                <div class="mb-2" style="width:250px">
                     <label class="form-label" for="ngaybd">Ngày bắt đầu hợp đồng</label>
                         <input type="date" class="form-control" id="ngaybd" name="ngaybd" value="{{ $hopdong->ngaybd }}" required />
                 </div>
 
-                <div class="mb-2">
+                <div class="mb-2" style="width:250px">
                     <label class="form-label" for="ngaykt">Ngày kết thúc hợp đồng</label>
                         <input type="date" class="form-control" id="ngaykt" name="ngaykt" value="{{ $hopdong->ngaykt }}" required />
                 </div>

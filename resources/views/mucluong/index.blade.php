@@ -30,8 +30,8 @@
     <li class=""><a href="{{ route('thuongphat') }}"><i class="fa fa-gift-card"></i> <span>Thưởng phạt</span></a></li>
     <li class=""><a href="{{ route('hopdong') }}"><i class="fas fa-file-signature"></i> <span>Hợp đồng</span></a></li>
     <li class=""><a href="{{ route('chucvu') }}"><i class="fa fa-users"></i> <span>Chức Vụ</span></a></li>
-    <li class="active"><a href="{{ route('ungluong') }}"><i class="fad fa-money-check-edit-alt"></i> <span>Ứng lương</span></a></li>
-    <li class=""><a href="{{ route('mucluong') }}"><i class="fa fa-money-check-alt"></i> <span>Mức lương</span></a></li>
+    <li class=""><a href="{{ route('ungluong') }}"><i class="fad fa-money-check-edit-alt"></i> <span>Ứng lương</span></a></li>
+    <li class="active"><a href="{{ route('mucluong') }}"><i class="fa fa-money-check-alt"></i> <span>Mức lương</span></a></li>
     <li class=""><a href="{{ route('lichnghi') }}"><i class="fal fa-toggle-off"></i> <span>Lịch Nghỉ</span></a></li>
     <li class=""><a href="{{ route('nghiviec') }}"><i class="fal fa-power-off"></i> <span>Nghỉ Việc</span></a></li>
 @endsection
@@ -71,9 +71,9 @@
                             <td>{{ $value->phongban->tenpb }}</td>
                             <td>{{ $value->chucvu->tencv }}</td>
                             <td>{{ number_format($value->luongcb) }} đ</td>
-                            <td>{{ $value->phucap }}</td>
+                            <td>{{ number_format($value->phucap) }} đ</td>
                             <td class="text-center" width="10%"><a class="btn btn-outline-primary"href="javascript:eventXoa('{{ route('mucluong.xoa',['id' => $value->id]) }}', '{{ $value->phongban->tenpb }} -> {{ $value->chucvu->tencv }}');"><i class="fa fa-trash"></i> Xóa</a></td>
-                            <td class="text-center" width="10%"><a class="btn btn-outline-danger" href="{{ route('bangcap.sua',['id' => $value->id]) }}"><i class="fa fa-edit"></i> Sửa</a></td>
+                            <td class="text-center" width="10%"><a class="btn btn-outline-danger" href="{{ route('mucluong.sua',['id' => $value->id]) }}"><i class="fa fa-edit"></i> Sửa</a></td>
                         </tr>
                     @endforeach
                 </tbody>

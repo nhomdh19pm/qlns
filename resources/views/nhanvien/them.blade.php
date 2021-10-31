@@ -232,7 +232,7 @@
                 <div class="mb-2">
                 <label class="form-label" for="trangthai">Tình trạng</label>
                 <select class="form-control" id="trangthai" name="trangthai">
-                    <option value="0">Treo giò</option>              
+                    <option value="0">Nghỉ việc</option>              
                     <option value="1">Đang làm việc</option>
                 </select>
                     @error('hopdong')

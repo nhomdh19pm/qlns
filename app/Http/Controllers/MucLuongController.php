@@ -43,6 +43,33 @@ class MucLuongController extends Controller
         return redirect()->route('mucluong');
 
     } 
+
+    public function getSua($id){
+        $mucluong = mucluong::find($id);
+        $chucvu = chucvu::all();
+        $phongban = phongban::all(); 
+        return view('mucluong.sua',compact('mucluong','chucvu','phongban'));
+    }
+    public function postSua( Request $request,$id)
+    {
+        // $request->validate([
+        //     'nhanvien_id' => ['required', Rule::exists('chucvu', 'id')],
+        //     'loai' => ['required'],
+        //     'lydo' => ['required'],
+        //     'sotien' => ['required'],
+        //     'thang' => ['required'],
+        //     'nam' => ['required'],
+        // ]);
+        $orm = mucluong::find($id);
+        $orm->chucvu_id = $request->chucvu_id;
+        $orm->phongban_id = $request->phongban_id;
+        $orm->luongcb = $request->luongcb;
+        $orm->phucap = $request->phucap;
+        $orm->save();
+        return redirect()->route('mucluong');
+
+    }
+
     public function getXoa($id)
     {
         $orm = mucluong::find($id);

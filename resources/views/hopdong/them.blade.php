@@ -72,7 +72,7 @@
                 </select>
                 </div>
 
-                <div class="mb-2" style="max-width:250px">
+                <div class="mb-2" style="width:250px">
                 <label class="form-label" for="ngaybd">Ngày bắt đầu hợp đồng</label>
                     <input type="date" class="form-control @error('ngaybd') is-invalid @enderror"  id="ngaybd"
                         name="ngaybd" required />
