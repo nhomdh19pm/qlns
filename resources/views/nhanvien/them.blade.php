@@ -240,7 +240,7 @@
                     @enderror
                 </div>
 
-                <div class="mb-2">
+                <div style="max-width:150px" class="mb-2">
                 <label class="form-label" for="ngaynghilam">Ngày nghỉ làm</label>
                     <input type="date" class="form-control @error('ngaynghilam') is-invalid @enderror"  id="ngaynghilam"
                         name="ngaynghilam" required />

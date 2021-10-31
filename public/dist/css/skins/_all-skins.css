@@ -1692,8 +1692,10 @@
   transition: border-left-color 0.3s ease;
 }
 .skin-purple-light .sidebar-menu > li.header {
-  color: #848484;
-  background: #f9fafc;
+  color: #ffffff;
+  font-weight: bold;
+  background: #605ca8;
+  font-size: initial;
 }
 .skin-purple-light .sidebar-menu > li > a {
   border-left: 3px solid transparent;
@@ -1703,6 +1705,7 @@
 .skin-purple-light .sidebar-menu > li.active > a {
   color: #000000;
   background: #f4f4f5;
+  border-left-color: #605ca8;
 }
 .skin-purple-light .sidebar-menu > li.active {
   border-left-color: #605ca8;

@@ -56,7 +56,7 @@
             <p><a href="{{ route('nhanvien.them') }}" class="btn btn-info"><i class="fas fa-plus"></i> Thêm mới</a></p>
               <table id="example1" class="table table-bordered table-striped ">
                 <thead>
-                <tr class="">
+                <tr class="align-middle">
                   <th >#</th>
                   <th >Họ và tên</th>
                   <th >Mức lương</th>
@@ -86,8 +86,8 @@
                             <td class="text-center">
                               <img width="20%" height="20%"src="../storage/images/{{ $value->photo_path }}" >
                             </td>                          
-                            <td class="text-center"><a class="btn btn-outline-primary"href="{{ route('nhanvien.xoa',['id' => $value->id]) }}" onclick="confirm('Bạn có muốn xóa {{ $value->loaiphim }}')"><i class="fa fa-trash"></i> Xóa</a></td>
-                            <td class="text-center"><a class="btn btn-outline-danger" href="{{ route('nhanvien.sua',['id' => $value->id]) }}"><i class="fa fa-edit"></i> Sửa</a></td>
+                            <td class="text-center" width="10%"><a class="btn btn-outline-primary"href="javascript:eventXoa('{{ route('nhanvien.xoa',['id' => $value->id]) }}', '{{ $value->hovaten }}');"><i class="fa fa-trash"></i> Xóa</a></td>
+                            <td class="text-center" width="10%"><a class="btn btn-outline-danger" href="{{ route('nhanvien.sua',['id' => $value->id]) }}"><i class="fa fa-edit"></i> Sửa</a></td>
                         </tr>
                     @endforeach
                 </tbody>
@@ -97,4 +97,13 @@
             </div>
             <!-- /.box-body -->
           </div>
+<script>
+function eventXoa(url, ten)
+{
+  let check  = confirm('Bạn có muốn xóa "' + ten + '"');
+
+  if (check)
+    window.location.href= url;
+}
+</script>
 @endsection

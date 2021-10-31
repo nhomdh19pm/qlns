@@ -254,7 +254,7 @@ a:focus {
   float: left;
   background-color: transparent;
   background-image: none;
-  padding: 15px 15px;
+  padding: 20px 15px;
   font-family: fontAwesome;
 }
 .main-header .sidebar-toggle:before {
@@ -317,6 +317,7 @@ a:focus {
 .content-header > h1 {
   margin: 0;
   font-size: 24px;
+  font-family: Garamond, serif;
 }
 .content-header > h1 > small {
   font-size: 15px;
@@ -1159,7 +1160,8 @@ a:focus {
   clear: both;
 }
 .navbar-nav > .user-menu > .dropdown-menu > .user-footer .btn-default {
-  color: #666666;
+  color: #605ca8;
+  border-color: #605ca8;
 }
 @media (max-width: 991px) {
   .navbar-nav > .user-menu > .dropdown-menu > .user-footer .btn-default:hover {
@@ -1263,12 +1265,12 @@ a:focus {
  * ---------------
  */
 .form-control {
-  border-radius: 30px;
-  box-shadow: none;
+  border-radius: 8px;
+  box-shadow: 0 .4rem 1rem rgba(0,0,0,.15)!important;
   border-color: #d2d6de;
 }
 .form-control:focus {
-  border-color: #3c8dbc;
+  border-color: #c9b6e9;
   box-shadow: none;
 }
 .form-control::-moz-placeholder,
@@ -2712,6 +2714,7 @@ a:focus {
 .table-bordered > tbody > tr > td,
 .table-bordered > tfoot > tr > td {
   border: 2px solid #f4f4f4;
+  vertical-align:middle;
 }
 .table-bordered > thead > tr > th,
 .table-bordered > thead > tr > td {
@@ -2722,9 +2725,13 @@ a:focus {
 .table.no-border th {
   border: 0;
 }
+.align-middle {
+  vertical-align: middle!important;
+}
 
 .table-bordered > tbody > tr > td > img {
     transition: transform .5s;
+    border-radius: 10px;
 }
 
 .table-bordered > tbody > tr > td > img:hover {

@@ -54,7 +54,7 @@
             <p><a href="{{ route('mucluong.them') }}" class="btn btn-info"><i class="fas fa-plus"></i> Thêm mới</a></p>
               <table id="example1" class="table table-bordered table-striped ">
                 <thead>
-                <tr class="text-center">
+                <tr class="">
                 <th >#</th>
                 <th >Phòng ban</th>
                 <th >Chức vụ</th>

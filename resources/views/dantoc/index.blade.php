@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('active')
-    <li  class="active"><a href="{{ route('nhanvien') }}"><i class="fa fa-id-card"></i> <span>Nhân Viên</span></a></li>
+    <li  class=""><a href="{{ route('nhanvien') }}"><i class="fa fa-id-card"></i> <span>Nhân Viên</span></a></li>
     <li class="treeview active">
         <a href="#"><i class="fa fa-info-circle"></i> <span>Thông Tin</span>
         <span class="pull-right-container">
@@ -52,9 +52,9 @@
             <!-- /.box-header -->
             <div class="box-body">
             <p><a href="{{ route('dantoc.them') }}" class="btn btn-info"><i class="fas fa-plus"></i> Thêm mới</a></p>
-              <table id="example1" class="table table-bordered table-striped text-center">
+              <table id="example1" class="table table-bordered table-striped ">
                 <thead>
-                <tr class="text-center">
+                <tr class="">
                         <th >#</th>
                         <th >Tên Dân tộc</th>
                         <th ></th>
@@ -66,10 +66,10 @@
                         <tr class="">
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $value->tendt }}</td>
-                            <td class="text-center" width="10%"><a class="btn btn-outline-primary"href="{{ route('dantoc.xoa',['id' => $value->id]) }}" onclick="confirm('Bạn có muốn xóa {{ $value->loaiphim }}')"><i class="fa fa-trash"></i> Xóa</a></td>
+                            <td class="text-center" width="10%"><a class="btn btn-outline-primary"href="javascript:eventXoa('{{ route('dantoc.xoa',['id' => $value->id]) }}', '{{ $value->tendt }}');"><i class="fa fa-trash"></i> Xóa</a></td>
                             <td class="text-center" width="10%"><a class="btn btn-outline-danger" href="{{ route('dantoc.sua',['id' => $value->id]) }}"><i class="fa fa-edit"></i> Sửa</a></td>
                         </tr>
-                    @endforeach
+                @endforeach
                 </tbody>
                 <tfoot>
                 </tfoot>
@@ -77,4 +77,13 @@
             </div>
             <!-- /.box-body -->
           </div>
+<script>
+function eventXoa(url, ten)
+{
+  let check  = confirm('Bạn có muốn xóa "' + ten + '"');
+
+  if (check)
+    window.location.href= url;
+}
+</script>        
 @endsection

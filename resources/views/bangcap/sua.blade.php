@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('active')
-    <li  class="active"><a href="{{ route('nhanvien') }}"><i class="fa fa-id-card"></i> <span>Nhân Viên</span></a></li>
+    <li  class=""><a href="{{ route('nhanvien') }}"><i class="fa fa-id-card"></i> <span>Nhân Viên</span></a></li>
     <li class="treeview active">
         <a href="#"><i class="fa fa-info-circle"></i> <span>Thông Tin</span>
         <span class="pull-right-container">

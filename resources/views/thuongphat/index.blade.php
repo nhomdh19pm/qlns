@@ -78,7 +78,7 @@
                             <td>{{ $value->lydo }}</td>
                             <td>{{ $value->thang }}</td>
                             <td>{{ $value->nam }}</td>
-                            <td class="text-center" width="10%"><a class="btn btn-outline-primary"href="{{ route('thuongphat.xoa',['id' => $value->id]) }}" onclick="confirm('Bạn có muốn xóa {{ $value->nhanvien->hovaten }}')"><i class="fa fa-trash"></i> Xóa</a></td>
+                            <td class="text-center" width="10%"><a class="btn btn-outline-primary"href="javascript:eventXoa('{{ route('thuongphat.xoa',['id' => $value->id]) }}', '{{ $value->nhanvien->hovaten }}');"><i class="fa fa-trash"></i> Xóa</a></td>
                             <td class="text-center" width="10%"><a class="btn btn-outline-danger" href="{{ route('thuongphat.sua',['id' => $value->id]) }}"><i class="fa fa-edit"></i> Sửa</a></td>
                         </tr>
                     @endforeach
@@ -89,4 +89,13 @@
             </div>
             <!-- /.box-body -->
           </div>
+<script>
+function eventXoa(url, ten)
+{
+  let check  = confirm('Bạn có muốn xóa "' + ten + '"');
+
+  if (check)
+    window.location.href= url;
+}
+</script>
 @endsection

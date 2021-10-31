@@ -52,24 +52,24 @@
             <!-- /.box-header -->
             <div class="box-body">
             <p><a href="{{ route('loaibaohiem.them') }}" class="btn btn-info"><i class="fas fa-plus"></i> Thêm mới</a></p>
-              <table id="example1" class="table table-bordered table-striped text-center">
+              <table id="example1" class="table table-bordered table-striped ">
                 <thead>
-                <tr class="text-center">
-                        <th >#</th>
-                        <th >Tên Loại bảo hiểm</th>
-                        <th ></th>
-                        <th ></th>
+                <tr class="">
+                  <th >#</th>
+                  <th >Tên Loại bảo hiểm</th>
+                  <th ></th>
+                  <th ></th>
                 </tr>
                 </thead>
                 <tbody>
                 @foreach ($loaibaohiem as $value)
-                        <tr class="">
-                            <td>{{ $loop->iteration }}</td>
-                            <td>{{ $value->tenbh }}</td>
-                            <td class="text-center"><a class="btn btn-outline-primary"href="{{ route('loaibaohiem.xoa',['id' => $value->id]) }}" onclick="confirm('Bạn có muốn xóa {{ $value->loaiphim }}')"><i class="fa fa-trash"></i> Xóa</a></td>
-                            <td class="text-center"><a class="btn btn-outline-danger" href="{{ route('loaibaohiem.sua',['id' => $value->id]) }}"><i class="fa fa-edit"></i> Sửa</a></td>
-                        </tr>
-                    @endforeach
+                <tr class="">
+                    <td>{{ $loop->iteration }}</td>
+                    <td>{{ $value->tenbh }}</td>
+                    <td class="text-center" width="10%"><a class="btn btn-outline-primary"href="javascript:eventXoa('{{ route('loaibaohiem.xoa',['id' => $value->id]) }}', '{{ $value->tenbh }}');"><i class="fa fa-trash"></i> Xóa</a></td>
+                    <td class="text-center" width="10%"><a class="btn btn-outline-danger" href="{{ route('loaibaohiem.sua',['id' => $value->id]) }}"><i class="fa fa-edit"></i> Sửa</a></td>
+                </tr>
+                @endforeach
                 </tbody>
                 <tfoot>
                 </tfoot>
@@ -77,4 +77,13 @@
             </div>
             <!-- /.box-body -->
           </div>
+<script>
+function eventXoa(url, ten)
+{
+  let check  = confirm('Bạn có muốn xóa "' + ten + '"');
+
+  if (check)
+    window.location.href= url;
+}
+</script>        
 @endsection

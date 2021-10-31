@@ -33,7 +33,7 @@
 				<form class="login100-form validate-form" method="post" action="{{ route('login') }}">
 				@csrf
 					<span class="login100-form-title">
-						Login on Company
+						Đăng nhập vào DH19PM
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
@@ -64,11 +64,11 @@
 					
 					<div class="container-login100-form-btn">
 						<button type="submit" class="login100-form-btn">
-							Login
+							Đăng nhập
 						</button>
 					</div>
 
-					<div class="text-center p-t-12">
+					<!-- <div class="text-center p-t-12">
 						<span class="txt1">
 							Forgot
 						</span>
@@ -78,11 +78,11 @@
 						<a class="txt2" href="#">
 							Password?
 						</a>
-					</div>
+					</div> -->
 
 					<div class="text-center p-t-136">
-						<a class="txt2" href="#">
-							Create your Account
+						<a class="txt2" href="{{ route('register') }}">
+							Đăng kí tài khoản
 							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
 						</a>
 					</div>

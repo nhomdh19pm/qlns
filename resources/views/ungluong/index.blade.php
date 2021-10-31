@@ -37,8 +37,8 @@
 @endsection
 @section('content-header')
 <h1>
-      Bảng ứng lương
-        <small>Quản lý ứng lương </small>
+      <strong>Quản lý Ứng lương</strong>
+      <small></small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i>Trang Chủ</a></li>
@@ -48,14 +48,13 @@
 @section('content')
 <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Ứng lương</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
             <p><a href="{{ route('ungluong.them') }}" class="btn btn-info"><i class="fas fa-plus"></i> Thêm mới</a></p>
-              <table id="example1" class="table table-bordered table-striped text-center">
+              <table id="example1" class="table table-bordered table-striped ">
                 <thead>
-                <tr class="text-center">
+                <tr class="">
                 <th >#</th>
                 <th >Họ và tên</th>
                 <th >Số tiền</th>
@@ -75,7 +74,7 @@
                             <td>{{ $value->lydo }}</td>
                             <td>{{ $value->thang }}</td>
                             <td>{{ $value->nam }}</td>
-                            <td class="text-center" width="10%"><a class="btn btn-outline-primary"href="{{ route('ungluong.xoa',['id' => $value->id]) }}" onclick="confirm('Bạn có muốn xóa {{ $value->nhanvien->hovaten }}')"><i class="fa fa-trash"></i> Xóa</a></td>
+                            <td class="text-center" width="10%"><a class="btn btn-outline-primary"href="javascript:eventXoa('{{ route('ungluong.xoa',['id' => $value->id]) }}', '{{ $value->nhanvien->hovaten }}');"><i class="fa fa-trash"></i> Xóa</a></td>
                             <td class="text-center" width="10%"><a class="btn btn-outline-danger" href="{{ route('ungluong.sua',['id' => $value->id]) }}"><i class="fa fa-edit"></i> Sửa</a></td>
                         </tr>
                     @endforeach
@@ -86,4 +85,13 @@
             </div>
             <!-- /.box-body -->
           </div>
+<script>
+function eventXoa(url, ten)
+{
+  let check  = confirm('Bạn có muốn xóa "' + ten + '"');
+
+  if (check)
+    window.location.href= url;
+}
+</script>
 @endsection

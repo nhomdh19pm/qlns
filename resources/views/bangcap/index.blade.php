@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('active')
-    <li  class="active"><a href="{{ route('nhanvien') }}"><i class="fa fa-id-card"></i> <span>Nhân Viên</span></a></li>
+    <li  class=""><a href="{{ route('nhanvien') }}"><i class="fa fa-id-card"></i> <span>Nhân Viên</span></a></li>
     <li class="treeview active">
         <a href="#"><i class="fa fa-info-circle"></i> <span>Thông Tin</span>
         <span class="pull-right-container">
@@ -52,9 +52,9 @@
             <!-- /.box-header -->
             <div class="box-body">
             <p><a href="{{ route('bangcap.them') }}" class="btn btn-info"><i class="fas fa-plus"></i> Thêm mới</a></p>
-              <table id="example1" class="table table-bordered table-striped text-center">
+              <table id="example1" class="table table-bordered table-striped ">
                 <thead>
-                <tr class="text-center">
+                <tr class="">
                         <th >#</th>
                         <th >Tên Bằng Cấp</th>
                         <th ></th>
