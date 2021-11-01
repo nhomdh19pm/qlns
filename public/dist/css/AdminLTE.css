@@ -1162,7 +1162,10 @@ a:focus {
 .navbar-nav > .user-menu > .dropdown-menu > .user-footer .btn-default {
   color: #605ca8;
   border-color: #605ca8;
+  border-radius: 10px;
 }
+
+
 @media (max-width: 991px) {
   .navbar-nav > .user-menu > .dropdown-menu > .user-footer .btn-default:hover {
     background-color: #f9f9f9;

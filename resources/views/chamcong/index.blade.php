@@ -29,41 +29,71 @@
     </li>
     <li class=""><a href="{{ route('thuongphat') }}"><i class="fa fa-gift-card"></i> <span>Thưởng phạt</span></a></li>
     <li class=""><a href="{{ route('hopdong') }}"><i class="fas fa-file-signature"></i> <span>Hợp đồng</span></a></li>
-    <li class="active"><a href="{{ route('chucvu') }}"><i class="fa fa-users"></i> <span>Chức Vụ</span></a></li>
+    <li class=""><a href="{{ route('chucvu') }}"><i class="fa fa-users"></i> <span>Chức Vụ</span></a></li>
     <li class=""><a href="{{ route('ungluong') }}"><i class="fad fa-money-check-edit-alt"></i> <span>Ứng lương</span></a></li>
     <li class=""><a href="{{ route('mucluong') }}"><i class="fa fa-money-check-alt"></i> <span>Mức lương</span></a></li>
     <li class=""><a href="{{ route('lichnghi') }}"><i class="fal fa-toggle-off"></i> <span>Lịch Nghỉ</span></a></li>
     <li class=""><a href="{{ route('nghiviec') }}"><i class="fal fa-power-off"></i> <span>Nghỉ Việc</span></a></li>
-    <li><a href="{{ route('chamcong') }}"><i class="fad fa-calendar-alt"></i> <span>Chấm Công</span></a></li>
+    <li class="active"><a href="{{ route('chamcong') }}"><i class="fal fa-power-off"></i> <span>Chấm Công</span></a></li>
 @endsection
 @section('content-header')
 <h1>
-      <strong>Quản lý Chức vụ</strong>
+      <strong>Quản lý Chấm công</strong>
       <small></small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i>Trang Chủ</a></li>
-        <li class="active">Chức vụ</li>
+        <li class="active">Chấm công</li>
       </ol>
 @endsection
 @section('content')
+<div class="box">
+            <div class="box-header">
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+            <!-- <p><a href="{{ route('chamcong.them') }}" class="btn btn-info"><i class="fas fa-plus"></i> Thêm mới</a></p> -->
+            <form action="{{ route('bangchamcong') }}" method="post">
+            @csrf
+            <div class="mb-2" style="width:250px">
+              <input type="date" class="form-control is-invalid"  id="ngaycongchuan" name="ngaycongchuan" required />
+            </div>
+              <table id="example1" class="table table-bordered table-striped ">
+                <thead>
+                <tr >
+                <th >#</th>
+                <th >Họ và tên</th>
+                <th class="text-center">Chấm công</th>
+                </tr>
+                </thead>
+                <tbody>
+                
+                  @foreach ($chamcong as $value)
+                  <tr >
+                      <td>{{ $loop->iteration }}</td>
+                      <td>{{ $value->hovaten }}</td> 
+                      <td class="text-center">
+                      <input class="form-check-input" type="checkbox" name="id_{{ $value->id }}" id="id_{{ $value->id }}">
+                      </td>                          
+                  </tr>
+                  @endforeach
+                </tbody>
+                <tfoot>
+                </tfoot>
+              </table>
+              <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Thêm vào CSDL</button>
+              </form>
+              
+            </div>
+            <!-- /.box-body -->
+          </div>
+<script>
+function eventXoa(url, ten)
+{
+  let check  = confirm('Bạn có muốn xóa "' + ten + '"');
 
-    <div class="card">
-        <div class="card-header"></div>
-        <div class="card-body">
-            <form action="{{ route('chucvu.them') }}" method="post">
-                @csrf
-
-                <div class="mb-2">
-                    <input type="text" class="form-control @error('tencv') is-invalid @enderror"  id="tencv"
-                        name="tencv" required />
-                    @error('chucvu')
-                        <div class="invalid-feedback"><strong>{{ $message }}</strong></div>
-                    @enderror
-                </div>
-
-                <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Thêm vào CSDL</button>
-            </form>
-        </div>
-    </div>
+  if (check)
+    window.location.href= url;
+}
+</script>        
 @endsection

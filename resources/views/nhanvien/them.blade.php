@@ -24,6 +24,7 @@
     <li><a href="{{ route('mucluong') }}"><i class="fa fa-money-check-alt"></i> <span>Mức lương</span></a></li>
     <li><a href="{{ route('lichnghi') }}"><i class="fal fa-toggle-off"></i> <span>Lịch Nghỉ</span></a></li>
     <li><a href="{{ route('nghiviec') }}"><i class="fal fa-power-off"></i> <span>Nghỉ Việc</span></a></li>
+    <li><a href="{{ route('chamcong') }}"><i class="fad fa-calendar-alt"></i> <span>Chấm Công</span></a></li>
 
 @endsection
 @section('content-header')
@@ -49,7 +50,7 @@
                         <option  value="">--Chọn--</option>
                         @foreach ($mucluong as $value)
                             <option value="{{ $value->id }}">
-                               {{  number_format($value->luongcb) }}đ
+                               {{  number_format($value->luongcb) }}
                             </option>
                         @endforeach
                         @error('nhanvien')

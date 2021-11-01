@@ -35,6 +35,7 @@
     <li><a href="{{ route('mucluong') }}"><i class="fa fa-money-check-alt"></i> <span>Mức lương</span></a></li>
     <li><a href="{{ route('lichnghi') }}"><i class="fal fa-toggle-off"></i> <span>Lịch Nghỉ</span></a></li>
     <li><a href="{{ route('nghiviec') }}"><i class="fal fa-power-off"></i> <span>Nghỉ Việc</span></a></li>
+    <li><a href="{{ route('chamcong') }}"><i class="fad fa-calendar-alt"></i> <span>Chấm Công</span></a></li>
 
 @endsection
 @section('content-header')
@@ -148,7 +149,7 @@
                 
                 <div class="mb-2" style="width:250px">
                     <label class="form-label" for="ngaysinh">Ngày sinh</label>
-                        <input type="text" class="form-control" id="ngaysinh" name="ngaysinh" value="{{ $nhanvien->ngaysinh }}" required />
+                        <input type="date" class="form-control" id="ngaysinh" name="ngaysinh" value="{{ $nhanvien->ngaysinh }}" required />
                 </div>
 
                 <div class="mb-2">
@@ -178,6 +179,21 @@
                         <option value="0" {{ $nhanvien->trangthai == 0 ? 'selected' : '' }}>Nghỉ việc</option> 
                         <option value="1" {{ $nhanvien->trangthai == 1 ? 'selected' : '' }}>Đang làm việc</option>              
                     </select>
+                </div>
+
+                <div class="mb-2" style="width:250px">
+                    <label class="form-label" for="ngaynghilam">Ngày nghỉ làm</label>
+                        <input type="date" class="form-control" id="ngaynghilam" name="ngaynghilam" value="{{ $nhanvien->ngaynghilam }}" required />
+                </div>
+
+                <div class="mb-2">
+                    <label class="form-label" for="hesoluong">Hệ số lương</label>
+                        <input type="text" class="form-control" id="hesoluong" name="hesoluong" value="{{ $nhanvien->hesoluong }}" required />
+                </div>
+
+                <div class="mb-2">
+                    <label class="form-label" for="photo_path">Hệ số lương</label>
+                        <input type="file" id="photo_path" name="photo_path" value="{{ $nhanvien->photo_path }}" required />
                 </div>
 
                 <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Thêm vào CSDL</button>

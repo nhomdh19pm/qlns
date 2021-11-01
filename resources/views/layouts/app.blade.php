@@ -93,7 +93,7 @@
                 <div class="pull-right" style="margin-right: 85px;">
                   <form action="{{ route('logout') }}" method="POST">
                 @csrf
-                    <button class="btn btn-default btn-flat">Đăng xuất</button>
+                    <button class="btn btn-default btn-flat"><i class="fas fa-power-off"></i> Đăng xuất</button>
                   </form>
                 </div>
               </li>

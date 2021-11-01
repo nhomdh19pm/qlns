@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class ChamCong extends Model
 {
     use HasFactory;
-    use SoftDeletes;
 
     protected $table = 'chamcong';
 
@@ -16,4 +15,5 @@ class ChamCong extends Model
     {
         return $this->belongsTo(NhanVien::class, 'nhanvien_id', 'id');
     }
+    
 }

@@ -6,39 +6,49 @@ use App\Models\ChamCong;
 use App\Models\NhanVien;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\Request;
+use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\URL;
 use Inertia\Inertia;
 
 class ChamCongController extends Controller
 {
-    public function index()
-    {
-        return '';
+    public function getDanhSach(){
+        //$chamcong = chamcong::all();
+        $chamcong = nhanvien::all();
+        return view('chamcong.index',compact('chamcong'));
     }
-
-    public function create(NhanVien $nhanvien)
-    {
-        return Inertia::render('ChamCong/Create', [
-            'nhanvien' => [
-                'id' => $nhanvien->id,
-                'hovaten' => $nhanvien->hovaten
-            ]
-        ]);
+    public function getThem(){
+        
+        $nhanvien = nhanvien::all();
+        return view('chamcong.them', compact('nhanvien'));
     }
-
-    public function store(NhanVien $nhanvien)
-    {
-        Request::validate([
-            'created_at' => ['required', 'date']
-        ]);
-
-        (new ChamCong())->create([
-            'nhanvien_id' => $nhanvien->id,
-            'created_at' => Request::get('created_at')
-        ]);
-
-        return Redirect::back()->with('success', 'Đã chấm công.');
+    public function postThem(Request $request){
+        // $this->validate($request, [
+        //     'tenbc' => ['required', 'max:255', 'unique:bangcap'],
+        //     ]);
+        $orm = new chamcong();
+        $orm->nhanvien_id = $request->nhanvien_id;
+        $orm->save();
+        return redirect()->route('chamcong');
+    }
+    // public function getSua($id){
+    //     $bangcap = bangcap::find($id);
+    //     return view('bangcap.sua',compact('bangcap'));
+    // }
+    // public function postSua( Request $request,$id)
+    // {
+    //     $this->validate($request, [
+    //         'tenbc' => ['required', 'max:255', 'unique:bangcap'],
+    //     ]);
+    //     $orm = bangcap::find($id);
+    //     $orm->tenbc = $request->tenbc;
+    //     $orm->save();
+    //     return redirect()->route('bangcap');
+    // }
+    public function getXoa($id){
+        $orm = bangcap::find($id);
+        $orm->delete();
+        return redirect()->route('bangcap');
     }
 }
