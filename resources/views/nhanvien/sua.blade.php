@@ -34,7 +34,6 @@
     <li><a href="{{ route('ungluong') }}"><i class="fad fa-money-check-edit-alt"></i> <span>Ứng lương</span></a></li>
     <li><a href="{{ route('mucluong') }}"><i class="fa fa-money-check-alt"></i> <span>Mức lương</span></a></li>
     <li><a href="{{ route('lichnghi') }}"><i class="fal fa-toggle-off"></i> <span>Lịch Nghỉ</span></a></li>
-    <li><a href="{{ route('nghiviec') }}"><i class="fal fa-power-off"></i> <span>Nghỉ Việc</span></a></li>
     <li><a href="{{ route('chamcong') }}"><i class="fad fa-calendar-alt"></i> <span>Chấm Công</span></a></li>
 
 @endsection
@@ -192,8 +191,17 @@
                 </div>
 
                 <div class="mb-2">
-                    <label class="form-label" for="photo_path">Hệ số lương</label>
-                        <input type="file" id="photo_path" name="photo_path" value="{{ $nhanvien->photo_path }}" required />
+                    <label class="form-label mb-2" for="photo_path">Hình ảnh Nhân viên</label>
+                    @if (!empty($nhanvien->photo_path))
+                        <img class="d-block rounded mb-2 rounded" style="border-radius: 10px;" src="http://127.0.0.1/qlns/storage/images/{{ $nhanvien->photo_path }}" width="100" />
+                           
+                        <span class="d-block small text-danger">Bỏ trống nếu muốn giữ nguyên ảnh cũ.</span>
+                    @endif
+                    <input type="file" class="form-control @error('photo_path') is-invalid @enderror" id="photo_path"
+                        name="photo_path" value="{{ $nhanvien->photo_path }}" />
+                    @error('photo_path')
+                        <div class="invalid-feedback"><strong>{{ $message }}</strong></div>
+                    @enderror 
                 </div>
 
                 <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Thêm vào CSDL</button>

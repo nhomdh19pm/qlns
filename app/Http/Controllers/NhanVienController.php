@@ -122,7 +122,7 @@ class NhanVienController extends Controller
             $extension = $file->getClientOriginalExtension();
             $filename = time().'.'.$extension;
             $file->move('storage/images/', $filename);
-            $orm->photo_path = $filename;
+            $orm->hinhanh = $filename;
         }
         $orm->save();
         return redirect()->route('nhanvien');
