@@ -186,6 +186,9 @@ a:focus {
   display: block;
   margin-top: 5px;
 }
+.form-label{
+  color: #000;
+}
 /*
  * Component: Main Header
  * ----------------------
@@ -338,9 +341,10 @@ a:focus {
   border-radius: 2px;
 }
 .content-header > .breadcrumb > li > a {
-  color: #444;
+  color: #605ca8;
   text-decoration: none;
   display: inline-block;
+  
 }
 .content-header > .breadcrumb > li > a > .fa,
 .content-header > .breadcrumb > li > a > .glyphicon,
@@ -348,7 +352,8 @@ a:focus {
   margin-right: 5px;
 }
 .content-header > .breadcrumb > li + li:before {
-  content: '>';
+  font-size: large;
+  content: '/';
   color: #000;
 }
 @media (max-width: 991px) {

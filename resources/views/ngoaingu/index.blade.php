@@ -41,8 +41,8 @@
       <small></small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i>Trang Chủ</a></li>
-        <li class="active">Ngoại ngữ</li>
+        <li><a href="#"><i class="fas "> Trang Chủ</i>
+        <li class="fas active">Ngoại ngữ</li>
       </ol>
 @endsection
 @section('content')

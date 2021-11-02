@@ -43,7 +43,7 @@
       <small></small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fas fa-user-shield">Trang Chủ</i>
+        <li><a href="#"><i class="fas ">Trang Chủ</i>
         <li class="fas active">Nhân viên</li>
       </ol>
 @endsection
