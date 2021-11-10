@@ -33,4 +33,6 @@ class BangChamCongController extends Controller
         return redirect()->route('chamcong');
     }
 
+    //luongchinhthuc = (luongcb * heso + (luongcb + phucap))/ngaycongchuan*ngaycongthucte - ungtien (+-) thuongphat - baohiem
+
 }

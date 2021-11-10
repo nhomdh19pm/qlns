@@ -1545,15 +1545,16 @@
 .skin-purple .wrapper,
 .skin-purple .main-sidebar,
 .skin-purple .left-side {
-  background-color: #222d32;
+  background-color: #0e1010;
 }
 .skin-purple .user-panel > .info,
 .skin-purple .user-panel > .info > a {
   color: #fff;
 }
 .skin-purple .sidebar-menu > li.header {
-  color: #4b646f;
-  background: #1a2226;
+  color: #ffffff;
+  background: #605ca8;
+  font-size: 15px;
 }
 .skin-purple .sidebar-menu > li > a {
   border-left: 3px solid transparent;
