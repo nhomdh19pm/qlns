@@ -1590,7 +1590,7 @@
 .skin-purple .sidebar-form input[type="text"],
 .skin-purple .sidebar-form .btn {
   box-shadow: none;
-  background-color: #374850;
+  background-color: #fff;
   border: 1px solid transparent;
   height: 35px;
 }

@@ -51,39 +51,37 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-            <!-- <p><a href="{{ route('chamcong.them') }}" class="btn btn-info"><i class="fas fa-plus"></i> Thêm mới</a></p> -->
-            <form action="{{ route('bangchamcong') }}" method="post">
-            @csrf
-            <div class="mb-2" style="width:250px">
-              <input type="date" class="form-control is-invalid"  id="ngaycongchuan" name="ngaycongchuan" required />
-            </div>
+            <p><a href="{{ route('chamcong.them') }}" class="btn btn-info"><i class="fas fa-plus"></i> Thêm mới</a></p>
               <table id="example1" class="table table-bordered table-striped ">
                 <thead>
-                <tr >
+                <tr>
                 <th >#</th>
                 <th >Họ và tên</th>
-                <th class="text-center">Chấm công</th>
+                <th >Số ngày công</th>
+                <th >Tháng</th>
+                <th >Năm</th>
+                <th ></th>
+                <th ></th>
                 </tr>
                 </thead>
                 <tbody>
-                
-                  @foreach ($chamcong as $value)
-                  <tr >
-                      <td>{{ $loop->iteration }}</td>
-                      <td>{{ $value->hovaten }}</td> 
-                      <td class="text-center">
-                      <input class="form-check-input" type="checkbox" name="id_{{ $value->id }}" id="id_{{ $value->id }}">
-                      </td>                          
-                  </tr>
-                  @endforeach
+                @foreach ($chamcong as $value)
+                <tr >
+                            <td>{{ $loop->iteration }}</td>
+                            <td>{{ $value->nhanvien->hovaten }}</td>
+                            <td>{{ $value->songaycong }}</td>
+                            <td>{{ $value->thang }}</td>  
+                            <td>{{ $value->nam }}</td>
+                            <td class="text-center" width="10%"><a class="btn btn-outline-primary"href="javascript:eventXoa('{{ route('chamcong.xoa',['id' => $value->id]) }}', '{{ $value->nhanvien->hovaten }}');"><i class="fa fa-trash"></i> Xóa</a></td>
+                            <td class="text-center" width="10%"><a class="btn btn-outline-danger" href="{{ route('chamcong.sua',['id' => $value->id]) }}"><i class="fa fa-edit"></i> Sửa</a></td>
+                        </tr>
+                    @endforeach
                 </tbody>
                 <tfoot>
                 </tfoot>
               </table>
-              <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Thêm vào CSDL</button>
-              </form>
-              
             </div>
+            <!-- /.box-body -->
             <!-- /.box-body -->
           </div>
 <script>
