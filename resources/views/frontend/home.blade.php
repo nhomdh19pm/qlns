@@ -34,6 +34,7 @@
     <li><a href="{{ route('ungluong') }}"><i class="fad fa-money-check-edit-alt"></i> <span>Ứng lương</span></a></li>
     <li><a href="{{ route('mucluong') }}"><i class="fa fa-money-check-alt"></i> <span>Mức lương</span></a></li>
     <li><a href="{{ route('chamcong') }}"><i class="fad fa-calendar-alt"></i> <span>Chấm Công</span></a></li>
+    <li><a href="{{ route('nhanluong') }}"><i class="fad fa-calendar-alt"></i> <span>Nhận Lương</span></a></li>
 @endsection
 @section('content')
 <div class="container">
