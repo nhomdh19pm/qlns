@@ -47,10 +47,6 @@ class NhanVien extends Model
         return $this->hasMany(BaoHiem::class, 'id', 'nhanvien_id');
     }
 
-    public function khautru()
-    {
-        return $this->hasMany(KhauTru::class, 'id', 'nhanvien_id');
-    }
 
     public function nhanluong()
     {
@@ -87,27 +83,27 @@ class NhanVien extends Model
         return $this->belongsTo(DanToc::class, 'dantoc_id', 'id');
     }
 
-    public static function getname()
-    {
-        return DB::table('nhanvien')
-        ->select('nhanvien.id','nhanvien.hesoluong','mucluong.luongcb','mucluong.phucap','thuongphat.sotien','ungluong.sotien','baohiem.mucdong')
-        ->join('phongban','mucluong.phongban_id','=','phongban.id')
-        ->join('chucvu','mucluong.chucvu_id','=','chucvu.id')
-        ->orderBy('phongban.id')
-        ->get();
+    // public static function getname()
+    // {
+    //     return DB::table('nhanvien')
+    //     ->select('nhanvien.id','nhanvien.hesoluong','mucluong.luongcb','mucluong.phucap','thuongphat.sotien','ungluong.sotien','baohiem.mucdong')
+    //     ->join('phongban','mucluong.phongban_id','=','phongban.id')
+    //     ->join('chucvu','mucluong.chucvu_id','=','chucvu.id')
+    //     ->orderBy('phongban.id')
+    //     ->get();
         
-    }
+    // }
 
-    public static function dfd()
-    {
-        return DB::table('mucluong')
-        ->select('mucluong.id','phongban.tenpb','chucvu.tencv')
-        ->join('phongban','mucluong.phongban_id','=','phongban.id')
-        ->join('chucvu','mucluong.chucvu_id','=','chucvu.id')
-        ->orderBy('phongban.id')
-        ->get();
+    // public static function dfd()
+    // {
+    //     return DB::table('mucluong')
+    //     ->select('mucluong.id','phongban.tenpb','chucvu.tencv')
+    //     ->join('phongban','mucluong.phongban_id','=','phongban.id')
+    //     ->join('chucvu','mucluong.chucvu_id','=','chucvu.id')
+    //     ->orderBy('phongban.id')
+    //     ->get();
         
-    }
+    // }
 
     // $post = Mjblog::whereYears('created_at', '=', $year)
     //               ->whereMonth('created_at', '=', $month)

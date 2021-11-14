@@ -22,6 +22,7 @@ use App\Http\Controllers\NghiViecController;
 use App\Http\Controllers\BaoHiemController;
 use App\Http\Controllers\ChamCongController;
 use App\Http\Controllers\BangChamCongController;
+use App\Http\Controllers\NhanLuongController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -175,6 +176,13 @@ Route::middleware('auth')->prefix('quan-ly')->group(function () {
     Route::get('/chamcong/xoa/{id}',[ChamCongController::class,'getXoa'])->name('chamcong.xoa');
 
     Route::post('/bangchamcong',[BangChamCongController::class,'index'])->name('bangchamcong');
+
+    Route::get('/nhanluong',[NhanLuongController::class,'getdanhsach'])->name('nhanluong');
+    Route::get('/nhanluong/them',[NhanLuongController::class,'getThem'])->name('nhanluong.them');
+    Route::post('/nhanluong/them',[NhanLuongController::class,'postThem'])->name('nhanluong.them');
+    Route::get('/nhanluong/sua/{id}',[NhanLuongController::class,'getSua'])->name('nhanluong.sua');
+    Route::post('/nhanluong/sua/{id}',[NhanLuongController::class,'postSua'])->name('nhanluong.sua');
+    Route::get('/nhanluong/xoa/{id}',[NhanLuongController::class,'getXoa'])->name('nhanluong.xoa');
 
 });
 
