@@ -52,7 +52,7 @@
             <form action="{{ route('baohiem.them') }}" method="post">
                 @csrf
                 <div class="mb-2">
-                    <label class="form-label" for="nhanvien_id">Tên phòng ban</label>
+                    <label class="form-label" for="nhanvien_id">Tên nhân viên</label>
                     <select name="nhanvien_id" id="nhanvien_id" class="form-control @error('nhanvien_id') is-invalid @enderror"
                         required>
                         <option value="">--Chọn--</option>

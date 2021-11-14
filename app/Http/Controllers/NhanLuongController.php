@@ -14,10 +14,12 @@ use Illuminate\Support\Str;
 class NhanLuongController extends Controller
 {
     public function getDanhSach(){
-        $nhanluong = nhanvien::all();
-        $chamcong = chamcong::all();
-        return view('nhanluong.index',compact('nhanluong', 'chamcong'));
+        // id = 2
+        $test = (new NhanLuong())->getThuongPhat(2, 11, 2021);
+        dd($test);
+        return '';
+        // $nhanluong = nhanvien::all();
+        // $chamcong = chamcong::all();
+        // return view('nhanluong.index',compact('nhanluong', 'chamcong'));
     }
-
-
 }

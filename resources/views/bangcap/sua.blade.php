@@ -53,9 +53,10 @@
  @csrf
  
  <div class="mb-2">
- <label class="form-label" for="tenbc"></label>
- <input type="text" class="form-control" id="tenpb" name="tenpb" value="{{ $bangcap->tenpb }}" required />
+ <label class="form-label" for="tenbc">Tên Tôn giáo</label>
+ <input type="text" class="form-control" id="tenbc" name="tenbc" value="{{ $bangcap->tenbc }}" required />
  </div>
+ 
  
  <button type="submit" class="btn btn-primary"><i class="fa fa-plus"></i> Cập nhật</button>
  </form>

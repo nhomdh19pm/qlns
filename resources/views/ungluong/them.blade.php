@@ -51,21 +51,11 @@
 
 
 
-                <div class="mb-2">
-                <label class="form-label" for="loai">Loại Thưởng/Phạt</label>
-                    <input type="text" class="form-control @error('loai') is-invalid @enderror"  id="loai"
-                        name="loai" required />
-                    @error('thuongphat')
-                        <div class="invalid-feedback"><strong>{{ $message }}</strong></div>
-                    @enderror
-                </div>
-
-
 
 
                 <div class="mb-2">
-                <label class="form-label" for="sotien">Số tiền phạt</label>
-                    <input type="text" class="form-control @error('sotien') is-invalid @enderror"  id="sotien"
+                <label class="form-label" for="sotien">Số tiền Úng</label>
+                    <input type="number" class="form-control @error('sotien') is-invalid @enderror"  id="sotien"
                         name="sotien" required />
                     @error('thuongphat')
                         <div class="invalid-feedback"><strong>{{ $message }}</strong></div>
@@ -76,7 +66,7 @@
 
 
                 <div class="mb-2">
-                <label class="form-label" for="lydo">Lý do phạt</label>
+                <label class="form-label" for="lydo">Lý do </label>
                     <input type="text" class="form-control @error('lydo') is-invalid @enderror"  id="lydo"
                         name="lydo" required />
                     @error('thuongphat')

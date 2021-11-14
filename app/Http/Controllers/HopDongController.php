@@ -27,12 +27,12 @@ class HopDongController extends Controller
 
     public function postThem(Request $request)
     {
-        $request->validate([
-            'nhanvien_id' => ['required', Rule::exists('chucvu', 'id')],
-            'loaihopdong' => ['required'],
-            'ngaybd' => ['required', 'date'],
-            'ngaykt' => ['required', 'date'],
-        ]);
+        // $request->validate([
+        //     'nhanvien_id' => ['required', Rule::exists('chucvu', 'id')],
+        //     'loaihopdong' => ['required'],
+        //     'ngaybd' => ['required', 'date'],
+        //     'ngaykt' => ['required', 'date'],
+        // ]);
         $orm = new hopdong();
         $orm->nhanvien_id = $request->nhanvien_id;
         $orm->loaihopdong = $request->loaihopdong;
@@ -49,12 +49,12 @@ class HopDongController extends Controller
     }
     public function postSua( Request $request,$id)
     {
-        $request->validate([
-            'nhanvien_id' => ['required', Rule::exists('chucvu', 'id')],
-            'loaihopdong' => ['required'],
-            'ngaybd' => ['required', 'date'],
-            'ngaykt' => ['required', 'date'],
-        ]);
+        // $request->validate([
+        //     'nhanvien_id' => ['required', Rule::exists('chucvu', 'id')],
+        //     'loaihopdong' => ['required'],
+        //     'ngaybd' => ['required', 'date'],
+        //     'ngaykt' => ['required', 'date'],
+        // ]);
         $orm = hopdong::find($id);
         $orm->nhanvien_id = $request->nhanvien_id;
         $orm->loaihopdong = $request->loaihopdong;
