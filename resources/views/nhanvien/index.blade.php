@@ -81,7 +81,7 @@
                                 {{ ($value->gioitinh == 1) ? 'Nữ' : 'Nam'; }}
                             </td>
                             <td>
-                                {{ ($value->trangthai == 1) ? 'Đang làm việc' : 'Nghỉ việc'; }}
+                                {{ ($value->trangthai == 0) ? 'Đang làm việc' : 'Nghỉ việc'; }}
                             </td>
                             <td class="text-center">
                               <img width="20%" height="20%"src="../storage/images/{{ $value->photo_path }}" >

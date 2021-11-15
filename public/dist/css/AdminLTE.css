@@ -320,7 +320,7 @@ a:focus {
 .content-header > h1 {
   margin: 0;
   font-size: 24px;
-  font-family: Garamond, serif;
+  font-family: 'Source Sans Pro';
 }
 .content-header > h1 > small {
   font-size: 15px;
@@ -523,7 +523,7 @@ a:focus {
 .sidebar-menu > li {
   position: relative;
   margin: 0;
-  padding: 0;
+  padding: 7px 7px;
 }
 .sidebar-menu > li > a {
   padding: 12px 5px 12px 15px;
@@ -1568,12 +1568,11 @@ a:focus {
  */
 .box {
   position: relative;
-  border-radius: 3px;
+  border-radius: 20px;
   background: #ffffff;
-  border-top: 3px solid #d2d6de;
+
   margin-bottom: 20px;
   width: 100%;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 }
 .box.box-primary {
   border-top-color: #3c8dbc;

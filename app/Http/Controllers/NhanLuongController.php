@@ -15,11 +15,12 @@ class NhanLuongController extends Controller
 {
     public function getDanhSach(){
         // id = 2
-        $test = (new NhanLuong())->getThuongPhat(2, 11, 2021);
-        dd($test);
-        return '';
-        // $nhanluong = nhanvien::all();
-        // $chamcong = chamcong::all();
-        // return view('nhanluong.index',compact('nhanluong', 'chamcong'));
+        // $test = (new NhanLuong())->getThuongPhat(2, 11, 2021);
+        // dd($test);
+        // return '';
+        $nhanvien_id = $_GET['id'];
+        $nhanluong = nhanvien::all();
+        $phucap = $this->nhanluong->getPhuCap($nhanvien_id);
+        return view('nhanluong.index',compact('nhanluong', '$phucap'));
     }
 }

@@ -54,11 +54,14 @@ class NhanLuong extends Model
         ->first()->sotien ?? 0;
     }
 
-
-
-
-
-
+    public function getBaoHiem($nhanvienId)
+    {
+        return DB::table('nhanvien')
+        ->join('baohiem as b', 'nhanvien.id', '=', 'b.nhanvien_id')
+        ->where('nhanvien.id', '=', $nhanvienId)
+        ->first()->mucdong ?? 0;
+    }
+    
     public static function getvalue()
     {
         return DB::table('nhanluong')

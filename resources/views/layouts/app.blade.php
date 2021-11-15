@@ -26,13 +26,11 @@
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="{{ url('public/plugins') }}/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">  <!-- Daterange picker -->
   <!-- Theme style -->
-  <link rel="stylesheet" href="{{ url('public/dist') }}/css/AdminLTE.min.css">
   <link rel="stylesheet" href="{{ url('public/dist') }}/css/AdminLTE.css">
 
   <link rel="stylesheet" href="{{ url('public/dist') }}/fontawesome/css/all.css">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
-       <link rel="stylesheet" href="{{ url('public/dist') }}/css/skins/_all-skins.min.css">
   <link rel="stylesheet" href="{{ url('public/dist') }}/css/skins/_all-skins.css">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -42,7 +40,7 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
-<body class="hold-transition purple-light sidebar-mini toggle-sidebar">
+<body class="hold-transition purple-light sidebar-mini toggle-sidebar fixed">
 <div class="wrapper">
 
   <header class="main-header">

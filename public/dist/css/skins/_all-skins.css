@@ -1545,15 +1545,43 @@
 .skin-purple .wrapper,
 .skin-purple .main-sidebar,
 .skin-purple .left-side {
-  background-color: #0e1010;
+  
+  background-image: url("http://127.0.0.1/qlns/public/dist/img/forest.jpg");
 }
+/* .skin-purple .main-sidebar::after{
+    background: #9368E9; 
+    background: -moz-linear-gradient(top, #9368E9 0%, #943bea 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #9368E9), color-stop(100%, #943bea)); 
+     background: -webkit-linear-gradient(top, #9368E9 0%, #943bea 100%); 
+    background: -o-linear-gradient(top, #9368E9 0%, #943bea 100%);
+    background: -ms-linear-gradient(top, #9368E9 0%, #943bea 100%);
+    background: linear-gradient(to bottom, #9368E9 0%, #943bea 100%);
+    background-size: 150% 150%;
+    z-index: 3;
+    opacity: 1;
+}
+
+.skin-purple .main-sidebar::after{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 260px;
+    display: block;
+    z-index: 1;
+    color: #fff;
+    font-weight: 200;
+    background-size: cover;
+    background-position: center center;
+} */
+
 .skin-purple .user-panel > .info,
 .skin-purple .user-panel > .info > a {
   color: #fff;
 }
 .skin-purple .sidebar-menu > li.header {
   color: #ffffff;
-  background: #605ca8;
+
   font-size: 15px;
 }
 .skin-purple .sidebar-menu > li > a {
@@ -1562,15 +1590,15 @@
 .skin-purple .sidebar-menu > li:hover > a,
 .skin-purple .sidebar-menu > li.active > a {
   color: #ffffff;
-  background: #1e282c;
-  border-left-color: #605ca8;
+  background: rgba(255, 255, 255, 0.23);
+  border-radius: 11px;
 }
 .skin-purple .sidebar-menu > li > .treeview-menu {
   margin: 0 1px;
   background: #2c3b41;
 }
 .skin-purple .sidebar a {
-  color: #b8c7ce;
+  color: #fff;
 }
 .skin-purple .sidebar a:hover {
   text-decoration: none;
@@ -1583,7 +1611,7 @@
   color: #ffffff;
 }
 .skin-purple .sidebar-form {
-  border-radius: 3px;
+  border-radius: 10px;
   border: 1px solid #374850;
   margin: 10px 10px;
 }

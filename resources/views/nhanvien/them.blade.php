@@ -237,8 +237,8 @@
                 <div class="mb-2">
                 <label class="form-label" for="trangthai">Tình trạng</label>
                 <select class="form-control" id="trangthai" name="trangthai">
-                    <option value="0">Nghỉ việc</option>              
-                    <option value="1">Đang làm việc</option>
+                    <option value="0">Đang làm việc</option>              
+                    <option value="1">Nghỉ việc</option>
                 </select>
                     @error('hopdong')
                         <div class="invalid-feedback"><strong>{{ $message }}</strong></div>
