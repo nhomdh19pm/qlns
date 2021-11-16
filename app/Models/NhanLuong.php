@@ -36,13 +36,13 @@ class NhanLuong extends Model
         ->first()->songaycong ?? 0;
     }
 
-    public function getNghiViec($nhanvienId)
-    {
-        return DB::table('nhanvien')
-        ->join('nghiviec as n', 'nhanvien.id', '=', 'n.nhanvien_id')
-        ->where('nhanvien.id', '=', $nhanvienId)
-        ->first()->huongluong ?? 0;
-    }
+    // public function getNghiViec($nhanvienId)
+    // {
+    //     return DB::table('nhanvien')
+    //     ->join('nghiviec as n', 'nhanvien.id', '=', 'n.nhanvien_id')
+    //     ->where('nhanvien.id', '=', $nhanvienId)
+    //     ->first()->huongluong ?? 0;
+    // }
 
     public function getThuongPhat($nhanvienId, $thang, $nam)
     {
@@ -60,6 +60,14 @@ class NhanLuong extends Model
         ->join('baohiem as b', 'nhanvien.id', '=', 'b.nhanvien_id')
         ->where('nhanvien.id', '=', $nhanvienId)
         ->first()->mucdong ?? 0;
+    }
+
+    public function getUngLuong($nhanvienId)
+    {
+        return DB::table('nhanvien')
+        ->join('ungluong as u', 'nhanvien.id', '=', 'u.nhanvien_id')
+        ->where('nhanvien.id', '=', $nhanvienId)
+        ->first()->sotien ?? 0;
     }
     
     public static function getvalue()

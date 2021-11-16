@@ -59,6 +59,25 @@
                     </select>
                 </div>
 
+                <div class="mb-2">
+                <label class="form-label" for="songaycong">Số ngày công</label>
+                    <input type="text" class="form-control @error('songaycong') is-invalid @enderror"  id="songaycong"
+                        name="songaycong" required />
+                </div>
+
+                <div class="mb-2">
+                <label class="form-label" for="thang">Tháng</label>
+                    <input type="text" class="form-control @error('thang') is-invalid @enderror"  id="thang"
+                        name="thang" required />
+                </div>
+
+                <div class="mb-2">
+                <label class="form-label" for="nam">Năm</label>
+                    <input type="text" class="form-control @error('nam') is-invalid @enderror"  id="nam"
+                        name="nam" required />
+                </div>
+
+
 
 
                 

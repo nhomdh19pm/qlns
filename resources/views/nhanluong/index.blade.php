@@ -64,8 +64,6 @@
                   <th >Hệ số lương</th>
                   <th >phụ cấp</th>
                   <th >Số ngày công</th>
-                  <th >Nghỉ có hưởng lương</th>
-                  <th >Nghỉ không có hưởng lương</th>
                   <th >Thưởng</th>
                   <th >Phạt</th>
                   <th >Tạm ứng</th>
@@ -84,9 +82,7 @@
                             <td>{{ number_format($value->luongcb) }}</td>
                             <td>{{ $value->hesoluong }}</td>
                             <td>{{ $value->phucap }}</td>                      
-                            <td>{{ $value->songaycong }}</td>                      
-                            <td>{{ $value->nghihl }}</td>                      
-                            <td>{{ $value->nghikhl }}</td>                      
+                            <td>{{ $value->songaycong }}</td>                                         
                             <td>{{ $value->thuong }}</td>                      
                             <td>{{ $value->phat }}</td>                      
                             <td>{{ $value->tamung }}</td>                      
