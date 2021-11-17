@@ -1489,7 +1489,7 @@
  * ------------
  */
 .skin-purple .main-header .navbar {
-  background-color: #605ca8;
+  background-color: #1a2035;
 }
 .skin-purple .main-header .navbar .nav > li > a {
   color: #ffffff;
@@ -1529,7 +1529,7 @@
   }
 }
 .skin-purple .main-header .logo {
-  background-color: #555299;
+  /* background-color: #555299; */
   color: #ffffff;
   border-bottom: 0 solid transparent;
 }
@@ -1542,11 +1542,16 @@
 .skin-purple .content-header {
   background: transparent;
 }
+.skin-purple .main-sidebar{
+  background: #1f283e !important;
+  opacity: .87 !important;
+}
+
 .skin-purple .wrapper,
 .skin-purple .main-sidebar,
 .skin-purple .left-side {
-  
-  background-image: url("http://127.0.0.1/qlns/public/dist/img/forest.jpg");
+
+  background-image: url("http://127.0.0.1/qlns/public/dist/img/sidebar-5.jpg");
 }
 /* .skin-purple .main-sidebar::after{
     background: #9368E9; 
@@ -1585,17 +1590,18 @@
   font-size: 15px;
 }
 .skin-purple .sidebar-menu > li > a {
-  border-left: 3px solid transparent;
+  /* border-left: 3px solid transparent; */
 }
 .skin-purple .sidebar-menu > li:hover > a,
 .skin-purple .sidebar-menu > li.active > a {
   color: #ffffff;
-  background: rgba(255, 255, 255, 0.23);
+  background: linear-gradient( 
+    60deg,#7b1fa2,#913f9e);
   border-radius: 11px;
 }
 .skin-purple .sidebar-menu > li > .treeview-menu {
   margin: 0 1px;
-  background: #2c3b41;
+  background: #fff0;
 }
 .skin-purple .sidebar a {
   color: #fff;

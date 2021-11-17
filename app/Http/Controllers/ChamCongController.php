@@ -14,7 +14,6 @@ use Inertia\Inertia;
 class ChamCongController extends Controller
 {
     public function getDanhSach(){
-        //$chamcong = chamcong::all();
         $chamcong = chamcong::all();
         return view('chamcong.index',compact('chamcong'));
     }

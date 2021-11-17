@@ -19,7 +19,7 @@ class NhanVien extends Model
 
     public function chamcong()
     {
-        return $this->hasMany(NhanVien::class, 'id', 'nhanvien_id');
+        return $this->hasMany(ChamCong::class, 'id', 'nhanvien_id');
     }
 
     public function hopdong()

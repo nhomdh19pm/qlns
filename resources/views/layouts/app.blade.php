@@ -162,7 +162,7 @@
   <!-- /.content-wrapper -->
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
-      <b>Version</b> 2.3.8
+      <b>HưngNguyễn</b> 27.06.00
     </div>
     <strong>Copyright &copy; 2021 <a href="http://facebook.com/nthung2706">DH19PM</a>.</strong> 
     reserved.

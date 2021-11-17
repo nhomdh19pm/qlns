@@ -44,13 +44,14 @@ class NhanLuong extends Model
     //     ->first()->huongluong ?? 0;
     // }
 
-    public function getThuongPhat($nhanvienId, $thang, $nam)
+    public function getThuongPhat($nhanvienId, $thang, $nam, $loai)
     {
         return DB::table('nhanvien')
         ->join('thuongphat as t', 'nhanvien.id', '=', 't.nhanvien_id')
         ->where('nhanvien.id', '=', $nhanvienId)
         ->where('t.thang', '=', $thang)
         ->where('t.nam', '=', $nam)
+        ->where('t.loai', '=', $loai)
         ->first()->sotien ?? 0;
     }
 

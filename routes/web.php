@@ -21,7 +21,6 @@ use App\Http\Controllers\ChucVuController;
 use App\Http\Controllers\NghiViecController;
 use App\Http\Controllers\BaoHiemController;
 use App\Http\Controllers\ChamCongController;
-use App\Http\Controllers\BangChamCongController;
 use App\Http\Controllers\NhanLuongController;
 /*
 |--------------------------------------------------------------------------
@@ -175,7 +174,6 @@ Route::middleware('auth')->prefix('quan-ly')->group(function () {
     Route::post('/chamcong/sua/{id}',[ChamCongController::class,'postSua'])->name('chamcong.sua');
     Route::get('/chamcong/xoa/{id}',[ChamCongController::class,'getXoa'])->name('chamcong.xoa');
 
-    Route::post('/bangchamcong',[BangChamCongController::class,'index'])->name('bangchamcong');
 
     Route::get('/nhanluong',[NhanLuongController::class,'getdanhsach'])->name('nhanluong');
     Route::get('/nhanluong/them',[NhanLuongController::class,'getThem'])->name('nhanluong.them');

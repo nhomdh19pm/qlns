@@ -69,6 +69,11 @@ class NhanVienController extends Controller
         $orm->trangthai = $request->trangthai;
         $orm->ngaynghilam = $request->ngaynghilam;
         $orm->hesoluong = $request->hesoluong;
+        $orm->tenbh = $request->tenbh;
+        $orm->mabh = $request->mabh;
+        $orm->mucdong = $request->mucdong;
+        $orm->ngaycap = $request->ngaycap;
+        $orm->ngayhethan = $request->ngayhethan;
         if ($request->hasFile('photo_path')) {
             $file = $request->file('photo_path');
             $extension = $file->getClientOriginalExtension();
@@ -117,6 +122,11 @@ class NhanVienController extends Controller
         $orm->trangthai = $request->trangthai;
         $orm->ngaynghilam = $request->ngaynghilam;
         $orm->hesoluong = $request->hesoluong;
+        $orm->tenbh = $request->tenbh;
+        $orm->mabh = $request->mabh;
+        $orm->mucdong = $request->mucdong;
+        $orm->ngaycap = $request->ngaycap;
+        $orm->ngayhethan = $request->ngayhethan;
         if ($request->hasFile('photo_path')) {
             $file = $request->file('photo_path');
             $extension = $file->getClientOriginalExtension();

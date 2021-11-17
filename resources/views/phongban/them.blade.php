@@ -54,7 +54,7 @@
 
                 <div class="mb-2">
                     <input type="text" class="form-control @error('tenpb') is-invalid @enderror"  id="tenpb"
-                        name="tenpb" required />
+                        name="tenpb" required  autofocus/>
                     @error('phongban')
                         <div class="invalid-feedback"><strong>{{ $message }}</strong></div>
                     @enderror
@@ -65,3 +65,4 @@
         </div>
     </div>
 @endsection
+
