@@ -14,6 +14,9 @@ html,
 body {
   height: 100%;
 }
+.table > thead:first-child > tr:first-child > th{
+  
+}
 
 .table-bordered > tbody > tr > td{
   border-top: 1px solid #000;
@@ -208,6 +211,7 @@ a:focus {
 }
 .form-label{
   color: #a9afbbd1;
+  font-size: large;
 }
 /*
  * Component: Main Header
@@ -362,7 +366,7 @@ a:focus {
   border-radius: 2px;
 }
 .content-header > .breadcrumb > li > a {
-  color: #605ca8;
+  color: #FFF;
   text-decoration: none;
   display: inline-block;
   
@@ -373,9 +377,9 @@ a:focus {
   margin-right: 5px;
 }
 .content-header > .breadcrumb > li + li:before {
-  font-size: large;
+  font-size: inherit;
   content: '/';
-  color: #000;
+  color: #cbb4b4;
 }
 @media (max-width: 991px) {
   .content-header > .breadcrumb {
@@ -516,18 +520,21 @@ a:focus {
 }
 .user-panel > .image > img {
   width: 100%;
-  max-width: 45px;
+  max-width: 58px;
   height: auto;
+  margin: 0px 19px;
 }
+
 .user-panel > .info {
   padding: 5px 5px 5px 15px;
   line-height: 1;
   position: absolute;
-  left: 55px;
+  left: 95px;
 }
 .user-panel > .info > p {
-  font-weight: 600;
+  font-weight: bold;
   margin-bottom: 9px;
+  font-size: large;
 }
 .user-panel > .info > a {
   text-decoration: none;
@@ -2315,6 +2322,7 @@ a:focus {
 .btn-info {
   background: linear-gradient(
     60deg,#7b1fa2,#913f9e);
+    box-shadow: 0px 7px 29px 0px #9c54a966;
 }
 .btn-info:active,
 .btn-info:focus {
