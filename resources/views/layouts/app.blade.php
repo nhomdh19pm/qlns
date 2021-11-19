@@ -21,6 +21,18 @@
   <link rel="stylesheet" href="{{ url('public/plugins') }}/morris/morris.css">
   <!-- jvectormap -->
   <link rel="stylesheet" href="{{ url('public/plugins') }}/jvectormap/jquery-jvectormap-1.2.2.css">
+    <!-- daterange picker -->
+  <link rel="stylesheet" href="{{ url('public/plugins/daterangepicker') }}/daterangepicker.css">
+  <!-- bootstrap datepicker -->
+  <link rel="stylesheet" href="{{ url('public/plugins/datepicker') }}/datepicker3.css">
+  <!-- iCheck for checkboxes and radio inputs -->
+  <link rel="stylesheet" href="{{ url('public/plugins') }}/iCheck/all.css">
+  <!-- Bootstrap Color Picker -->
+  <link rel="stylesheet" href="{{ url('public/plugins/colorpicker') }}/bootstrap-colorpicker.min.css">
+  <!-- Bootstrap time Picker -->
+  <link rel="stylesheet" href="{{ url('public/plugins/timepicker') }}/bootstrap-timepicker.min.css">
+  <!-- Select2 -->
+  <link rel="stylesheet" href="{{ url('/public/plugins/select2') }}/select2.min.css">
   <!-- Date Picker -->
   <link rel="stylesheet" href="{{ url('public/plugins') }}/daterangepicker/daterangepicker.css">  <!-- Daterange picker -->
   <!-- bootstrap wysihtml5 - text editor -->
@@ -402,6 +414,13 @@
 <!-- AdminLTE for demo purposes -->
 <script src="{{ url('public/dist') }}/js/demo.js"></script>
 <!-- page script -->
+<!-- Select2 -->
+<script src="{{ url('public/plugins/select2') }}/select2.full.min.js"></script>
+<!-- InputMask -->
+<script src="{{ url('public/plugins/input-mask') }}/jquery.inputmask.js"></script>
+<script src="{{ url('public/plugins/input-mask') }}/jquery.inputmask.date.extensions.js"></script>
+<script src="{{ url('public/plugins/input-mask') }}/jquery.inputmask.extensions.js"></script>
+
 <script>
   $(function () {
     $("#example1").DataTable();
@@ -417,3 +436,4 @@
 </script>
 </body>
 </html>
+

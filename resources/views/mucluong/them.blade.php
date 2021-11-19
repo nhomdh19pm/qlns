@@ -45,12 +45,14 @@
       </ol>
 @endsection
 @section('content')
-    <div class="card">
-        <div class="card-header"></div>
-        <div class="card-body">
-            <form action="{{ route('mucluong.them') }}" method="post">
-                @csrf
-                <div class="mb-2">
+    <div class="box box-default">
+        <!-- /.box-header -->
+        <div class="box-body">
+        <form action="{{ route('mucluong.them') }}" method="post">
+        @csrf
+          <div class="row">
+            <div class="col-md-6">
+            <div class="mb-2">
                     <label class="form-label" for="phongban_id">Tên phòng ban</label>
                     <select name="phongban_id" id="phongban_id" class="form-control @error('phongban_id') is-invalid @enderror"
                         required>
@@ -62,9 +64,8 @@
                         @endforeach
                     </select>
                 </div>
-
-
-                <div class="mb-2">
+              <!-- /.form-group -->
+              <div class="mb-2">
                     <label class="form-label" for="chucvu_id">Tên chức vụ</label>
                     <select name="chucvu_id" id="chucvu_id" class="form-control @error('chucvu_id') is-invalid @enderror"
                         required>
@@ -76,9 +77,11 @@
                         @endforeach
                     </select>
                 </div>
-
-
-                <div class="mb-2">
+              <!-- /.form-group -->
+            </div>
+            <!-- /.col -->
+            <div class="col-md-6">
+            <div class="mb-2">
                 <label class="form-label" for="luongcb">Lưng cơ bản</label>
                     <input type="text" class="form-control @error('luongcb') is-invalid @enderror"  id="luongcb"
                         name="luongcb" required />
@@ -86,9 +89,8 @@
                         <div class="invalid-feedback"><strong>{{ $message }}</strong></div>
                     @enderror
                 </div>
-                
-                
-                <div class="mb-2">
+              <!-- /.form-group -->
+              <div class="mb-2">
                 <label class="form-label" for="phucap">Phụ cấp</label>
                     <input type="text" class="form-control @error('phucap') is-invalid @enderror"  id="phucap"
                         name="phucap" required />
@@ -96,9 +98,13 @@
                         <div class="invalid-feedback"><strong>{{ $message }}</strong></div>
                     @enderror
                 </div>
-
-                <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Thêm vào CSDL</button>
-            </form>
+              <!-- /.form-group -->
+            </div>
+            <!-- /.col -->
+          </div>
+          <button type="submit" class="btn btn-info"><i class="bi bi-save"></i> Thêm vào CSDL</button>
+        </form>
         </div>
-    </div>
+        <!-- /.box-body -->
+      </div>
 @endsection
