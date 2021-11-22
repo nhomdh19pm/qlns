@@ -25,6 +25,17 @@ class NhanLuongController extends Controller
         return view('nhanluong.index',compact('nhanluong'));
     }
 
+    public function getDanhSachNhanVien(){
+        // id = 2
+        $phucap = (new NhanLuong())->getPhuCap(2);
+        // dd($test);
+        // return '';
+        // $nhanvien_id = $_GET['id'];
+        $nhanluong = nhanvien::all();
+
+        return view('nhanluong.index2',compact('nhanluong'));
+    }
+
     public function getThem()
     {
         $id = $_GET['id'];

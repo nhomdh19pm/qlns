@@ -32,7 +32,7 @@
         </ul>
     </li>
     <li class=""><a href="{{ route('hopdong') }}"><i class="fas fa-file-signature"></i> <span>Hợp đồng</span></a></li>
-    <li class=""><a href="{{ route('lichnghi') }}"><i class="fal fa-toggle-off"></i> <span>Lịch Nghỉ</span></a></li>
+    <li class=""><a href="{{ route('user') }}"><i class="fas fa-user"></i> <span>Tài khoản</span></a></li>
 @endsection
 @section('content-header')
 <h1>
@@ -65,7 +65,21 @@
                     </select>
                 </div>
               <!-- /.form-group -->
+
+              <!-- /.form-group -->
               <div class="mb-2">
+                <label class="form-label" for="luongcb">Lưng cơ bản</label>
+                    <input type="text" class="form-control @error('luongcb') is-invalid @enderror"  id="luongcb"
+                        name="luongcb" required />
+                    @error('mucluong')
+                        <div class="invalid-feedback"><strong>{{ $message }}</strong></div>
+                    @enderror
+                </div>
+                
+            </div>
+            <!-- /.col -->
+            <div class="col-md-6">
+            <div class="mb-2">
                     <label class="form-label" for="chucvu_id">Tên chức vụ</label>
                     <select name="chucvu_id" id="chucvu_id" class="form-control @error('chucvu_id') is-invalid @enderror"
                         required>
@@ -76,18 +90,6 @@
                             </option>
                         @endforeach
                     </select>
-                </div>
-              <!-- /.form-group -->
-            </div>
-            <!-- /.col -->
-            <div class="col-md-6">
-            <div class="mb-2">
-                <label class="form-label" for="luongcb">Lưng cơ bản</label>
-                    <input type="text" class="form-control @error('luongcb') is-invalid @enderror"  id="luongcb"
-                        name="luongcb" required />
-                    @error('mucluong')
-                        <div class="invalid-feedback"><strong>{{ $message }}</strong></div>
-                    @enderror
                 </div>
               <!-- /.form-group -->
               <div class="mb-2">

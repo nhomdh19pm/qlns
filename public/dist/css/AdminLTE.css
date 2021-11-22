@@ -1307,7 +1307,10 @@ a:focus {
 .form-control {
   border-radius: 8px;
   box-shadow: 0 .4rem 1rem rgba(0,0,0,.15)!important;
+  font-size: 15px;
   border-color: #d2d6de;
+
+  
 }
 .form-control:focus {
   border-color: #c9b6e9;
@@ -2320,14 +2323,14 @@ a:focus {
   background-color: #008d4c;
 }
 .btn-info {
-  background: linear-gradient(
-    60deg,#7b1fa2,#913f9e);
+  background: linear-gradient( 
+60deg,#5260ff,#bf59ff);
     box-shadow: 0px 7px 29px 0px #9c54a966;
 }
 .btn-info:active,
 .btn-info:focus {
   background: linear-gradient(
-    60deg,#7b1fa2,#913f9e) !important;
+    60deg,#5260ff,#bf59ff) !important;
     border-color: #fff !important;
 }
 

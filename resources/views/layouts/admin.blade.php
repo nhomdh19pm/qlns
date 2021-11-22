@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Dashboard</title>
+  <title>Trang Quản Lý Lương</title>
+  <link rel="icon" href="{{ url('public/dist') }}/img/admin.ico">
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
@@ -12,24 +13,37 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  
-  
-  <!-- Theme style -->
-  <link rel="stylesheet" href="{{ url('public/dist') }}/css/AdminLTE.min.css">
-  <!-- AdminLTE Skins. Choose a skin from the  css/skins
-       folder instead of downloading all of them to reduce the load. -->
-  <link rel="stylesheet" href="{{ url('public/dist') }}/css/skins/_all-skins.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="{{ url('public/plugins') }}/datatables/dataTables.bootstrap.css">
   <!-- iCheck -->
   <link rel="stylesheet" href="{{ url('public/plugins') }}/iCheck/flat/blue.css">
   <!-- Morris chart -->
   <link rel="stylesheet" href="{{ url('public/plugins') }}/morris/morris.css">
   <!-- jvectormap -->
   <link rel="stylesheet" href="{{ url('public/plugins') }}/jvectormap/jquery-jvectormap-1.2.2.css">
-
+    <!-- daterange picker -->
+  <link rel="stylesheet" href="{{ url('public/plugins/daterangepicker') }}/daterangepicker.css">
+  <!-- bootstrap datepicker -->
+  <link rel="stylesheet" href="{{ url('public/plugins/datepicker') }}/datepicker3.css">
+  <!-- iCheck for checkboxes and radio inputs -->
+  <link rel="stylesheet" href="{{ url('public/plugins') }}/iCheck/all.css">
+  <!-- Bootstrap Color Picker -->
+  <link rel="stylesheet" href="{{ url('public/plugins/colorpicker') }}/bootstrap-colorpicker.min.css">
+  <!-- Bootstrap time Picker -->
+  <link rel="stylesheet" href="{{ url('public/plugins/timepicker') }}/bootstrap-timepicker.min.css">
+  <!-- Select2 -->
+  <link rel="stylesheet" href="{{ url('/public/plugins/select2') }}/select2.min.css">
   <!-- Date Picker -->
   <link rel="stylesheet" href="{{ url('public/plugins') }}/daterangepicker/daterangepicker.css">  <!-- Daterange picker -->
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="{{ url('public/plugins') }}/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">  <!-- Daterange picker -->
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{{ url('public/dist') }}/css/AdminLTE.css">
+
+  <link rel="stylesheet" href="{{ url('public/dist') }}/fontawesome/css/all.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="{{ url('public/dist') }}/css/skins/_all-skins.css">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -38,185 +52,59 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
-<!--
-BODY TAG OPTIONS:
-=================
-Apply one or more of the following classes to get the
-desired effect
-|---------------------------------------------------------|
-| SKINS         | skin-blue                               |
-|               | skin-black                              |
-|               | skin-purple                             |
-|               | skin-yellow                             |
-|               | skin-red                                |
-|               | skin-green                              |
-|---------------------------------------------------------|
-|LAYOUT OPTIONS | fixed                                   |
-|               | layout-boxed                            |
-|               | layout-top-nav                          |
-|               | sidebar-collapse                        |
-|               | sidebar-mini                            |
-|---------------------------------------------------------|
--->
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition purple-light sidebar-mini toggle-sidebar fixed">
 <div class="wrapper">
 
-  <!-- Main Header -->
   <header class="main-header">
-
-    <!-- Logo -->
-    <a href="index2.html" class="logo">
+  <a href="/qlns" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>H</b>LT</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>ISEKAI-</b>WJBU</span>
+      <span class="logo-lg"><b>Quản lý nhân sự</b></span>
     </a>
-
-    <!-- Header Navbar -->
-    <nav class="navbar navbar-static-top" role="navigation">
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top">
       <!-- Sidebar toggle button-->
       <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
         <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
       </a>
-      <!-- Navbar Right Menu -->
+
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
-          <!-- Messages: style can be found in dropdown.less-->
-          <li class="dropdown messages-menu">
-            <!-- Menu toggle button -->
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <i class="fa fa-envelope-o"></i>
-              <span class="label label-success">4</span>
-            </a>
-            <ul class="dropdown-menu">
-              <li class="header">You have 4 messages</li>
-              <li>
-                <!-- inner menu: contains the messages -->
-                <ul class="menu">
-                  <li><!-- start message -->
-                    <a href="#">
-                      <div class="pull-left">
-                        <!-- User Image -->
-                        <img src="public/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-                      </div>
-                      <!-- Message title and timestamp -->
-                      <h4>
-                        Support Team
-                        <small><i class="fa fa-clock-o"></i> 5 mins</small>
-                      </h4>
-                      <!-- The message -->
-                      <p>Why not buy a new awesome theme?</p>
-                    </a>
-                  </li>
-                  <!-- end message -->
-                </ul>
-                <!-- /.menu -->
-              </li>
-              <li class="footer"><a href="#">See All Messages</a></li>
-            </ul>
-          </li>
-          <!-- /.messages-menu -->
 
-          <!-- Notifications Menu -->
-          <li class="dropdown notifications-menu">
-            <!-- Menu toggle button -->
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <i class="fa fa-bell-o"></i>
-              <span class="label label-warning">10</span>
-            </a>
-            <ul class="dropdown-menu">
-              <li class="header">You have 10 notifications</li>
-              <li>
-                <!-- Inner Menu: contains the notifications -->
-                <ul class="menu">
-                  <li><!-- start notification -->
-                    <a href="#">
-                      <i class="fa fa-users text-aqua"></i> 5 new members joined today
-                    </a>
-                  </li>
-                  <!-- end notification -->
-                </ul>
-              </li>
-              <li class="footer"><a href="#">View all</a></li>
-            </ul>
-          </li>
-          <!-- Tasks Menu -->
-          <li class="dropdown tasks-menu">
-            <!-- Menu Toggle Button -->
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <i class="fa fa-flag-o"></i>
-              <span class="label label-danger">9</span>
-            </a>
-            <ul class="dropdown-menu">
-              <li class="header">You have 9 tasks</li>
-              <li>
-                <!-- Inner menu: contains the tasks -->
-                <ul class="menu">
-                  <li><!-- Task item -->
-                    <a href="#">
-                      <!-- Task title and progress text -->
-                      <h3>
-                        Design some buttons
-                        <small class="pull-right">20%</small>
-                      </h3>
-                      <!-- The progress bar -->
-                      <div class="progress xs">
-                        <!-- Change the css width attribute to simulate progress -->
-                        <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                          <span class="sr-only">20% Complete</span>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <!-- end task item -->
-                </ul>
-              </li>
-              <li class="footer">
-                <a href="#">View all tasks</a>
-              </li>
-            </ul>
-          </li>
-          <!-- User Account Menu -->
+
+          <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <!-- Menu Toggle Button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <!-- The user image in the navbar-->
-              <img src="public/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <img href="/qlns" src="{{url('public/dist/img/admin.png')}}" width=30 height=30 class="img-circle" alt="User Image"/>
+
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
-              <span class="hidden-xs">Alexander Pierce</span>
+              <span class="hidden-xs">DH19PM</span>
             </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
               <li class="user-header">
-                <img src="public/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+              <img src="{{url('public/dist/img/admin.png')}}" class="img-circle" alt="User Image"/>
 
                 <p>
-                  Alexander Pierce - Web Developer
-                  <small>Member since Nov. 2012</small>
+                  DH19PM - KTPM
+                  <small>2021</small>
                 </p>
               </li>
               <!-- Menu Body -->
-              <li class="user-body">
-                <div class="row">
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Followers</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Sales</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Friends</a>
-                  </div>
-                </div>
-                <!-- /.row -->
-              </li>
+
               <!-- Menu Footer-->
               <li class="user-footer">
-                <div class="pull-left">
-                  <a href="{{ route('login') }}" class="btn btn-default btn-flat">Đăng nhập</a>
-                </div>
-                <div class="pull-right">
-                  <a href="{{ route('logout') }}" class="btn btn-default btn-flat">Đăng xuất</a>
+                <div class="pull-right" style="margin-right: 85px;">
+                <form action="{{ route('logout') }}" method="POST">
+                @csrf
+                    <button class="btn btn-default btn-flat"><i class="fas fa-power-off"></i> Đăng xuất</button>
+                  </form>
                 </div>
               </li>
             </ul>
@@ -231,23 +119,20 @@ desired effect
   </header>
   <!-- Left side column. contains the logo and sidebar -->
   <aside class="main-sidebar">
-
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
-
-      <!-- Sidebar user panel (optional) -->
+      <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="public/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+         <img  src="{{url('public/dist/img/admin.png')}}" class="img-circle" alt="User Image"/>
         </div>
         <div class="pull-left info">
-          <p>Alexander Pierce</p>
+          <p>DH19PM</p>
           <!-- Status -->
-          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+          <a href="#"><i class="fa fa-circle text-success"></i>With love</a>
         </div>
       </div>
-
-      <!-- search form (Optional) -->
+      <!-- search form -->
       <form action="#" method="get" class="sidebar-form">
         <div class="input-group">
           <input type="text" name="q" class="form-control" placeholder="Search...">
@@ -258,25 +143,13 @@ desired effect
         </div>
       </form>
       <!-- /.search form -->
-
+      <!-- sidebar menu: : style can be found in sidebar.less -->
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu">
-        <li class="header">HEADER</li>
+        <li class="header">Danh Mục</li>
         <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
-        <li><a href="{{ route('nhanvien') }}"><i class="fa fa-id-card"></i> <span>Nhân Viên</span></a></li>
-        <li><a href="{{ route('phongban') }}"><i class="fa fa-laptop-house"></i> <span>Phòng Ban</span></a></li>
-        <li class="treeview">
-          <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="#">Link in level 2</a></li>
-            <li><a href="#">Link in level 2</a></li>
-          </ul>
-        </li>
+        @yield('active')
+        
       </ul>
       <!-- /.sidebar-menu -->
     </section>
@@ -287,69 +160,41 @@ desired effect
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1>
-        Page Header
-        <small>Optional description</small>
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-        <li class="active">Here</li>
-      </ol>
+    @yield('content-header')
     </section>
 
     <!-- Main content -->
     <section class="content">
-    <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Trang admin') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('') }}
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
+    @yield('content')
       <!-- Your Page Content Here -->
 
     </section>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-
-  <!-- Main Footer -->
   <footer class="main-footer">
-    <!-- To the right -->
     <div class="pull-right hidden-xs">
-      Anything you want
+      <b>HưngNguyễn</b> 27.06.00
     </div>
-    <!-- Default to the left -->
-    <strong>Copyright &copy; 2016 <a href="#">Company</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2021 <a href="http://facebook.com/nthung2706">DH19PM</a>.</strong> 
+    reserved.
   </footer>
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
     <!-- Create the tabs -->
     <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
-      <li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+      <li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
       <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
     </ul>
     <!-- Tab panes -->
     <div class="tab-content">
       <!-- Home tab content -->
-      <div class="tab-pane active" id="control-sidebar-home-tab">
+      <div class="tab-pane" id="control-sidebar-home-tab">
         <h3 class="control-sidebar-heading">Recent Activity</h3>
         <ul class="control-sidebar-menu">
           <li>
-            <a href="javascript:;">
+            <a href="javascript:void(0)">
               <i class="menu-icon fa fa-birthday-cake bg-red"></i>
 
               <div class="menu-info">
@@ -359,22 +204,89 @@ desired effect
               </div>
             </a>
           </li>
+          <li>
+            <a href="javascript:void(0)">
+              <i class="menu-icon fa fa-user bg-yellow"></i>
+
+              <div class="menu-info">
+                <h4 class="control-sidebar-subheading">Frodo Updated His Profile</h4>
+
+                <p>New phone +1(800)555-1234</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">
+              <i class="menu-icon fa fa-envelope-o bg-light-blue"></i>
+
+              <div class="menu-info">
+                <h4 class="control-sidebar-subheading">Nora Joined Mailing List</h4>
+
+                <p>nora@example.com</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">
+              <i class="menu-icon fa fa-file-code-o bg-green"></i>
+
+              <div class="menu-info">
+                <h4 class="control-sidebar-subheading">Cron Job 254 Executed</h4>
+
+                <p>Execution time 5 seconds</p>
+              </div>
+            </a>
+          </li>
         </ul>
         <!-- /.control-sidebar-menu -->
 
         <h3 class="control-sidebar-heading">Tasks Progress</h3>
         <ul class="control-sidebar-menu">
           <li>
-            <a href="javascript:;">
+            <a href="javascript:void(0)">
               <h4 class="control-sidebar-subheading">
                 Custom Template Design
-                <span class="pull-right-container">
-                  <span class="label label-danger pull-right">70%</span>
-                </span>
+                <span class="label label-danger pull-right">70%</span>
               </h4>
 
               <div class="progress progress-xxs">
                 <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">
+              <h4 class="control-sidebar-subheading">
+                Update Resume
+                <span class="label label-success pull-right">95%</span>
+              </h4>
+
+              <div class="progress progress-xxs">
+                <div class="progress-bar progress-bar-success" style="width: 95%"></div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">
+              <h4 class="control-sidebar-subheading">
+                Laravel Integration
+                <span class="label label-warning pull-right">50%</span>
+              </h4>
+
+              <div class="progress progress-xxs">
+                <div class="progress-bar progress-bar-warning" style="width: 50%"></div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">
+              <h4 class="control-sidebar-subheading">
+                Back End Framework
+                <span class="label label-primary pull-right">68%</span>
+              </h4>
+
+              <div class="progress progress-xxs">
+                <div class="progress-bar progress-bar-primary" style="width: 68%"></div>
               </div>
             </a>
           </li>
@@ -402,11 +314,61 @@ desired effect
             </p>
           </div>
           <!-- /.form-group -->
+
+          <div class="form-group">
+            <label class="control-sidebar-subheading">
+              Allow mail redirect
+              <input type="checkbox" class="pull-right" checked>
+            </label>
+
+            <p>
+              Other sets of options are available
+            </p>
+          </div>
+          <!-- /.form-group -->
+
+          <div class="form-group">
+            <label class="control-sidebar-subheading">
+              Expose author name in posts
+              <input type="checkbox" class="pull-right" checked>
+            </label>
+
+            <p>
+              Allow the user to show his name in blog posts
+            </p>
+          </div>
+          <!-- /.form-group -->
+
+          <h3 class="control-sidebar-heading">Chat Settings</h3>
+
+          <div class="form-group">
+            <label class="control-sidebar-subheading">
+              Show me as online
+              <input type="checkbox" class="pull-right" checked>
+            </label>
+          </div>
+          <!-- /.form-group -->
+
+          <div class="form-group">
+            <label class="control-sidebar-subheading">
+              Turn off notifications
+              <input type="checkbox" class="pull-right">
+            </label>
+          </div>
+          <!-- /.form-group -->
+
+          <div class="form-group">
+            <label class="control-sidebar-subheading">
+              Delete chat history
+              <a href="javascript:void(0)" class="text-red pull-right"><i class="fa fa-trash-o"></i></a>
+            </label>
+          </div>
+          <!-- /.form-group -->
         </form>
       </div>
       <!-- /.tab-pane -->
     </div>
-    </aside>
+  </aside>
   <!-- /.control-sidebar -->
   <!-- Add the sidebar's background. This div must be placed
        immediately after the control sidebar -->
@@ -416,19 +378,16 @@ desired effect
 
 <!-- jQuery 2.2.3 -->
 <script src="{{ url('public/plugins') }}/jQuery/jquery-2.2.3.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="{{ url('public/bootstrap') }}/js/bootstrap.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
 <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
   $.widget.bridge('uibutton', $.ui.button);
 </script>
-<!-- Bootstrap 3.3.6 -->
-<script src="{{ url('public/bootstrap') }}/js/bootstrap.min.js"></script>
 <!-- Morris.js charts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
 <script src="{{ url('public/plugins') }}/morris/morris.min.js"></script>
-<!-- Sparkline -->
-<script src="{{ url('public/plugins') }}/sparkline/jquery.sparkline.min.js"></script>
 <!-- jvectormap -->
 <script src="{{ url('public/plugins') }}/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
 <script src="{{ url('public/plugins') }}/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
@@ -439,18 +398,42 @@ desired effect
 <script src="{{ url('public/plugins') }}/daterangepicker/daterangepicker.js"></script>
 <!-- datepicker -->
 <script src="{{ url('public/plugins') }}/datepicker/bootstrap-datepicker.js"></script>
-
 <!-- Bootstrap WYSIHTML5 -->
 <script src="{{ url('public/plugins') }}/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
-<!-- Slimscroll -->
+<!-- Sparkline -->
+<script src="{{ url('public/plugins') }}/sparkline/jquery.sparkline.min.js"></script>
+<!-- DataTables -->
+<script src="{{ url('public/plugins') }}/datatables/jquery.dataTables.min.js"></script>
+<script src="{{ url('public/plugins') }}/datatables/dataTables.bootstrap.min.js"></script>
+<!-- SlimScroll -->
 <script src="{{ url('public/plugins') }}/slimScroll/jquery.slimscroll.min.js"></script>
 <!-- FastClick -->
 <script src="{{ url('public/plugins') }}/fastclick/fastclick.js"></script>
 <!-- AdminLTE App -->
 <script src="{{ url('public/dist') }}/js/app.min.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="{{ url('public/dist') }}/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ url('public/dist') }}/js/demo.js"></script>
+<!-- page script -->
+<!-- Select2 -->
+<script src="{{ url('public/plugins/select2') }}/select2.full.min.js"></script>
+<!-- InputMask -->
+<script src="{{ url('public/plugins/input-mask') }}/jquery.inputmask.js"></script>
+<script src="{{ url('public/plugins/input-mask') }}/jquery.inputmask.date.extensions.js"></script>
+<script src="{{ url('public/plugins/input-mask') }}/jquery.inputmask.extensions.js"></script>
+
+<script>
+  $(function () {
+    $("#example1").DataTable();
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false
+    });
+  });
+</script>
 </body>
 </html>
+

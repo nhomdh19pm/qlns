@@ -32,6 +32,7 @@
         </ul>
     </li>
     <li class=""><a href="{{ route('hopdong') }}"><i class="fas fa-file-signature"></i> <span>Hợp đồng</span></a></li>
+    <li class=""><a href="{{ route('user') }}"><i class="fas fa-user"></i> <span>Tài khoản</span></a></li>
 @endsection
 @section('content-header')
 <h1>
@@ -67,7 +68,7 @@
                 </thead>
                 <tbody>
                 @foreach ($nhanvien as $value)
-                <tr class="hung-nguyen">
+                <tr >
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $value->hovaten }}</td>
                             <td>{{ number_format($value->mucluong->luongcb) }}</td>
@@ -78,6 +79,7 @@
                             </td>
                             <td>
                                 {{ ($value->trangthai == 0) ? 'Đang làm việc' : 'Nghỉ việc'; }}
+                                
                             </td>
                             <td class="text-center">
                               <img width="20%" height="20%"src="../storage/images/{{ $value->photo_path }}" >

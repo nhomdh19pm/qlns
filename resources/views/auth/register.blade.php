@@ -104,7 +104,7 @@
 						</a>
 					</div> -->
 
-					<div class="text-center p-t-136">
+					<div class="text-center p-t-44">
 						<a class="txt2" href="/qlns">
 							Quay về trang chủ
 							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>

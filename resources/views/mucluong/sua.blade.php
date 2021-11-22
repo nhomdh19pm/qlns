@@ -32,7 +32,7 @@
         </ul>
     </li>
     <li class=""><a href="{{ route('hopdong') }}"><i class="fas fa-file-signature"></i> <span>Hợp đồng</span></a></li>
-    <li class=""><a href="{{ route('lichnghi') }}"><i class="fal fa-toggle-off"></i> <span>Lịch Nghỉ</span></a></li>
+    <li class=""><a href="{{ route('user') }}"><i class="fas fa-user"></i> <span>Tài khoản</span></a></li>
 @endsection
 @section('content')
     <div class="box box-default">
@@ -54,7 +54,18 @@
                     </select>
                 </div>
               <!-- /.form-group -->
-              <div class="mb-2">
+
+
+                <div class="mb-2">
+                    <label class="form-label" for="luongcb">Lương cơ bản</label>
+                        <input type="text" class="form-control" id="luongcb" name="luongcb" value="{{ $mucluong->luongcb }}" required />
+                </div>
+              <!-- /.form-group -->
+            </div>
+            <!-- /.col -->
+            <div class="col-md-6">
+
+            <div class="mb-2">
                     <label class="form-label" for="chucvu_id">Tên chức vụ</label>
                     <select name="chucvu_id" id="chucvu_id" class="form-control @error('chucvu_id')  is-invalid @enderror" 
                         required>
@@ -65,15 +76,6 @@
                         @endforeach
                     </select>
                 </div>
-              <!-- /.form-group -->
-            </div>
-            <!-- /.col -->
-            <div class="col-md-6">
-            <div class="mb-2">
-                    <label class="form-label" for="luongcb">Lương cơ bản</label>
-                        <input type="text" class="form-control" id="luongcb" name="luongcb" value="{{ $mucluong->luongcb }}" required />
-                </div>
-
               <!-- /.form-group -->
               <div class="mb-2">
                     <label class="form-label" for="phucap">Phụ cấp</label>

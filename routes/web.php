@@ -69,12 +69,12 @@ Route::middleware('auth')->prefix('quan-ly')->group(function () {
     Route::post('/nhanvien/sua/{id}',[NhanVienController::class,'postSua'])->name('nhanvien.sua');
     Route::get('/nhanvien/xoa/{id}',[NhanVienController::class,'getXoa'])->name('nhanvien.xoa');
 
-    Route::get('/User',[UserController::class,'getdanhsach'])->name('User');
-    Route::get('/User/them',[UserController::class,'getThem'])->name('User.them');
-    Route::post('/User/them',[UserController::class,'postThem'])->name('User.them');
-    Route::get('/User/sua/{id}',[UserController::class,'getSua'])->name('User.sua');
-    Route::post('/User/sua/{id}',[UserController::class,'postSua'])->name('User.sua');
-    Route::get('/User/xoa/{id}',[UserController::class,'getXoa'])->name('User.xoa');
+    Route::get('/user',[UserController::class,'getdanhsach'])->name('user');
+    Route::get('/user/them',[UserController::class,'getThem'])->name('user.them');
+    Route::post('/user/them',[UserController::class,'postThem'])->name('user.them');
+    Route::get('/user/sua/{id}',[UserController::class,'getSua'])->name('user.sua');
+    Route::post('/user/sua/{id}',[UserController::class,'postSua'])->name('user.sua');
+    Route::get('/user/xoa/{id}',[UserController::class,'getXoa'])->name('user.xoa');
 
     Route::get('/chuyenmon',[ChuyenMonController::class,'getdanhsach'])->name('chuyenmon');
     Route::get('/chuyenmon/them',[ChuyenMonController::class,'getThem'])->name('chuyenmon.them');

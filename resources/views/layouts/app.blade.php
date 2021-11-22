@@ -101,7 +101,7 @@
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-right" style="margin-right: 85px;">
-                  <form action="{{ route('logout') }}" method="POST">
+                <form action="{{ route('logout') }}" method="POST">
                 @csrf
                     <button class="btn btn-default btn-flat"><i class="fas fa-power-off"></i> Đăng xuất</button>
                   </form>

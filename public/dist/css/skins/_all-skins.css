@@ -1601,7 +1601,7 @@
 .skin-purple .sidebar-menu > li.active > a {
   color: #ffffff;
   background: linear-gradient( 
-    60deg,#7b1fa2,#913f9e);
+    60deg,#5260ff,#bf59ff);
   border-radius: 11px;
 }
 .skin-purple .sidebar-menu > li > .treeview-menu {

@@ -32,7 +32,7 @@
         </ul>
     </li>
     <li class=""><a href="{{ route('hopdong') }}"><i class="fas fa-file-signature"></i> <span>Hợp đồng</span></a></li>
-    <li class=""><a href="{{ route('lichnghi') }}"><i class="fal fa-toggle-off"></i> <span>Lịch Nghỉ</span></a></li>
+    <li class=""><a href="{{ route('user') }}"><i class="fas fa-user"></i> <span>Tài khoản</span></a></li>
 @endsection
 @section('content-header')
 <h1>
@@ -49,9 +49,11 @@
     <div class="card">
         <div class="card-header"></div>
         <div class="card-body">
-            <form action="{{ route('ungluong.them') }}" method="post">
-                @csrf
-                <div class="mb-2">
+        <form action="{{ route('ungluong.them') }}" method="post">
+        @csrf
+          <div class="row">
+            <div class="col-md-6">
+            <div class="mb-2">
                     <label class="form-label" for="nhanvien_id">Tên Nhân viên</label>
                     <select name="nhanvien_id" id="nhanvien_id" class="form-control @error('nhanvien_id') is-invalid @enderror"
                         required>
@@ -66,13 +68,8 @@
                         @enderror
                     </select>
                 </div>
-
-
-
-
-
-
-                <div class="mb-2">
+              <!-- /.form-group -->
+              <div class="mb-2">
                 <label class="form-label" for="sotien">Số tiền Úng</label>
                     <input type="number" class="form-control @error('sotien') is-invalid @enderror"  id="sotien"
                         name="sotien" required />
@@ -80,11 +77,11 @@
                         <div class="invalid-feedback"><strong>{{ $message }}</strong></div>
                     @enderror
                 </div>
+              <!-- /.form-group -->
+            </div>
 
-
-
-
-                <div class="mb-2">
+            <div class="col-md-6">
+            <div class="mb-2">
                 <label class="form-label" for="lydo">Lý do </label>
                     <input type="text" class="form-control @error('lydo') is-invalid @enderror"  id="lydo"
                         name="lydo" required />
@@ -92,9 +89,8 @@
                         <div class="invalid-feedback"><strong>{{ $message }}</strong></div>
                     @enderror
                 </div>
-
-
-                <div class="mb-2">
+              <!-- /.form-group -->
+              <div class="mb-2">
                 <label class="form-label" for="thang">Của tháng</label>
                     <input type="text" class="form-control @error('thang') is-invalid @enderror"  id="thang"
                         name="thang" required />
@@ -102,8 +98,11 @@
                         <div class="invalid-feedback"><strong>{{ $message }}</strong></div>
                     @enderror
                 </div>
+              <!-- /.form-group -->
+            </div>
 
-                <div class="mb-2">
+            <div class="col-md-6">
+            <div class="mb-2">
                 <label class="form-label" for="nam">Của năm</label>
                     <input type="text" class="form-control @error('nam') is-invalid @enderror"  id="nam"
                         name="nam" required />
@@ -111,9 +110,12 @@
                         <div class="invalid-feedback"><strong>{{ $message }}</strong></div>
                     @enderror
                 </div>
-
-                <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Thêm vào CSDL</button>
-            </form>
+              <!-- /.form-group -->
+              <!-- /.form-group -->
+            </div>
+          </div>
+          <button type="submit" class="btn btn-info"><i class="bi bi-save"></i> Thêm vào CSDL</button>
+        </form>
         </div>
     </div>
 @endsection

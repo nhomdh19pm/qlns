@@ -24,15 +24,15 @@
         </span>
         </a>
         <ul class="treeview-menu">
-          <li class=""><a href="{{ route('ungluong') }}"><i class="fad fa-money-check-edit-alt"></i> <span>Ứng lương</span></a></li>
-          <li ><a href="{{ route('mucluong') }}"><i class="fa fa-money-check-alt"></i> <span>Mức lương</span></a></li>
+          <li ><a href="{{ route('ungluong') }}"><i class="fad fa-money-check-edit-alt"></i> <span>Ứng lương</span></a></li>
+          <li class=""><a href="{{ route('mucluong') }}"><i class="fa fa-money-check-alt"></i> <span>Mức lương</span></a></li>
           <li class="active"><a href="{{ route('chamcong') }}"><i class="fad fa-calendar-alt"></i> <span>Chấm Công</span></a></li>
           <li><a href="{{ route('nhanluong') }}"><i class="fad fa-cash-register"></i> <span>Nhận Lương</span></a></li>
           <li class=""><a href="{{ route('thuongphat') }}"><i class="fa fa-gift-card"></i> <span>Thưởng phạt</span></a></li>
         </ul>
     </li>
     <li class=""><a href="{{ route('hopdong') }}"><i class="fas fa-file-signature"></i> <span>Hợp đồng</span></a></li>
-    <li class=""><a href="{{ route('lichnghi') }}"><i class="fal fa-toggle-off"></i> <span>Lịch Nghỉ</span></a></li>
+    <li class=""><a href="{{ route('user') }}"><i class="fas fa-user"></i> <span>Tài khoản</span></a></li>
 @endsection
 @section('content-header')
 <h1>
@@ -69,8 +69,8 @@
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $value->nhanvien->hovaten }}</td>
                             <td>{{ $value->songaycong }}</td>
-                            <td>{{ $value->thang }} đ</td>
-                            <td>{{ $value->nam }} đ</td>
+                            <td>{{ $value->thang }} </td>
+                            <td>{{ $value->nam }} </td>
                             <td class="text-center" width="10%"><a class="btn btn-outline-primary"href="javascript:eventXoa('{{ route('chamcong.xoa',['id' => $value->id]) }}', '{{ $value->hovaten }});"><i class="fa fa-trash"></i> Xóa</a></td>
                             <td class="text-center" width="10%"><a class="btn btn-outline-danger" href="{{ route('chamcong.sua',['id' => $value->id]) }}"><i class="fa fa-edit"></i> Sửa</a></td>
                         </tr>

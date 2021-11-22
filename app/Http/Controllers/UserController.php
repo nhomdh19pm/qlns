@@ -18,7 +18,7 @@ class UserController extends Controller
     public function getDanhSach()
     {
         $user = user::all();
-        return view('user.index', ['user' => $nguoidung]);
+        return view('user.index', ['user' => $user]);
     }
     public function getThem()
     {
@@ -71,6 +71,11 @@ class UserController extends Controller
         return redirect()->route('user');
     }
     public function index()
+    {
+        return view('frontend.user');
+    }
+
+    public function index2()
     {
         return view('frontend.user');
     }
