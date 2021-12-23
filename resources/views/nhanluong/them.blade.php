@@ -1,48 +1,12 @@
 @extends('layouts.app')
-@section('active')
-    <li  class="active"><a href="{{ route('nhanvien') }}"><i class="fa fa-id-card"></i> <span>Nhân Viên</span></a></li>
-    <li class="treeview">
-        <a href="#"><i class="fa fa-info-circle"></i> <span>Thông Tin</span>
-        <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-        </span>
-        </a>
-        <ul class="treeview-menu">
-        <li class=""><a href="{{ route('phongban') }}"><i class="fa fa-tasks-alt"></i> <span>Phòng Ban</span></a></li>        
-        <li class=""><a href="{{ route('tongiao') }}"><i class="fa fa-star-of-david"></i> <span>Tôn Giáo</span></a></li>
-        <li class=""><a href="{{ route('chuyenmon') }}"><i class="fa fa-user-tie"></i> <span>Chuyên Môn</span></a></li>
-        <li class=""><a href="{{ route('bangcap') }}"><i class="fa fa-id-card-alt"></i> <span>Bằng Cấp</span></a></li>
-        <li class=""><a href="{{ route('ngoaingu') }}"><i class="fa fa-globe-asia"></i> <span>Ngoại Ngữ</span></a></li>
-        <li class=""><a href="{{ route('dantoc') }}"><i class="fa fa-flag-usa"></i> <span>Dân Tộc</span></a></li>
-        </ul>
-    </li>
-    <li class="treeview ">
-        <a href="#"><i class="fas fa-hospitals"></i> <span>Bảo Hiểm</span>
-        <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-        </span>
-        </a>
-        <ul class="treeview-menu">
-        <li class=""><a href="{{ route('baohiem') }}"><i class="far fa-id-card"></i> <span>Bảo hiểm</span></a></li>
-        <li class=""><a href="{{ route('loaibaohiem') }}"><i class="far fa-credit-card"></i> <span>Loại bảo hiểm</span></a></li>
-        </ul>
-    </li>
-    <li class=""><a href="{{ route('thuongphat') }}"><i class="fa fa-gift-card"></i> <span>Thưởng phạt</span></a></li>
-    <li class=""><a href="{{ route('hopdong') }}"><i class="fas fa-file-signature"></i> <span>Hợp đồng</span></a></li>
-    <li class=""><a href="{{ route('chucvu') }}"><i class="fa fa-users"></i> <span>Chức Vụ</span></a></li>
-    <li class=""><a href="{{ route('ungluong') }}"><i class="fad fa-money-check-edit-alt"></i> <span>Ứng lương</span></a></li>
-    <li class=""><a href="{{ route('mucluong') }}"><i class="fa fa-money-check-alt"></i> <span>Mức lương</span></a></li>
-    <li class=""><a href="{{ route('lichnghi') }}"><i class="fal fa-toggle-off"></i> <span>Lịch Nghỉ</span></a></li>
-    <li class=""><a href="{{ route('nghiviec') }}"><i class="fal fa-power-off"></i> <span>Nghỉ Việc</span></a></li>
-@endsection
 @section('content-header')
 <h1>
-      <strong>Thêm Nhân viên</strong>
+      <strong>Thêm Lương</strong>
       <small></small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i>Trang Chủ</a></li>
-        <li class="active">Nhân Viên</li>
+        <li class="active">Lương</li>
       </ol>
 @endsection
 @section('content')
@@ -51,26 +15,17 @@
         <div class="card-body">
             <form action="{{ route('nhanluong.them') }}" method="post" >
             @csrf
-                <div class="mb-2">
-                    <label class="form-label" for="nhanvien_id">Mức lương</label>
-                    <select name="nhanvien_id" id="nhanvien_id" class="form-control @error('nhanvien_id') is-invalid @enderror"
-                        required>
-                        <option  value="">--Chọn--</option>
-                        @foreach ($nhanvien as $value)
-                            <option value="{{ $value->id }}">
-                               {{  $value->hovaten }}
-                            </option>
-                        @endforeach
-                        @error('nhanvien')
-                            <div class="invalid-feedback"><strong>{{ $message }}</strong></div>
-                        @enderror
-                    </select>
+
+            <div class="col-md-6">
+            <div class="mb-2">
+                    <label class="form-label" for="hovaten">Họ và tên</label>
+                        <input type="text" class="form-control" id="hovaten" name="hovaten" value="{{ $nhanvien }}" required />
                 </div>
 
                 <div class="mb-2">
-                <label class="form-label" for="luongcb">Lương cơ bản</label>
-                    <input type="text" class="form-control @error('luongcb') is-invalid @enderror"  id="luongcb"
-                        name="luongcb" required />
+                <label class="form-label" for="mucluong">Lương cơ bản</label>
+                    <input value="{{ $nhanvien }}"  type="text" class="form-control @error('mucluong') is-invalid @enderror"  id="mucluong"
+                        name="mucluong" required />
                     @error('luongcb')
                         <div class="invalid-feedback"><strong>{{ $message }}</strong></div>
                     @enderror
@@ -86,12 +41,8 @@
                 </div>
 
                 <div class="mb-2">
-                <label class="form-label" for="hesoluong">Hệ số lương </label>
-                    <input type="text" class="form-control @error('hesoluong') is-invalid @enderror"  id="hesoluong"
-                        name="hesoluong" required />
-                    @error('hesoluong')
-                        <div class="invalid-feedback"><strong>{{ $message }}</strong></div>
-                    @enderror
+                    <label class="form-label" for="hesoluong">Hệ số lương</label>
+                        <input type="text" class="form-control" id="hesoluong" name="hesoluong" value="{{ $nhanvien }}" required />
                 </div>
 
                 <div class="mb-2">
@@ -112,7 +63,17 @@
                     @enderror
                 </div>
 
-                <div class="mb-2">
+                <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Thêm vào CSDL</button>
+            </div>
+
+
+
+
+
+            <div class="col-md-6">
+                
+
+            <div class="mb-2">
                 <label class="form-label" for="phat">Phạt</label>
                     <input value="{{ $phat }}" type="text" class="form-control @error('phat') is-invalid @enderror"  id="phat"
                         name="phat" required />
@@ -123,18 +84,18 @@
 
                 <div class="mb-2">
                 <label class="form-label" for="tamung">Tạm ứng</label>
-                    <input type="text" class="form-control @error('tamung') is-invalid @enderror"  id="tamung"
-                        name="tamung" required />
-                    @error('tamung')
+                    <input value="{{ $ungluong }}" type="text" class="form-control @error('ungluong') is-invalid @enderror"  id="ungluong"
+                        name="ungluong" required />
+                    @error('ungluong')
                         <div class="invalid-feedback"><strong>{{ $message }}</strong></div>
                     @enderror
                 </div>
 
                 <div class="mb-2">
-                <label class="form-label" for="khautru">Khẩu trừ</label>
-                    <input type="text" class="form-control @error('khautru') is-invalid @enderror"  id="khautru"
-                        name="khautru" required />
-                    @error('khautru')
+                <label class="form-label" for="mucdong">Khẩu trừ</label>
+                    <input type="text" class="form-control @error('mucdong') is-invalid @enderror"  id="mucdong"
+                        name="mucdong" required />
+                    @error('mucdong')
                         <div class="invalid-feedback"><strong>{{ $message }}</strong></div>
                     @enderror
                 </div>
@@ -158,7 +119,11 @@
                 </div>
 
 
-                <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Thêm vào CSDL</button>
+            </div>
+                
+
+
+                
             </form>
         </div>
     </div>

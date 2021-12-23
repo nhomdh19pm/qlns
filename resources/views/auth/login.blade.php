@@ -32,12 +32,12 @@
 
 				<form class="login100-form validate-form" method="post" action="{{ route('login') }}">
 				@csrf
-					<span class="login100-form-title">
-						Đăng nhập vào DH19PM
+					<span class="login100-form-title text-while">
+						Đăng nhập vào Web
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100 {{ $errors->has('email') || $errors->has('nhanvien_id') ? ' is-invalid' : '' }}" type="text"  name="email" id="email" name="email" value="{{ old('email') }}" placeholder="Email or Username">
+						<input class="input100 {{ $errors->has('email') || $errors->has('username') ? ' is-invalid' : '' }}" type="text"  name="email" id="email"  value="{{ old('email') }}" placeholder="Email or Username">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-envelope" aria-hidden="true"></i>
@@ -67,7 +67,6 @@
 							Đăng nhập
 						</button>
 					</div>
-
 					<!-- <div class="text-center p-t-12">
 						<span class="txt1">
 							Forgot
@@ -80,7 +79,7 @@
 						</a>
 					</div> -->
 
-					<div class="text-center p-t-136">
+					<div class="text-center p-t-70">
 						<a class="txt2" href="{{ route('register') }}">
 							Đăng kí tài khoản
 							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>

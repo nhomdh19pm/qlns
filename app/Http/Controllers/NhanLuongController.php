@@ -25,16 +25,17 @@ class NhanLuongController extends Controller
         return view('nhanluong.index',compact('nhanluong'));
     }
 
-    public function getDanhSachNhanVien(){
-        // id = 2
-        $phucap = (new NhanLuong())->getPhuCap(2);
-        // dd($test);
-        // return '';
-        // $nhanvien_id = $_GET['id'];
-        $nhanluong = nhanvien::all();
+    // public function getDanhSachNhanVien(){
+    //     // id = 2
+    //     $id = $_GET['id'];
+    //     $phucap = (new NhanLuong())->getPhuCap(2);
+    //     // dd($test);
+    //     // return '';
+    //     // $nhanvien_id = $_GET['id'];
+    //     $nhanluong = nhanvien::all();
 
-        return view('nhanluong.index2',compact('nhanluong'));
-    }
+    //     return view('nhanluong.index2',compact('nhanluong'));
+    // }
 
     public function getThem()
     {
@@ -46,8 +47,9 @@ class NhanLuongController extends Controller
         $phucap = (new NhanLuong())->getPhuCap($id);       
         $ngaycong = (new NhanLuong())->getNgayCong($id, 11, 2021);    
         $thuong = (new NhanLuong())->getThuongPhat($id, 11, 2021, 1);  
-        $phat = (new NhanLuong())->getThuongPhat($id, 11, 2021, 0); 
-        return view('nhanluong.them', compact('nhanvien', 'phucap', 'ngaycong', 'thuong', 'phat'));
+        $phat = (new NhanLuong())->getThuongPhat($id, 11, 2021, 1);
+        $ungluong = (new NhanLuong())->getUngLuong($id);
+        return view('nhanluong.them', compact('nhanvien', 'phucap', 'ngaycong', 'thuong', 'phat', 'ungluong'));
     }
 
     public function postThem(Request $request)

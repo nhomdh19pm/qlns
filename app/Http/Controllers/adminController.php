@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class Admincontroller extends Controller
 {
     public function __construct()
     {
@@ -27,6 +27,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('admin');
+        return view('frontend.home');
     }
 }

@@ -70,6 +70,7 @@ class NhanLuong extends Model
         ->where('nhanvien.id', '=', $nhanvienId)
         ->first()->sotien ?? 0;
     }
+
     
     public static function getvalue()
     {

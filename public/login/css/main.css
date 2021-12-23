@@ -144,7 +144,7 @@ iframe {
   font-family: Poppins-Regular;
   font-size: 13px;
   line-height: 1.5;
-  color: #666666;
+  color: #ffffff;
 }
 
 
@@ -168,11 +168,23 @@ iframe {
   justify-content: center;
   align-items: center;
   padding: 15px;
-  background: #9053c7;
-  background: -webkit-linear-gradient(-135deg, #c850c0, #4158d0);
-  background: -o-linear-gradient(-135deg, #c850c0, #4158d0);
-  background: -moz-linear-gradient(-135deg, #c850c0, #4158d0);
-  background: linear-gradient(-135deg, #c850c0, #4158d0);
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 7s ease infinite;
+	height: 100vh;
+
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 /* .wrap-login100 {
@@ -194,7 +206,7 @@ iframe {
 
 .wrap-login100 {
   width: 960px;
-  background: #fff;
+  background: #fff0;
   border-radius: 10px;
   overflow: hidden;
   display: -webkit-box;
@@ -226,7 +238,7 @@ iframe {
 .login100-form-title {
   font-family: Montserrat-Bold;
   font-size: 24px;
-  color: #333333;
+  color: #ffffff;
   line-height: 1.2;
   text-align: center;
 
@@ -252,7 +264,7 @@ iframe {
 
   display: block;
   width: 100%;
-  background: #e6e6e6;
+  background: #ffffff;
   height: 50px;
   border-radius: 25px;
   padding: 0 30px 0 68px;
@@ -343,11 +355,10 @@ iframe {
   line-height: 1.5;
   color: #fff;
   text-transform: uppercase;
-
-  width: 100%;
+  width: 53%;
   height: 50px;
   border-radius: 25px;
-  background: #5c56cd;
+  /* background: #5c56cd; */
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -356,17 +367,22 @@ iframe {
   justify-content: center;
   align-items: center;
   padding: 0 25px;
-
   -webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
   -moz-transition: all 0.4s;
   transition: all 0.4s;
+  border: 1px solid;
 }
 
 .login100-form-btn:hover {
-  background: #2e1b99;
+  background: #eeeeee;
+  color: rgb(71, 71, 71);
+  border: none;
 }
 
+::placeholder { /* Most modern browsers support this now. */
+  color:    rgb(255, 254, 255);
+}
 
 
 /*------------------------------------------------------------------

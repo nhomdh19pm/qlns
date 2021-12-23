@@ -34,7 +34,7 @@
 				<form class="login100-form validate-form" method="POST" action="{{ route('register') }}">
 				@csrf
 					<span class="login100-form-title">
-						Đăng kí tài khoản DH19PM
+						Đăng kí tài khoản 
 					</span>
 
 					<div class="wrap-input100 validate-input" >			
@@ -105,7 +105,7 @@
 					</div> -->
 
 					<div class="text-center p-t-44">
-						<a class="txt2" href="/qlns">
+						<a class="txt2" href="/qlns/login">
 							Quay về trang chủ
 							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
 						</a>

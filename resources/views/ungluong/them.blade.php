@@ -109,7 +109,7 @@
                     @error('thuongphat')
                         <div class="invalid-feedback"><strong>{{ $message }}</strong></div>
                     @enderror
-                </div>
+            </div>
               <!-- /.form-group -->
               <!-- /.form-group -->
             </div>

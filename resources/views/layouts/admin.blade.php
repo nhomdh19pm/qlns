@@ -92,8 +92,8 @@
               <img src="{{url('public/dist/img/admin.png')}}" class="img-circle" alt="User Image"/>
 
                 <p>
-                  DH19PM - KTPM
-                  <small>2021</small>
+                {{ Auth::user()->name }}
+                  <small>{{ Auth::user()->username }}</small>
                 </p>
               </li>
               <!-- Menu Body -->
@@ -127,9 +127,12 @@
          <img  src="{{url('public/dist/img/admin.png')}}" class="img-circle" alt="User Image"/>
         </div>
         <div class="pull-left info">
-          <p>DH19PM</p>
+          <p> {{ Auth::user()->username }}</p>
           <!-- Status -->
-          <a href="#"><i class="fa fa-circle text-success"></i>With love</a>
+          <a href="#"><i class="fa fa-circle text-success"></i>
+            
+           Quản lý
+          </a>
         </div>
       </div>
       <!-- search form -->
@@ -147,8 +150,57 @@
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu">
         <li class="header">Danh Mục</li>
+
+
+        
+        
         <!-- Optionally, you can add icons to the links -->
-        @yield('active')
+        <li  class=""><a href="{{ route('nhanvien') }}"><i class="fa fa-id-card"></i> <span>Nhân Viên</span></a></li>
+    <li class="treeview">
+        <a href="#"><i class="fa fa-info-circle"></i> <span>Thông Tin</span>
+        <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+        </span>
+        </a>
+        <ul class="treeview-menu">
+          <li class=""><a href="{{ route('phongban') }}"><i class="fa fa-tasks-alt"></i> <span>Phòng Ban</span></a></li>        
+          <li class=""><a href="{{ route('tongiao') }}"><i class="fa fa-star-of-david"></i> <span>Tôn Giáo</span></a></li>
+          <li class=""><a href="{{ route('chuyenmon') }}"><i class="fa fa-user-tie"></i> <span>Chuyên Môn</span></a></li>
+          <li class=""><a href="{{ route('bangcap') }}"><i class="fa fa-id-card-alt"></i> <span>Bằng Cấp</span></a></li>
+          <li class=""><a href="{{ route('ngoaingu') }}"><i class="fa fa-globe-asia"></i> <span>Ngoại Ngữ</span></a></li>
+          <li class=""><a href="{{ route('dantoc') }}"><i class="fa fa-flag-usa"></i> <span>Dân Tộc</span></a></li>
+          <li class=""><a href="{{ route('chucvu') }}"><i class="fa fa-users"></i> <span>Chức Vụ</span></a></li>
+        </ul>
+    </li>
+    <li class="treeview ">
+        <a href="#"><i class="fad fa-sack-dollar"></i><span> Lương và các khoản</span>
+        <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+        </span>
+        </a>
+        <ul class="treeview-menu">
+          <li class=""><a href="{{ route('ungluong') }}"><i class="fad fa-money-check-edit-alt"></i> <span>Ứng lương</span></a></li>
+          <li ><a href="{{ route('mucluong') }}"><i class="fa fa-money-check-alt"></i> <span>Mức lương</span></a></li>
+          <li class=""><a href="{{ route('chamcong') }}"><i class="fad fa-calendar-alt"></i> <span>Chấm Công</span></a></li>
+          <li><a href="{{ route('nhanluong') }}"><i class="fad fa-cash-register"></i> <span>Nhận Lương</span></a></li>
+          <li class=""><a href="{{ route('thuongphat') }}"><i class="fa fa-gift-card"></i> <span>Thưởng phạt</span></a></li>
+        </ul>
+    </li>
+    <li class=""><a href="{{ route('hopdong') }}"><i class="fas fa-file-signature"></i> <span>Hợp đồng</span></a></li>
+    <li class=""><a href="{{ route('user') }}"><i class="fas fa-user"></i> <span>Tài khoản</span></a></li>
+        
+
+
+
+
+
+
+
+
+
+
+
+
         
       </ul>
       <!-- /.sidebar-menu -->

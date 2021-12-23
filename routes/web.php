@@ -22,6 +22,7 @@ use App\Http\Controllers\NghiViecController;
 use App\Http\Controllers\BaoHiemController;
 use App\Http\Controllers\ChamCongController;
 use App\Http\Controllers\NhanLuongController;
+use App\Http\Controllers\Admincontroller;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,16 +36,39 @@ use App\Http\Controllers\NhanLuongController;
 
 
 
+
 Auth::routes();
-Route::middleware('auth')->get('/', [HomeController::class, 'index'])->name('frontend');
+
+Route::middleware(['auth'])->group(function () {
+    //After Login the routes are accept by the loginUsers...
+    
+    });
+
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
+Route::middleware('auth','user')->prefix('user')->group(function () {
+    Route::get('/', [UserController::class, 'index'])->name('frontend.user');
+    //ton giao
+
+
+   //phong ban
+    Route::get('/nhanluong',[NhanLuongController::class,'getdanhsach'])->name('nhanluong');
+    Route::get('/nhanluong/them',[NhanLuongController::class,'getThem'])->name('nhanluong.them');
+    Route::post('/nhanluong/them',[NhanLuongController::class,'postThem'])->name('nhanluong.them');
+    Route::get('/nhanluong/sua/{id}',[NhanLuongController::class,'getSua'])->name('nhanluong.sua');
+    Route::post('/nhanluong/sua/{id}',[NhanLuongController::class,'postSua'])->name('nhanluong.sua');
+    Route::get('/nhanluong/xoa/{id}',[NhanLuongController::class,'getXoa'])->name('nhanluong.xoa');
+
+
+});
 //Route::get('/index', [HomeController::class, 'index'])->name('index');
 
 /*Route::middleware('auth')->prefix('nhan-vien')->group(function () {
     Route::get('/', [UserController::class, 'index'])->name('frontend.user');
 });*/
 
-Route::middleware('auth')->prefix('quan-ly')->group(function () {
-    Route::get('/', [UserController::class, 'index'])->name('frontend.admin');
+Route::middleware('auth','admin')->prefix('admin')->group(function () {
+    Route::get('/', [Admincontroller::class, 'index'])->name('frontend.admin');
     //ton giao
     Route::get('/tongiao',[TonGiaoController::class,'getdanhsach'])->name('tongiao');
     Route::get('/tongiao/them',[TonGiaoController::class,'getThem'])->name('tongiao.them');
