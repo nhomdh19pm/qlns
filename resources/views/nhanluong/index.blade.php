@@ -39,7 +39,7 @@
                 @foreach ($nhanluong as $value)
                 <tr class="hung-nguyen">
                             <td>{{ $loop->iteration }}</td>
-                            <td>{{ $value->hovaten }}</td>
+                            <td>{{ $value->nhanvien->hovaten }}</td>
                             <td>{{ number_format($value->luongcb) }}</td>
                             <td>{{ $value->hesoluong }}</td>
                             <td>{{ $value->phucap }}</td>                      
@@ -47,7 +47,7 @@
                             <td>{{ $value->thuong }}</td>                      
                             <td>{{ $value->phat }}</td>                      
                             <td>{{ $value->tamung }}</td>                      
-                            <td>{{ $value->mucdong }}</td>                      
+                            <td>{{ number_format($value->mucdong)  }}đ</td>                      
                             <td>{{ $value->thang }}</td>                      
                             <td>{{ $value->nam }}</td>                      
                             <td class="text-center" width="10%"><a class="btn btn-outline-primary"href="javascript:eventXoa('{{ route('nhanluong.xoa',['id' => $value->id]) }}', '{{ $value->hovaten }}');"><i class="fa fa-trash"></i> Xóa</a></td>

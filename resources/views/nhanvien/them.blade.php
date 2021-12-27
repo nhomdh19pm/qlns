@@ -15,7 +15,7 @@
     <div class="box box-default">
         <!-- /.box-header -->
         <div class="box-body">
-        <form action="{{ route('nhanvien.them') }}" method="post">
+        <form action="{{ route('nhanvien.them') }}" enctype="multipart/form-data" method="post">
         @csrf
           <div class="row">
             <div class="col-md-6">
@@ -138,7 +138,7 @@
                 <label class="form-label" for="gioitinh">Giới tính</label>
                 <select class="form-control" id="gioitinh" name="gioitinh">
                     <option value="0">Nam</option>              
-                    <option value="1">Nũ</option>
+                    <option value="1">Nữ</option>
                 </select>
                     @error('hopdong')
                         <div class="invalid-feedback"><strong>{{ $message }}</strong></div>

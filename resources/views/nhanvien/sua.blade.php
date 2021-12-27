@@ -18,11 +18,11 @@
 
 
         </a>
-        <form action="{{ route('nhanvien.sua', ['id' => $nhanvien->id]) }}" method="post">
+        <form action="{{ route('nhanvien.sua', ['id' => $nhanvien->id]) }}" enctype="multipart/form-data" method="post">
         @csrf
           <div class="row">
             <div class="col-md-6">
-            <div class="mb-2">
+              <div class="mb-2">
                     <label class="form-label" for="hovaten">Họ và tên</label>
                         <input type="text" class="form-control" id="hovaten" name="hovaten" value="{{ $nhanvien->hovaten }}" required />
                 </div>
@@ -32,7 +32,7 @@
                     <select name="mucluong_id" id="mucluong_id" class="form-control @error('mucluong_id')  is-invalid @enderror" 
                         required>
                         @foreach ($mucluong as $value)
-                        <option value="{{ $value->id }}" {{ ($nhanvien->bangcap_id == $value->id) ? 'selected' : '' }}>
+                        <option value="{{ $value->id }}" {{ ($nhanvien->mucluong_id == $value->id) ? 'selected' : '' }}>
                             {{  number_format($value->luongcb) }} đ
                         </option>
                         @endforeach

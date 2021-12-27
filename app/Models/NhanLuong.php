@@ -36,6 +36,14 @@ class NhanLuong extends Model
         ->first()->songaycong ?? 0;
     }
 
+    public function getLuongcb($nhanvienId)
+    {
+        return DB::table('nhanvien')
+        ->join('mucluong as m', 'nhanvien.mucluong_id', '=', 'm.id')
+        ->where('nhanvien.id', '=', $nhanvienId)
+        ->first()->luongcb ?? 0;
+    }
+
     // public function getNghiViec($nhanvienId)
     // {
     //     return DB::table('nhanvien')

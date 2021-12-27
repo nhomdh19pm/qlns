@@ -34,7 +34,7 @@ use App\Http\Controllers\Admincontroller;
 |
 */
 
-
+Route::get('/401',[HomeController::class,'index'])->name('401');
 
 
 Auth::routes();
@@ -77,6 +77,7 @@ Route::middleware('auth','admin')->prefix('admin')->group(function () {
     Route::post('/tongiao/sua/{id}',[TonGiaoController::class,'postSua'])->name('tongiao.sua');
     Route::get('/tongiao/xoa/{id}',[TonGiaoController::class,'getXoa'])->name('tongiao.xoa');
 
+
    //phong ban
    Route::get('/phongban',[PhongBanController::class,'getdanhsach'])->name('phongban');
    Route::get('/phongban/them',[PhongBanController::class,'getThem'])->name('phongban.them');
@@ -92,6 +93,9 @@ Route::middleware('auth','admin')->prefix('admin')->group(function () {
     Route::get('/nhanvien/sua/{id}',[NhanVienController::class,'getSua'])->name('nhanvien.sua');
     Route::post('/nhanvien/sua/{id}',[NhanVienController::class,'postSua'])->name('nhanvien.sua');
     Route::get('/nhanvien/xoa/{id}',[NhanVienController::class,'getXoa'])->name('nhanvien.xoa');
+
+    Route::post('/nhanvien/nhap', [NhanVienController::class, 'postNhap'])->name('nhanvien.nhap');
+    Route::get('/nhanvien/xuat', [NhanVienController::class, 'getXuat'])->name('nhanvien.xuat');
 
     Route::get('/user',[UserController::class,'getdanhsach'])->name('user');
     Route::get('/user/them',[UserController::class,'getThem'])->name('user.them');

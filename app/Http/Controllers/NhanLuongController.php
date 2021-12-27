@@ -16,12 +16,9 @@ class NhanLuongController extends Controller
 {
     public function getDanhSach(){
         // id = 2
-        $phucap = (new NhanLuong())->getPhuCap(2);
-        // dd($test);
-        // return '';
-        // $nhanvien_id = $_GET['id'];
-        $nhanluong = nhanvien::all();
 
+        
+        $nhanluong = NhanLuong::all();
         return view('nhanluong.index',compact('nhanluong'));
     }
 
@@ -43,13 +40,16 @@ class NhanLuongController extends Controller
         if($id == null){
             return 'abc';            
         }
-        $nhanvien = nhanvien::all();
-        $phucap = (new NhanLuong())->getPhuCap($id);       
+        $nhanvien = nhanvien::find($id);
+        $hovaten = nhanvien::all();
+        $phucap = (new NhanLuong())->getPhuCap($id);
+        $luongcb = (new NhanLuong())->getLuongcb($id);       
         $ngaycong = (new NhanLuong())->getNgayCong($id, 11, 2021);    
         $thuong = (new NhanLuong())->getThuongPhat($id, 11, 2021, 1);  
         $phat = (new NhanLuong())->getThuongPhat($id, 11, 2021, 1);
         $ungluong = (new NhanLuong())->getUngLuong($id);
-        return view('nhanluong.them', compact('nhanvien', 'phucap', 'ngaycong', 'thuong', 'phat', 'ungluong'));
+
+        return view('nhanluong.them', compact('nhanvien', 'phucap', 'ngaycong', 'thuong', 'phat', 'ungluong', 'luongcb', 'hovaten'));
     }
 
     public function postThem(Request $request)
@@ -60,15 +60,15 @@ class NhanLuongController extends Controller
         //     'luongcb' => ['required', 'string'],
         //     'phucap' => ['required', 'string'],
         // ]);
-        $orm = new nhanluong();
+        $orm = new NhanLuong();
         $orm->nhanvien_id = $request->nhanvien_id;
         $orm->phucap = $request->phucap;
         $orm->luongcb = $request->luongcb;
         $orm->hesoluong = $request->hesoluong;
         $orm->songaycong = $request->songaycong;
+        $orm->tamung = $request->tamung;
         $orm->thuong = $request->thuong;
         $orm->phat = $request->phat;
-        $orm->tamung = $request->tamung;
         $orm->khautru = $request->khautru;
         $orm->thang = $request->thang;
         $orm->nam = $request->nam;

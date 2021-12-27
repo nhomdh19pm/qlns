@@ -6,6 +6,7 @@ use App\Models\user;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use App\Models\NhanVien;
 
 
 
@@ -22,18 +23,20 @@ class UserController extends Controller
     }
     public function getThem()
     {
-        return view('user.them');
+        $nhanvien = nhanvien::all();
+        return view('user.them', compact('nhanvien'));
     }
     public function postThem(Request $request)
     {
         $this->validate($request, [
             'name' => ['required', 'max:255', 'max:100'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:nguoidung'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'chucvu' => ['required'],
             'password' => ['required', 'confirmed'],
         ]);
         $orm = new user();
         $orm->name = $request->name;
+        $orm->nhanvien_id = $request->nhanvien_id;
         $orm->username = Str::before($request->email, '@');
         $orm->email = $request->email;
         $orm->chucvu = $request->chucvu;
@@ -43,19 +46,21 @@ class UserController extends Controller
     }
     public function getSua($id)
     {
+        $nhanvien = nhanvien::all();
         $user = user::find($id);
-        return view('user.sua', compact('user'));
+        return view('user.sua', compact('user', 'nhanvien'));
     }
     public function postSua(Request $request, $id)
     {
         $this->validate($request, [
             'name' => ['required', 'max:255', 'max:100'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:user,email' .$request->id],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users' .$request->id],
             'chucvu' => ['required'],
-            'password' => ['required', 'min:4', 'confirmed'],
+            'password' => ['required', 'confirmed'],
         ]);
         $orm = user::find($id);
         $orm->name = $request->name;
+        $orm->nhanvien_id = $request->nhanvien_id;
         $orm->username = Str::before($request->email, '@');
         $orm->email = $request->email;
         $orm->chucvu = $request->chucvu;

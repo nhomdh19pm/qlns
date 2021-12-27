@@ -31,6 +31,11 @@ class CreateNhanvienTable extends Migration
             $table->boolean('trangthai')->default(false);
             $table->date('ngaynghilam')->nullable();
             $table->float('hesoluong', 5, 2);
+            $table->string('tenbh', 255);
+            $table->string('mabh', 255);
+            $table->integer('mucdong');
+            $table->date('ngaycap');
+            $table->date('ngayhethan');         
             $table->string('photo_path', 100)->nullable();
             $table->timestamps();
             $table->engine = 'InnoDB';

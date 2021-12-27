@@ -17,7 +17,7 @@ class User
     public function handle(Request $request, Closure $next)
     {
         if (!Auth::check() || Auth::user()->chucvu == 1) {
-            return redirect(route('login'));
+            return redirect(route('401'));
         }
         return $next($request);
     }

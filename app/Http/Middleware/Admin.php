@@ -17,7 +17,7 @@ class Admin
     public function handle(Request $request, Closure $next)
     {
         if (!Auth::check() || Auth::user()->chucvu == 0) {
-            return redirect(route('login'));
+            return redirect(route('401'));
         }
         return $next($request);
     }

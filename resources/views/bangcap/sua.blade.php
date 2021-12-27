@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 @section('content-header')
 <h1>
       <strong>Sửa Bằng cấp</strong>

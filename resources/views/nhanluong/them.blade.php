@@ -13,22 +13,29 @@
     <div class="card">
         <div class="card-header"></div>
         <div class="card-body">
-            <form action="{{ route('nhanluong.them') }}" method="post" >
+
+            <form action="{{ route('nhanluong.them', ['id' => $nhanvien->id]) }}" method="post">   
             @csrf
 
             <div class="col-md-6">
             <div class="mb-2">
-                    <label class="form-label" for="hovaten">Họ và tên</label>
-                        <input type="text" class="form-control" id="hovaten" name="hovaten" value="{{ $nhanvien }}" required />
+                    <label class="form-label" for="nhanvien_id">Tên nhân viên</label>
+                    <select name="nhanvien_id" id="nhanvien_id" class="form-control @error('nhanvien_id')  is-invalid @enderror" 
+                        required>
+                        @foreach ($hovaten as $value)
+                        <option value="{{ $value->id }}" {{ ( $nhanvien->id == $value->id) ? 'selected' : '' }}>
+                                {{ $value->hovaten }}
+                            </option>
+                        @endforeach
+                        @error('hopdong')
+                            <div class="invalid-feedback"><strong>{{ $message }}</strong></div>
+                        @enderror
+                    </select>
                 </div>
 
-                <div class="mb-2">
+                <div class="mb-2">  
                 <label class="form-label" for="mucluong">Lương cơ bản</label>
-                    <input value="{{ $nhanvien }}"  type="text" class="form-control @error('mucluong') is-invalid @enderror"  id="mucluong"
-                        name="mucluong" required />
-                    @error('luongcb')
-                        <div class="invalid-feedback"><strong>{{ $message }}</strong></div>
-                    @enderror
+                <input value="{{ $luongcb }}" type="text" class="form-control" id="luongcb" name="luongcb"  required />
                 </div>
 
                 <div class="mb-2">
@@ -42,7 +49,7 @@
 
                 <div class="mb-2">
                     <label class="form-label" for="hesoluong">Hệ số lương</label>
-                        <input type="text" class="form-control" id="hesoluong" name="hesoluong" value="{{ $nhanvien }}" required />
+                        <input type="text" class="form-control" id="hesoluong" name="hesoluong" value="{{ $nhanvien->hesoluong }}" required />
                 </div>
 
                 <div class="mb-2">
@@ -84,20 +91,16 @@
 
                 <div class="mb-2">
                 <label class="form-label" for="tamung">Tạm ứng</label>
-                    <input value="{{ $ungluong }}" type="text" class="form-control @error('ungluong') is-invalid @enderror"  id="ungluong"
-                        name="ungluong" required />
+                    <input value="{{ $ungluong }}" type="text" class="form-control @error('ungluong') is-invalid @enderror"  id="tamung"
+                        name="tamung" required />
                     @error('ungluong')
                         <div class="invalid-feedback"><strong>{{ $message }}</strong></div>
                     @enderror
                 </div>
 
                 <div class="mb-2">
-                <label class="form-label" for="mucdong">Khẩu trừ</label>
-                    <input type="text" class="form-control @error('mucdong') is-invalid @enderror"  id="mucdong"
-                        name="mucdong" required />
-                    @error('mucdong')
-                        <div class="invalid-feedback"><strong>{{ $message }}</strong></div>
-                    @enderror
+                    <label class="form-label" for="mucdong">Mức đóng</label>
+                        <input type="text" class="form-control" id="khautru" name="khautru" value="{{ $nhanvien->mucdong }}" required />
                 </div>
 
                 <div class="mb-2">

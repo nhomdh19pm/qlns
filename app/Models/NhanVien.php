@@ -11,6 +11,31 @@ class NhanVien extends Model
  
     protected $table = 'nhanvien';
 
+    protected $fillable = [
+            'mucluong_id',
+            'bangcap_id',
+            'chuyenmon_id',
+            'ngoaingu_id',
+            'dantoc_id',
+            'tongiao_id',
+            'hovaten',
+            'gioitinh',
+            'ngaysinh',
+            'cmnd',
+            'sdt',
+            'diachi',
+            'quequan',
+            'trangthai',
+            'ngaynghilam',
+            'hesoluong',
+            'tenbh',
+            'mabh',
+            'mucdong',
+            'ngaycap',
+            'ngayhethan',
+            'photo_path',
+        ];
+       
 
     public function user()
     {

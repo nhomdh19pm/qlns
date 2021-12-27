@@ -16,6 +16,9 @@ class CreateChamcongTable extends Migration
         Schema::create('chamcong', function (Blueprint $table) {
             $table->id();
             $table->foreignId('nhanvien_id')->constrained('nhanvien');
+            $table->integer('songaycong');
+            $table->integer('thang');
+            $table->integer('nam');          
             $table->timestamps();
             $table->engine = 'InnoDB';
         });

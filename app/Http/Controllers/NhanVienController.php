@@ -14,9 +14,27 @@ use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use App\Exports\NhanVienExport;
+use App\Imports\NhanVienImport;
+use Maatwebsite\Excel\Facades\Excel;
+
 
 class NhanVienController extends Controller
 {
+    public function getXuat()
+    {
+    return Excel::download(new NhanVienExport, 'danh-sach-nhan-vien.xlsx');
+    }
+
+    public function postNhap(Request $request)
+    {
+    Excel::import(new NhanVienImport, $request->file('file_excel'));
+
+    return redirect()->route('nhanvien');
+    }
+
+   
+
     public function getDanhSach(){
         $nhanvien = nhanvien::all();
         return view('nhanvien.index',compact('nhanvien'));
